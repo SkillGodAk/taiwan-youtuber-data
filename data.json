@@ -1,0 +1,51 @@
+{
+  "lastUpdate": 1717473600,
+  "channelCount": 3,
+  "channels": [
+    {
+      "id": "UC_placeholder_1",
+      "title": "測試頻道1",
+      "avatarUrl": "https://via.placeholder.com/240",
+      "bannerUrl": "",
+      "subscriberCount": 1000000,
+      "videoCount": 100,
+      "rank": 1,
+      "previousRank": 2,
+      "yesterdaySubscribers": 990000,
+      "weekAgoSubscribers": 950000,
+      "monthAgoSubscribers": 900000,
+      "latestVideos": [],
+      "lastUpdate": 1717473600
+    },
+    {
+      "id": "UC_placeholder_2",
+      "title": "測試頻道2",
+      "avatarUrl": "https://via.placeholder.com/240",
+      "bannerUrl": "",
+      "subscriberCount": 800000,
+      "videoCount": 200,
+      "rank": 2,
+      "previousRank": 1,
+      "yesterdaySubscribers": 805000,
+      "weekAgoSubscribers": 810000,
+      "monthAgoSubscribers": 820000,
+      "latestVideos": [],
+      "lastUpdate": 1717473600
+    },
+    {
+      "id": "UC_placeholder_3",
+      "title": "測試頻道3",
+      "avatarUrl": "https://via.placeholder.com/240",
+      "bannerUrl": "",
+      "subscriberCount": 500000,
+      "videoCount": 150,
+      "rank": 3,
+      "previousRank": 3,
+      "yesterdaySubscribers": 498000,
+      "weekAgoSubscribers": 490000,
+      "monthAgoSubscribers": 470000,
+      "latestVideos": [],
+      "lastUpdate": 1717473600
+    }
+  ]
+}
