@@ -288,7 +288,7 @@ def main():
 
         # 頭像：取較大尺寸
         avatar_url = snippet.get('thumbnails', {}).get('default', {}).get('url', '')
-        avatar_url = avatar_url.replace('/s88-', '/s240-')
+        avatar_url = avatar_url.replace('/s88-', '/s240-').replace('=s88-', '=s240-')
         if not avatar_url and nox_ch.get('avatar'):
             avatar_url = nox_ch['avatar']
 
