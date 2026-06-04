@@ -43,7 +43,7 @@ def fetch_noxinfluencer_top100():
     # 解析回應結構
     rows = []
     if isinstance(data, dict):
-        rows = data.get('data', data.get('rows', data.get('list', [])))
+        rows = data.get('retDataList', data.get('data', data.get('rows', data.get('list', []))))
     elif isinstance(data, list):
         rows = data
 
@@ -305,12 +305,9 @@ def main():
         # 上次排名
         prev_rank = previous_ranks.get(cid, rank)
 
-        # 最新影片（限制數量以節省 API quota）
+        # 不抓最新影片（search.list 太貴，100 單位/次，100 頻道 = 10000 單位爆配額）
+        # 平均觀看量直接用 Noxinfluencer 的 avgViews
         latest_videos = []
-        try:
-            latest_videos = get_latest_videos(cid, 3)
-        except Exception as e:
-            print(f"  取得影片失敗 {cid}: {e}")
 
         title = snippet.get('title', '') or nox_ch.get('title', '')
 
