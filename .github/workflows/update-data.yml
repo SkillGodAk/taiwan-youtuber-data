@@ -1,0 +1,35 @@
+name: Update YouTube Data
+
+on:
+  schedule:
+    # 每 10 分鐘執行一次
+    - cron: '*/10 * * * *'
+  workflow_dispatch:  # 允許手動觸發
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Run fetch script
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+        run: python scripts/fetch_data.py
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data.json data/ -f
+          git diff --staged --quiet || git commit -m "Update data $(date -u '+%Y-%m-%d %H:%M:%S UTC')"
+          git push
