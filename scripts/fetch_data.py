@@ -3,7 +3,7 @@
 台灣創作者Top100 - YouTube 數據抓取腳本
 由 GitHub Actions 定期自動執行
 
-使用 Noxinfluencer API 取得 Top 100 排名 + avgViews
+使用 Noxinfluencer API 取得排名 + avgViews
 使用 YouTube Data API v3 取得精確的訂閱數、影片數等
 """
 
@@ -18,11 +18,10 @@ API_KEY = os.environ.get('YOUTUBE_API_KEY', '')
 BASE_URL = 'https://www.googleapis.com/youtube/v3'
 LATEST_VIDEO_CHANNEL_LIMIT = int(os.environ.get('LATEST_VIDEO_CHANNEL_LIMIT', '20'))
 LATEST_VIDEO_COUNT = int(os.environ.get('LATEST_VIDEO_COUNT', '3'))
+TOP_CHANNEL_LIMIT = int(os.environ.get('TOP_CHANNEL_LIMIT', '100'))
+RANKING_POOL_SIZE = int(os.environ.get('RANKING_POOL_SIZE', '500'))
 
-NOXINFLUENCER_URL = (
-    'https://www.noxinfluencer.com/ws/rank/youtube/kol'
-    '?country=TW&rankType=followers&interval=weekly&pageNum=1&pageSize=100'
-)
+NOXINFLUENCER_URL = 'https://www.noxinfluencer.com/ws/rank/youtube/kol'
 
 HEADERS = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 '
@@ -31,10 +30,17 @@ HEADERS = {
 }
 
 
-def fetch_noxinfluencer_top100():
-    """從 Noxinfluencer 取得台灣 YouTube Top 100 頻道"""
-    print("正在從 Noxinfluencer 取得 Top 100...")
-    req = urllib.request.Request(NOXINFLUENCER_URL, headers=HEADERS)
+def fetch_noxinfluencer_channels(limit=RANKING_POOL_SIZE):
+    """從 Noxinfluencer 取得台灣 YouTube 排名頻道。"""
+    print(f"正在從 Noxinfluencer 取得前 {limit} 名...")
+    params = urllib.parse.urlencode({
+        'country': 'TW',
+        'rankType': 'followers',
+        'interval': 'weekly',
+        'pageNum': 1,
+        'pageSize': limit,
+    })
+    req = urllib.request.Request(f"{NOXINFLUENCER_URL}?{params}", headers=HEADERS)
     try:
         with urllib.request.urlopen(req, timeout=30) as resp:
             data = json.loads(resp.read().decode())
@@ -259,11 +265,11 @@ def compute_comparison(channel_id, history):
 
 
 def main():
-    print("=== 台灣創作者Top100 數據更新 ===")
+    print("=== 台灣 YouTuber 排行榜數據更新 ===")
     print(f"時間：{datetime.now(timezone.utc).isoformat()}")
 
-    # 1. 從 Noxinfluencer 取得 Top 100 排名和平均觀看量
-    nox_channels = fetch_noxinfluencer_top100()
+    # 1. 從 Noxinfluencer 取得排名和平均觀看量，前 100 給首頁，其餘給搜尋索引
+    nox_channels = fetch_noxinfluencer_channels()
     if not nox_channels:
         print("無法從 Noxinfluencer 取得數據，終止")
         return
@@ -376,6 +382,8 @@ def main():
         ]
         channel.pop('_uploadsPlaylist', None)
 
+    top_channels = output_channels[:TOP_CHANNEL_LIMIT]
+
     # 5. 儲存歷史和排名
     save_history(output_channels)
     save_current_ranks(output_channels)
@@ -383,8 +391,10 @@ def main():
     # 6. 產出 JSON
     output = {
         'lastUpdate': now_ts,
-        'channelCount': len(output_channels),
-        'channels': output_channels,
+        'channelCount': len(top_channels),
+        'searchIndexCount': len(output_channels),
+        'channels': top_channels,
+        'searchIndex': output_channels,
     }
 
     os.makedirs('data', exist_ok=True)
@@ -400,7 +410,7 @@ def main():
             f, ensure_ascii=False, indent=2,
         )
 
-    print(f"\n完成！共 {len(output_channels)} 個頻道，已輸出 data.json")
+    print(f"\n完成！首頁 {len(top_channels)} 個，搜尋索引 {len(output_channels)} 個，已輸出 data.json")
 
     # 統計 avgViews 覆蓋率
     with_avg = sum(1 for c in output_channels if c.get('avgViews', 0) > 0)

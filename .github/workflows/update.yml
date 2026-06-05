@@ -23,6 +23,8 @@ jobs:
       - name: Fetch data
         env:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+          TOP_CHANNEL_LIMIT: 100
+          RANKING_POOL_SIZE: 500
           LATEST_VIDEO_CHANNEL_LIMIT: 20
           LATEST_VIDEO_COUNT: 3
         run: python scripts/fetch_data.py
