@@ -41,6 +41,8 @@ jobs:
           RANKING_POOL_SIZE: 500
           CANDIDATE_LIMIT: 1000
           CANDIDATE_RESOLVE_LIMIT: ${{ github.event.inputs.candidate_resolve_limit || '25' }}
+          ABOUT_PAGE_CHECK_LIMIT: 120
+          MIN_SEARCH_INDEX_SUBSCRIBERS: 1000
           VERIFY_OFFICIAL_TW: true
           LATEST_VIDEO_CHANNEL_LIMIT: 20
           LATEST_VIDEO_COUNT: 3

@@ -37,6 +37,7 @@ DISCOVERY_MODE = os.environ.get("DISCOVERY_MODE", "").lower() in ("1", "true", "
 CANDIDATE_LIMIT = int(os.environ.get("CANDIDATE_LIMIT", "1000"))
 CANDIDATE_RESOLVE_LIMIT = int(os.environ.get("CANDIDATE_RESOLVE_LIMIT", "25"))
 ABOUT_PAGE_CHECK_LIMIT = int(os.environ.get("ABOUT_PAGE_CHECK_LIMIT", "120"))
+MIN_SEARCH_INDEX_SUBSCRIBERS = int(os.environ.get("MIN_SEARCH_INDEX_SUBSCRIBERS", "1000"))
 VERIFY_OFFICIAL_TW = os.environ.get("VERIFY_OFFICIAL_TW", "true").lower() in (
     "1",
     "true",
@@ -818,6 +819,11 @@ def main() -> None:
             about_checks_used += 1
 
         if VERIFY_OFFICIAL_TW and not match_reason:
+            continue
+        subscriber_count = parse_int(
+            youtube_channel.get("statistics", {}).get("subscriberCount")
+        )
+        if subscriber_count < MIN_SEARCH_INDEX_SUBSCRIBERS:
             continue
         output_channels.append(
             make_output_channel(
