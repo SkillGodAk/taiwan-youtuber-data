@@ -14,6 +14,10 @@ on:
         options:
           - 'false'
           - 'true'
+      candidate_resolve_limit:
+        description: 'How many youtubers.me candidates to resolve in this manual run'
+        required: false
+        default: '25'
 
 permissions:
   contents: write
@@ -36,7 +40,7 @@ jobs:
           TOP_CHANNEL_LIMIT: 100
           RANKING_POOL_SIZE: 500
           CANDIDATE_LIMIT: 1000
-          CANDIDATE_RESOLVE_LIMIT: 25
+          CANDIDATE_RESOLVE_LIMIT: ${{ github.event.inputs.candidate_resolve_limit || '25' }}
           VERIFY_OFFICIAL_TW: true
           LATEST_VIDEO_CHANNEL_LIMIT: 20
           LATEST_VIDEO_COUNT: 3
