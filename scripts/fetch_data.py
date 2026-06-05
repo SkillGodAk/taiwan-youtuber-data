@@ -506,6 +506,37 @@ def resolve_youtubers_candidates(
     return list(merged.values())
 
 
+def discover_channels_from_youtube_web(keyword: str) -> list[dict[str, str]]:
+    query = urllib.parse.urlencode({"search_query": keyword, "sp": "EgIQAg%3D%3D"})
+    url = f"https://www.youtube.com/results?{query}"
+    try:
+        page = http_get_text(url, timeout=25)
+    except Exception:
+        return []
+
+    channels: list[dict[str, str]] = []
+    seen = set()
+    pattern = re.compile(
+        r'"channelRenderer"\s*:\s*\{.*?"channelId"\s*:\s*"(UC[a-zA-Z0-9_-]{22})".*?'
+        r'"title"\s*:\s*\{"simpleText"\s*:\s*"([^"]+)"',
+        flags=re.S,
+    )
+    for match in pattern.finditer(page):
+        cid = match.group(1)
+        if cid in seen:
+            continue
+        seen.add(cid)
+        channels.append(
+            {
+                "channel_id": cid,
+                "title": html.unescape(match.group(2)),
+            }
+        )
+        if len(channels) >= 20:
+            break
+    return channels
+
+
 def discover_channels_by_youtube_search(
     existing_ids: set[str],
     max_new_channels: int = 250,
@@ -525,17 +556,36 @@ def discover_channels_by_youtube_search(
                 "maxResults": 50,
             },
         )
-        if not data:
-            continue
-        for item in data.get("items", []):
+        ids_from_keyword: list[dict[str, str]] = []
+        if data:
+            for item in data.get("items", []):
+                cid = item.get("id", {}).get("channelId", "")
+                if cid:
+                    ids_from_keyword.append(
+                        {
+                            "channel_id": cid,
+                            "title": item.get("snippet", {}).get("title", ""),
+                        }
+                    )
+
+        web_channels = discover_channels_from_youtube_web(keyword)
+        known_for_keyword = {item["channel_id"] for item in ids_from_keyword}
+        for web_channel in web_channels:
+            if web_channel["channel_id"] not in known_for_keyword:
+                ids_from_keyword.append(web_channel)
+                known_for_keyword.add(web_channel["channel_id"])
+
+        for item in ids_from_keyword:
             cid = item.get("id", {}).get("channelId", "")
+            if not cid:
+                cid = item.get("channel_id", "")
             if cid and cid not in existing_ids:
                 existing_ids.add(cid)
                 discovered.append(
                     {
                         "channel_id": cid,
-                        "title": item.get("snippet", {}).get("title", ""),
-                        "source": "youtube_search",
+                        "title": item.get("title", ""),
+                        "source": "youtube_discovery",
                         "avg_views": 0,
                     }
                 )
