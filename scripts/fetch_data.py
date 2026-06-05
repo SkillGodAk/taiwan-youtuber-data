@@ -58,17 +58,42 @@ DISCOVERY_KEYWORDS = [
     "vlog",
     "台灣人",
     "台灣創作者",
+    "台灣YouTuber",
+    "台灣Vlog",
     "台灣大胃王",
     "大胃王",
     "旅韓台灣人",
     "台灣人在韓國",
     "美食",
+    "料理",
+    "吃播",
     "遊戲",
+    "實況",
+    "電競",
     "新聞",
+    "政治",
+    "財經",
+    "投資",
     "旅遊",
     "開箱",
+    "科技",
+    "3C",
     "音樂",
+    "唱片",
+    "Cover",
     "生活",
+    "親子",
+    "兒童",
+    "教育",
+    "英文教學",
+    "健身",
+    "運動",
+    "寵物",
+    "動漫",
+    "Podcast",
+    "訪談",
+    "搞笑",
+    "短劇",
     "短影音",
 ]
 
@@ -471,9 +496,14 @@ def resolve_youtubers_candidates(
     return list(merged.values())
 
 
-def discover_channels_by_youtube_search(existing_ids: set[str]) -> list[dict[str, Any]]:
+def discover_channels_by_youtube_search(
+    existing_ids: set[str],
+    max_new_channels: int = 250,
+) -> list[dict[str, Any]]:
     discovered = []
     for keyword in DISCOVERY_KEYWORDS:
+        if len(discovered) >= max_new_channels:
+            break
         data = youtube_api_get(
             "search",
             {
@@ -499,6 +529,8 @@ def discover_channels_by_youtube_search(existing_ids: set[str]) -> list[dict[str
                         "avg_views": 0,
                     }
                 )
+                if len(discovered) >= max_new_channels:
+                    break
         time.sleep(0.25)
     print(f"Discovered {len(discovered)} keyword-search channels")
     return discovered
