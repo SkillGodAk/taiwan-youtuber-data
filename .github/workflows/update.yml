@@ -8,6 +8,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: update-youtube-data
+  cancel-in-progress: false
+
 jobs:
   update:
     runs-on: ubuntu-latest
@@ -19,6 +23,8 @@ jobs:
       - name: Fetch data
         env:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+          LATEST_VIDEO_CHANNEL_LIMIT: 20
+          LATEST_VIDEO_COUNT: 3
         run: python scripts/fetch_data.py
       - name: Push
         run: |

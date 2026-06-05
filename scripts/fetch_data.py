@@ -16,6 +16,8 @@ from datetime import datetime, timezone, timedelta
 
 API_KEY = os.environ.get('YOUTUBE_API_KEY', '')
 BASE_URL = 'https://www.googleapis.com/youtube/v3'
+LATEST_VIDEO_CHANNEL_LIMIT = int(os.environ.get('LATEST_VIDEO_CHANNEL_LIMIT', '20'))
+LATEST_VIDEO_COUNT = int(os.environ.get('LATEST_VIDEO_COUNT', '3'))
 
 NOXINFLUENCER_URL = (
     'https://www.noxinfluencer.com/ws/rank/youtube/kol'
@@ -108,7 +110,7 @@ def batch_channels_list(channel_ids):
     for i in range(0, len(channel_ids), 50):
         batch = channel_ids[i:i + 50]
         params = {
-            'part': 'snippet,statistics,brandingSettings',
+            'part': 'snippet,statistics,brandingSettings,contentDetails',
             'id': ','.join(batch),
         }
         data = youtube_api_get('channels', params)
@@ -118,52 +120,68 @@ def batch_channels_list(channel_ids):
     return results
 
 
-def get_latest_videos(channel_id, max_results=5):
-    """取得頻道最新影片"""
+def get_recent_video_ids(uploads_playlist_id, max_results=LATEST_VIDEO_COUNT):
+    """用 uploads playlist 取得最新影片 ID。比 search.list 省很多 quota。"""
+    if not uploads_playlist_id:
+        return []
+
     params = {
-        'part': 'snippet',
-        'channelId': channel_id,
+        'part': 'contentDetails',
+        'playlistId': uploads_playlist_id,
         'maxResults': max_results,
-        'order': 'date',
-        'type': 'video',
     }
-    data = youtube_api_get('search', params)
+    data = youtube_api_get('playlistItems', params)
     if not data or 'items' not in data:
         return []
 
-    video_ids = [item['id']['videoId'] for item in data['items']
-                 if item['id'].get('videoId')]
-    if not video_ids:
-        return []
+    return [
+        item.get('contentDetails', {}).get('videoId', '')
+        for item in data['items']
+        if item.get('contentDetails', {}).get('videoId')
+    ]
 
-    # 取得影片統計
-    params2 = {
-        'part': 'statistics,snippet',
-        'id': ','.join(video_ids),
-    }
-    data2 = youtube_api_get('videos', params2)
-    if not data2 or 'items' not in data2:
-        return []
 
-    videos = []
-    for item in data2['items']:
-        published_at = item['snippet']['publishedAt']
-        # 轉換為 Unix timestamp
-        try:
-            dt = datetime.fromisoformat(published_at.replace('Z', '+00:00'))
-            ts = int(dt.timestamp())
-        except Exception:
-            ts = 0
+def get_video_details(video_ids):
+    """批次取得影片資訊，回傳 videoId -> video info。"""
+    details = {}
+    unique_ids = list(dict.fromkeys([vid for vid in video_ids if vid]))
 
-        videos.append({
-            'videoId': item['id'],
-            'title': item['snippet']['title'],
-            'thumbnailUrl': item['snippet']['thumbnails'].get('medium', {}).get('url', ''),
-            'viewCount': int(item['statistics'].get('viewCount', 0)),
-            'likeCount': int(item['statistics'].get('likeCount', 0)),
-            'publishedAt': ts,
-        })
-    return videos
+    for i in range(0, len(unique_ids), 50):
+        batch = unique_ids[i:i + 50]
+        params = {
+            'part': 'statistics,snippet',
+            'id': ','.join(batch),
+        }
+        data = youtube_api_get('videos', params)
+        if not data or 'items' not in data:
+            continue
+
+        for item in data['items']:
+            snippet = item.get('snippet', {})
+            stats = item.get('statistics', {})
+            published_at = snippet.get('publishedAt', '')
+            try:
+                dt = datetime.fromisoformat(published_at.replace('Z', '+00:00'))
+                ts = int(dt.timestamp())
+            except Exception:
+                ts = 0
+
+            details[item['id']] = {
+                'videoId': item['id'],
+                'title': snippet.get('title', ''),
+                'thumbnailUrl': (
+                    snippet.get('thumbnails', {}).get('maxres', {}).get('url', '') or
+                    snippet.get('thumbnails', {}).get('high', {}).get('url', '') or
+                    snippet.get('thumbnails', {}).get('medium', {}).get('url', '')
+                ),
+                'viewCount': int(stats.get('viewCount', 0)),
+                'likeCount': int(stats.get('likeCount', 0)),
+                'publishedAt': ts,
+            }
+
+        time.sleep(0.15)
+
+    return details
 
 
 def load_history():
@@ -269,11 +287,11 @@ def main():
     history = load_history()
     previous_ranks = load_previous_ranks()
 
-    # 4. 組裝最終輸出（依 Noxinfluencer 排名順序）
+    # 4. 組裝最終輸出，稍後再依 YouTube 訂閱數排序
     output_channels = []
     now_ts = int(time.time())
 
-    for rank, nox_ch in enumerate(nox_channels, 1):
+    for nox_ch in nox_channels:
         cid = nox_ch['channel_id']
         yt_ch = yt_map.get(cid)
 
@@ -285,6 +303,7 @@ def main():
         snippet = yt_ch.get('snippet', {})
         stats = yt_ch.get('statistics', {})
         branding = yt_ch.get('brandingSettings', {})
+        content = yt_ch.get('contentDetails', {})
 
         # 頭像：取較大尺寸
         avatar_url = snippet.get('thumbnails', {}).get('default', {}).get('url', '')
@@ -302,12 +321,10 @@ def main():
         ch_history = history.get(cid, {})
         comparison = compute_comparison(cid, ch_history)
 
-        # 上次排名
-        prev_rank = previous_ranks.get(cid, rank)
-
-        # 不抓最新影片（search.list 太貴，100 單位/次，100 頻道 = 10000 單位爆配額）
-        # 平均觀看量直接用 Noxinfluencer 的 avgViews
-        latest_videos = []
+        uploads_playlist = (
+            content.get('relatedPlaylists', {}).get('uploads', '')
+            if isinstance(content, dict) else ''
+        )
 
         title = snippet.get('title', '') or nox_ch.get('title', '')
 
@@ -319,18 +336,45 @@ def main():
             'subscriberCount': sub_count,
             'videoCount': vid_count,
             'avgViews': avg_views,
-            'rank': rank,
-            'previousRank': prev_rank,
+            'rank': 0,
+            'previousRank': previous_ranks.get(cid, 0),
             'yesterdaySubscribers': comparison.get('yesterdaySubscribers'),
             'weekAgoSubscribers': comparison.get('weekAgoSubscribers'),
             'monthAgoSubscribers': comparison.get('monthAgoSubscribers'),
-            'latestVideos': latest_videos,
+            'latestVideos': [],
             'lastUpdate': now_ts,
+            '_uploadsPlaylist': uploads_playlist,
         })
 
     if not output_channels:
         print("沒有成功組裝任何頻道數據，終止")
         return
+
+    # 依公開 YouTube API 訂閱數重新排序，首頁排名才會跟今日訂閱數一致。
+    output_channels.sort(key=lambda c: c.get('subscriberCount', 0), reverse=True)
+    for rank, channel in enumerate(output_channels, 1):
+        channel['rank'] = rank
+        if not channel['previousRank']:
+            channel['previousRank'] = rank
+
+    # 最新影片只抓前 N 名，兼顧「有展示」與每日 YouTube API 配額。
+    print(f"抓取前 {LATEST_VIDEO_CHANNEL_LIMIT} 名最新影片，每頻道 {LATEST_VIDEO_COUNT} 支...")
+    all_video_ids = []
+    for channel in output_channels[:LATEST_VIDEO_CHANNEL_LIMIT]:
+        video_ids = get_recent_video_ids(channel.get('_uploadsPlaylist', ''))
+        channel['_latestVideoIds'] = video_ids
+        all_video_ids.extend(video_ids)
+        time.sleep(0.15)
+
+    video_details = get_video_details(all_video_ids)
+    for channel in output_channels:
+        ordered_ids = channel.pop('_latestVideoIds', [])
+        channel['latestVideos'] = [
+            video_details[video_id]
+            for video_id in ordered_ids
+            if video_id in video_details
+        ]
+        channel.pop('_uploadsPlaylist', None)
 
     # 5. 儲存歷史和排名
     save_history(output_channels)
