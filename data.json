@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1780630523,
+  "lastUpdate": 1780631637,
   "channelCount": 99,
   "channels": [
     {
@@ -15,8 +15,33 @@
       "yesterdaySubscribers": 15800000,
       "weekAgoSubscribers": null,
       "monthAgoSubscribers": null,
-      "latestVideos": [],
-      "lastUpdate": 1780630523
+      "latestVideos": [
+        {
+          "videoId": "DshjHxox0F4",
+          "title": "They laughed at her... until this",
+          "thumbnailUrl": "https://i.ytimg.com/vi/DshjHxox0F4/maxresdefault.jpg",
+          "viewCount": 75781,
+          "likeCount": 782,
+          "publishedAt": 1780474384
+        },
+        {
+          "videoId": "rYrv9kP5IU8",
+          "title": "Watch till the end!",
+          "thumbnailUrl": "https://i.ytimg.com/vi/rYrv9kP5IU8/maxresdefault.jpg",
+          "viewCount": 52623,
+          "likeCount": 795,
+          "publishedAt": 1780223892
+        },
+        {
+          "videoId": "NzR6Qea1oI8",
+          "title": "😱😱😱",
+          "thumbnailUrl": "https://i.ytimg.com/vi/NzR6Qea1oI8/maxresdefault.jpg",
+          "viewCount": 50959,
+          "likeCount": 956,
+          "publishedAt": 1779793168
+        }
+      ],
+      "lastUpdate": 1780631637
     },
     {
       "id": "UCRB4xZ_2ew7fzmrcv8aj4Lw",
@@ -31,8 +56,33 @@
       "yesterdaySubscribers": 14100000,
       "weekAgoSubscribers": null,
       "monthAgoSubscribers": null,
-      "latestVideos": [],
-      "lastUpdate": 1780630523
+      "latestVideos": [
+        {
+          "videoId": "7CuvrjXdqzY",
+          "title": "Để thế giới lắng nghe âm thanh Việt Nam! Let the World Hear the Voice of Vietnam! Ocean Media Group",
+          "thumbnailUrl": "https://i.ytimg.com/vi/7CuvrjXdqzY/maxresdefault.jpg",
+          "viewCount": 13751,
+          "likeCount": 492,
+          "publishedAt": 1780023638
+        },
+        {
+          "videoId": "8m1a7YXOoSk",
+          "title": "Can all beans be used to make coffee? #Shorts | Ms Yeah",
+          "thumbnailUrl": "https://i.ytimg.com/vi/8m1a7YXOoSk/maxresdefault.jpg",
+          "viewCount": 2678615,
+          "likeCount": 128284,
+          "publishedAt": 1685271604
+        },
+        {
+          "videoId": "uKcienQVuC0",
+          "title": "If you can make fish with a humidifier, you can be a the “boss” too😎 #Shorts | Ms Yeah",
+          "thumbnailUrl": "https://i.ytimg.com/vi/uKcienQVuC0/maxresdefault.jpg",
+          "viewCount": 2132276,
+          "likeCount": 113638,
+          "publishedAt": 1685098851
+        }
+      ],
+      "lastUpdate": 1780631637
     },
     {
       "id": "UCGbshtvS9t-8CW11W7TooQg",
@@ -47,8 +97,33 @@
       "yesterdaySubscribers": 8780000,
       "weekAgoSubscribers": null,
       "monthAgoSubscribers": null,
-      "latestVideos": [],
-      "lastUpdate": 1780630523
+      "latestVideos": [
+        {
+          "videoId": "RNXrekXG9f8",
+          "title": "《Wistoria: Wand and Sword Season2》#shorts",
+          "thumbnailUrl": "https://i.ytimg.com/vi/RNXrekXG9f8/maxresdefault.jpg",
+          "viewCount": 2987,
+          "likeCount": 181,
+          "publishedAt": 1780583411
+        },
+        {
+          "videoId": "DbtYzs3H2QY",
+          "title": "Ace of Diamond Act II - Episode 47 [English Sub]",
+          "thumbnailUrl": "https://i.ytimg.com/vi/DbtYzs3H2QY/maxresdefault.jpg",
+          "viewCount": 5628,
+          "likeCount": 104,
+          "publishedAt": 1780574406
+        },
+        {
+          "videoId": "KtakixuuNlE",
+          "title": "Marriage advisor Mei《MarriageToxin》 Anime Highlight",
+          "thumbnailUrl": "https://i.ytimg.com/vi/KtakixuuNlE/maxresdefault.jpg",
+          "viewCount": 1253,
+          "likeCount": 55,
+          "publishedAt": 1780569001
+        }
+      ],
+      "lastUpdate": 1780631637
     },
     {
       "id": "UCSkgMzzl652vxXvEgtnhTmw",
@@ -63,8 +138,33 @@
       "yesterdaySubscribers": 8200000,
       "weekAgoSubscribers": null,
       "monthAgoSubscribers": null,
-      "latestVideos": [],
-      "lastUpdate": 1780630523
+      "latestVideos": [
+        {
+          "videoId": "TdGWlJeTf64",
+          "title": "The Frog Prince🌿🏰 #Barkley #shorts",
+          "thumbnailUrl": "https://i.ytimg.com/vi/TdGWlJeTf64/maxresdefault.jpg",
+          "viewCount": 3688,
+          "likeCount": 22,
+          "publishedAt": 1780564307
+        },
+        {
+          "videoId": "vmcyNKoPxvA",
+          "title": "The Wheels On The Bus - Round and Round🚌🎵 #Barkley #shorts",
+          "thumbnailUrl": "https://i.ytimg.com/vi/vmcyNKoPxvA/maxresdefault.jpg",
+          "viewCount": 14003,
+          "likeCount": 99,
+          "publishedAt": 1780448435
+        },
+        {
+          "videoId": "lLBPdJt6iSI",
+          "title": "The Frog Prince💦🔮 #Barkley #shorts",
+          "thumbnailUrl": "https://i.ytimg.com/vi/lLBPdJt6iSI/maxresdefault.jpg",
+          "viewCount": 7931,
+          "likeCount": 74,
+          "publishedAt": 1780275623
+        }
+      ],
+      "lastUpdate": 1780631637
     },
     {
       "id": "UCnWCj9UofS6OxSK34xWvKCg",
@@ -79,8 +179,33 @@
       "yesterdaySubscribers": 7820000,
       "weekAgoSubscribers": null,
       "monthAgoSubscribers": null,
-      "latestVideos": [],
-      "lastUpdate": 1780630523
+      "latestVideos": [
+        {
+          "videoId": "7lSXKx73dq8",
+          "title": "Living in a Camper Van for a Week | ASMR - 4K",
+          "thumbnailUrl": "https://i.ytimg.com/vi/7lSXKx73dq8/maxresdefault.jpg",
+          "viewCount": 177297,
+          "likeCount": 2315,
+          "publishedAt": 1778994028
+        },
+        {
+          "videoId": "Q41gMtq19gA",
+          "title": "Task failed successfully? 😂 #funny #funnycouple #couplecomedy #comedy",
+          "thumbnailUrl": "https://i.ytimg.com/vi/Q41gMtq19gA/maxresdefault.jpg",
+          "viewCount": 98388,
+          "likeCount": 1210,
+          "publishedAt": 1772989200
+        },
+        {
+          "videoId": "xSTWf3JWUF0",
+          "title": "Poolside rizz 😎💅🏻✨ #summer #vacation #rizz",
+          "thumbnailUrl": "https://i.ytimg.com/vi/xSTWf3JWUF0/maxresdefault.jpg",
+          "viewCount": 169043,
+          "likeCount": 2052,
+          "publishedAt": 1772978400
+        }
+      ],
+      "lastUpdate": 1780631637
     },
     {
       "id": "UC1RMpjsUQcBuel6-GIeV9Cw",
@@ -95,8 +220,33 @@
       "yesterdaySubscribers": 7130000,
       "weekAgoSubscribers": null,
       "monthAgoSubscribers": null,
-      "latestVideos": [],
-      "lastUpdate": 1780630523
+      "latestVideos": [
+        {
+          "videoId": "-NH2ZLQ1T0Q",
+          "title": "[ENG SUB] Swin to Sky| EP07🌊Human-mermaid forbidden love. She hides identity, doomed to part.",
+          "thumbnailUrl": "https://i.ytimg.com/vi/-NH2ZLQ1T0Q/maxresdefault.jpg",
+          "viewCount": 106,
+          "likeCount": 2,
+          "publishedAt": 1780574412
+        },
+        {
+          "videoId": "viRETDBlN0Q",
+          "title": "看到火车激动的两个小学生 #关晓彤 #李昀锐 #guanxiaotong #liyunrui  #cdrama #chinesedrama #drama #couple",
+          "thumbnailUrl": "https://i.ytimg.com/vi/viRETDBlN0Q/maxresdefault.jpg",
+          "viewCount": 1341,
+          "likeCount": 32,
+          "publishedAt": 1780570816
+        },
+        {
+          "videoId": "Gu8bu4AI_QA",
+          "title": "#关晓彤 等你下课一起走好吗 #李昀锐 #guanxiaotong #liyunrui #cdrama  #chinesedrama #drama #couple #viral",
+          "thumbnailUrl": "https://i.ytimg.com/vi/Gu8bu4AI_QA/maxresdefault.jpg",
+          "viewCount": 1575,
+          "likeCount": 47,
+          "publishedAt": 1780567214
+        }
+      ],
+      "lastUpdate": 1780631637
     },
     {
       "id": "UCXpxKdZAiyUEaTkoCPpEZzg",
@@ -111,8 +261,33 @@
       "yesterdaySubscribers": 6550000,
       "weekAgoSubscribers": null,
       "monthAgoSubscribers": null,
-      "latestVideos": [],
-      "lastUpdate": 1780630523
+      "latestVideos": [
+        {
+          "videoId": "IwrRAvRKmLw",
+          "title": "Ai 前後對比，也太扯 ! #ai #vfx  #幕後花絮",
+          "thumbnailUrl": "https://i.ytimg.com/vi/IwrRAvRKmLw/maxresdefault.jpg",
+          "viewCount": 74445,
+          "likeCount": 464,
+          "publishedAt": 1761991235
+        },
+        {
+          "videoId": "EK9H9vGteHo",
+          "title": "Ai 結合真人實拍的新嘗試，鐵牛帥爆 ! #讓我看看",
+          "thumbnailUrl": "https://i.ytimg.com/vi/EK9H9vGteHo/maxresdefault.jpg",
+          "viewCount": 32971,
+          "likeCount": 364,
+          "publishedAt": 1761991220
+        },
+        {
+          "videoId": "7wI-ipbJsqE",
+          "title": "用AI拍倩女幽魂是怎樣的體驗?【Ai x 實拍 x 特效】 ft.開天(乾爹)",
+          "thumbnailUrl": "https://i.ytimg.com/vi/7wI-ipbJsqE/maxresdefault.jpg",
+          "viewCount": 303160,
+          "likeCount": 1101,
+          "publishedAt": 1761304222
+        }
+      ],
+      "lastUpdate": 1780631637
     },
     {
       "id": "UCHm9SiOLG8UoBT8STWY5mVA",
@@ -127,8 +302,33 @@
       "yesterdaySubscribers": 6100000,
       "weekAgoSubscribers": null,
       "monthAgoSubscribers": null,
-      "latestVideos": [],
-      "lastUpdate": 1780630523
+      "latestVideos": [
+        {
+          "videoId": "77puqamFvwc",
+          "title": "How to draw a man walking dog / Acrylic / Painting technique",
+          "thumbnailUrl": "https://i.ytimg.com/vi/77puqamFvwc/maxresdefault.jpg",
+          "viewCount": 11269,
+          "likeCount": 457,
+          "publishedAt": 1780152303
+        },
+        {
+          "videoId": "z_b8T5mAc-M",
+          "title": "Painting Brilliant Emerald Forest / Acrylic Painting",
+          "thumbnailUrl": "https://i.ytimg.com/vi/z_b8T5mAc-M/maxresdefault.jpg",
+          "viewCount": 23120,
+          "likeCount": 778,
+          "publishedAt": 1779548468
+        },
+        {
+          "videoId": "sQgWxx_nZRY",
+          "title": "Painting Snowy Winter Mountains / Acrylic Painting with Scissors",
+          "thumbnailUrl": "https://i.ytimg.com/vi/sQgWxx_nZRY/maxresdefault.jpg",
+          "viewCount": 38876,
+          "likeCount": 807,
+          "publishedAt": 1778940078
+        }
+      ],
+      "lastUpdate": 1780631637
     },
     {
       "id": "UCA2qvunXtkK3SUVxfOGiobA",
@@ -143,8 +343,33 @@
       "yesterdaySubscribers": 5960000,
       "weekAgoSubscribers": null,
       "monthAgoSubscribers": null,
-      "latestVideos": [],
-      "lastUpdate": 1780630523
+      "latestVideos": [
+        {
+          "videoId": "kXqNKuwbwAQ",
+          "title": "Such a lovely rabbit! 🐰 Songsong and Ermao funny shorts",
+          "thumbnailUrl": "https://i.ytimg.com/vi/kXqNKuwbwAQ/maxresdefault.jpg",
+          "viewCount": 5228858,
+          "likeCount": 66361,
+          "publishedAt": 1675162828
+        },
+        {
+          "videoId": "B6LHQqTk9Kk",
+          "title": "How much is the big crab claw?🦀 | Songsong and Ermao classic shorts",
+          "thumbnailUrl": "https://i.ytimg.com/vi/B6LHQqTk9Kk/maxresdefault.jpg",
+          "viewCount": 1620907,
+          "likeCount": 41744,
+          "publishedAt": 1674730807
+        },
+        {
+          "videoId": "da_NdUe58To",
+          "title": "How do Russians and Chinese eat chicken? | Songsong and Ermao #shorts",
+          "thumbnailUrl": "https://i.ytimg.com/vi/da_NdUe58To/maxresdefault.jpg",
+          "viewCount": 1762945,
+          "likeCount": 44185,
+          "publishedAt": 1673488809
+        }
+      ],
+      "lastUpdate": 1780631637
     },
     {
       "id": "UCFsXFlbI8FpNAVQ_RL3I4bw",
@@ -159,8 +384,33 @@
       "yesterdaySubscribers": 4680000,
       "weekAgoSubscribers": null,
       "monthAgoSubscribers": null,
-      "latestVideos": [],
-      "lastUpdate": 1780630523
+      "latestVideos": [
+        {
+          "videoId": "LQezWOk1gNI",
+          "title": "瑪莎與熊 - 新 一集! 🦷 牙齒的珍貴 🪥✨ | Masha and The Bear CH",
+          "thumbnailUrl": "https://i.ytimg.com/vi/LQezWOk1gNI/maxresdefault.jpg",
+          "viewCount": 398,
+          "likeCount": 3,
+          "publishedAt": 1780628427
+        },
+        {
+          "videoId": "3W0q0iY6Vh0",
+          "title": "🔴 LIVE! 瑪莎與熊 - 🫖 下午茶時間到！🍵🧇 | Masha and The Bear",
+          "thumbnailUrl": "https://i.ytimg.com/vi/3W0q0iY6Vh0/maxresdefault.jpg",
+          "viewCount": 15427,
+          "likeCount": 30,
+          "publishedAt": 1780583311
+        },
+        {
+          "videoId": "AQ60VOzctag",
+          "title": "瑪莎與熊 - 🍟 快餐與健康食品 🍔🥦 (第24集) | 🎬 短篇 📺🎉",
+          "thumbnailUrl": "https://i.ytimg.com/vi/AQ60VOzctag/maxresdefault.jpg",
+          "viewCount": 8451,
+          "likeCount": 23,
+          "publishedAt": 1780542024
+        }
+      ],
+      "lastUpdate": 1780631637
     },
     {
       "id": "UCEL4CTjME4620e70QMkUyyw",
@@ -175,8 +425,33 @@
       "yesterdaySubscribers": 4580000,
       "weekAgoSubscribers": null,
       "monthAgoSubscribers": null,
-      "latestVideos": [],
-      "lastUpdate": 1780630523
+      "latestVideos": [
+        {
+          "videoId": "yS3K3RGgBCI",
+          "title": "我们宿舍在自给自足的路上，越走越远 #充能计划",
+          "thumbnailUrl": "https://i.ytimg.com/vi/yS3K3RGgBCI/hqdefault.jpg",
+          "viewCount": 2118,
+          "likeCount": 96,
+          "publishedAt": 1760004095
+        },
+        {
+          "videoId": "YOzLDllHRh4",
+          "title": "我的月饼，贵就贵在有故事 #充能计划",
+          "thumbnailUrl": "https://i.ytimg.com/vi/YOzLDllHRh4/hqdefault.jpg",
+          "viewCount": 2609,
+          "likeCount": 101,
+          "publishedAt": 1759913103
+        },
+        {
+          "videoId": "cJGsuA4S_i8",
+          "title": "DIY界的翘楚，必须一省到底#充能计划",
+          "thumbnailUrl": "https://i.ytimg.com/vi/cJGsuA4S_i8/hqdefault.jpg",
+          "viewCount": 1524,
+          "likeCount": 90,
+          "publishedAt": 1759825817
+        }
+      ],
+      "lastUpdate": 1780631637
     },
     {
       "id": "UCn-lUu7jvkogucyxymK4XDg",
@@ -191,8 +466,33 @@
       "yesterdaySubscribers": 4330000,
       "weekAgoSubscribers": null,
       "monthAgoSubscribers": null,
-      "latestVideos": [],
-      "lastUpdate": 1780630523
+      "latestVideos": [
+        {
+          "videoId": "Whu3fD2Cebk",
+          "title": "爸爸給的棉花糖，居然讓水變色了？！😱 #親子日常 #科學實驗 #神奇現象",
+          "thumbnailUrl": "https://i.ytimg.com/vi/Whu3fD2Cebk/maxresdefault.jpg",
+          "viewCount": 9810,
+          "likeCount": 95,
+          "publishedAt": 1780587018
+        },
+        {
+          "videoId": "2DNy6OqlT40",
+          "title": "沉浸式咕卡：今天和孩子們一起做手工！#咕卡 #親子手工 #手工製作 #沉浸式 #shorts",
+          "thumbnailUrl": "https://i.ytimg.com/vi/2DNy6OqlT40/maxresdefault.jpg",
+          "viewCount": 7945,
+          "likeCount": 78,
+          "publishedAt": 1780585237
+        },
+        {
+          "videoId": "L7H43oGc1rs",
+          "title": "全家出動！解鎖這個寶藏遊樂場！#親子旅遊#帶娃日常 #家庭生活 #遊樂場 #Shorts",
+          "thumbnailUrl": "https://i.ytimg.com/vi/L7H43oGc1rs/maxresdefault.jpg",
+          "viewCount": 1968,
+          "likeCount": 35,
+          "publishedAt": 1780583414
+        }
+      ],
+      "lastUpdate": 1780631637
     },
     {
       "id": "UCTQ-gSOpuLtgQarXw3XVmyQ",
@@ -207,8 +507,33 @@
       "yesterdaySubscribers": 4130000,
       "weekAgoSubscribers": null,
       "monthAgoSubscribers": null,
-      "latestVideos": [],
-      "lastUpdate": 1780630523
+      "latestVideos": [
+        {
+          "videoId": "FnbIuMCaW58",
+          "title": "趙定遠提醒蕭秀春！要小心顧萬鈞對俊龍不利！｜#百味人生 精華 EP206│ Vidol",
+          "thumbnailUrl": "https://i.ytimg.com/vi/FnbIuMCaW58/maxresdefault.jpg",
+          "viewCount": 183,
+          "likeCount": 3,
+          "publishedAt": 1780628410
+        },
+        {
+          "videoId": "vRyp-fQx53A",
+          "title": "承昊大膽追愛！用花比喻「你就是唯一的恩曦」！｜#百味人生 精華 EP206│ Vidol",
+          "thumbnailUrl": "https://i.ytimg.com/vi/vRyp-fQx53A/maxresdefault.jpg",
+          "viewCount": 203,
+          "likeCount": 4,
+          "publishedAt": 1780624807
+        },
+        {
+          "videoId": "okOsQ1q9T9o",
+          "title": "【#直播中LIVE】【20260605】彩券開獎│ Vidol",
+          "thumbnailUrl": "https://i.ytimg.com/vi/okOsQ1q9T9o/maxresdefault_live.jpg",
+          "viewCount": 0,
+          "likeCount": 2,
+          "publishedAt": 1780615125
+        }
+      ],
+      "lastUpdate": 1780631637
     },
     {
       "id": "UC7723FqVehXq2zeRb3tP0hQ",
@@ -223,8 +548,33 @@
       "yesterdaySubscribers": 4100000,
       "weekAgoSubscribers": null,
       "monthAgoSubscribers": null,
-      "latestVideos": [],
-      "lastUpdate": 1780630523
+      "latestVideos": [
+        {
+          "videoId": "-HWrag79nM0",
+          "title": "NẾU VN-INDEX THỦNG 1.800, HÀNH ĐỘNG GÌ? | CHỐT LỜI THỰC CHIẾN CÙNG FPTS | Chứng khoán sáng 5/6",
+          "thumbnailUrl": "https://i.ytimg.com/vi/-HWrag79nM0/maxresdefault_live.jpg",
+          "viewCount": 269,
+          "likeCount": 24,
+          "publishedAt": 1780621283
+        },
+        {
+          "videoId": "TNHM7WmAHjQ",
+          "title": "Mỹ căng mình với Iran nhưng vẫn giữ thế chủ động",
+          "thumbnailUrl": "https://i.ytimg.com/vi/TNHM7WmAHjQ/maxresdefault.jpg",
+          "viewCount": 149,
+          "likeCount": 0,
+          "publishedAt": 1780630235
+        },
+        {
+          "videoId": "-fkPivSVuUc",
+          "title": "Xung đột Trung Đông 5/6: Iran \"bật đèn xanh\" nhắm ICBM vào Mỹ | EU mở Aspides Hormuz · Xung đột",
+          "thumbnailUrl": "https://i.ytimg.com/vi/-fkPivSVuUc/maxresdefault.jpg",
+          "viewCount": 1016,
+          "likeCount": 29,
+          "publishedAt": 1780630229
+        }
+      ],
+      "lastUpdate": 1780631637
     },
     {
       "id": "UC6CY2nCQuKuxND2-lDvGdqw",
@@ -239,8 +589,33 @@
       "yesterdaySubscribers": 4100000,
       "weekAgoSubscribers": null,
       "monthAgoSubscribers": null,
-      "latestVideos": [],
-      "lastUpdate": 1780630523
+      "latestVideos": [
+        {
+          "videoId": "oJTrxOLKD0E",
+          "title": "蠢老公吃獨食搶我的飯，婆婆看不下去狠狠教訓他，最後沒吃上肉氣哭了！",
+          "thumbnailUrl": "https://i.ytimg.com/vi/oJTrxOLKD0E/maxresdefault.jpg",
+          "viewCount": 2264,
+          "likeCount": 86,
+          "publishedAt": 1780585233
+        },
+        {
+          "videoId": "v9DDhlNPAz4",
+          "title": "貪吃老公獨吞紅燒肉，我故意在裡面加入小料，最後假裝暈倒直接把他嚇哭",
+          "thumbnailUrl": "https://i.ytimg.com/vi/v9DDhlNPAz4/maxresdefault.jpg",
+          "viewCount": 26920,
+          "likeCount": 690,
+          "publishedAt": 1780583417
+        },
+        {
+          "videoId": "l6r5uWn5qXc",
+          "title": "老公選食物只看表面，沒想到西瓜裡面另有玄機，看到最後老公原地爆哭！",
+          "thumbnailUrl": "https://i.ytimg.com/vi/l6r5uWn5qXc/maxresdefault.jpg",
+          "viewCount": 51080,
+          "likeCount": 789,
+          "publishedAt": 1780581613
+        }
+      ],
+      "lastUpdate": 1780631637
     },
     {
       "id": "UCTMt7iMWa7jy0fNXIktwyLA",
@@ -255,8 +630,33 @@
       "yesterdaySubscribers": 3960000,
       "weekAgoSubscribers": null,
       "monthAgoSubscribers": null,
-      "latestVideos": [],
-      "lastUpdate": 1780630523
+      "latestVideos": [
+        {
+          "videoId": "Jwbu8eI2U6s",
+          "title": "VIOLET VENDETTA | Omeleto",
+          "thumbnailUrl": "https://i.ytimg.com/vi/Jwbu8eI2U6s/maxresdefault.jpg",
+          "viewCount": 2814,
+          "likeCount": 221,
+          "publishedAt": 1780462526
+        },
+        {
+          "videoId": "-hNbmMWD_tc",
+          "title": "OPERATION DYNAMO | Omeleto",
+          "thumbnailUrl": "https://i.ytimg.com/vi/-hNbmMWD_tc/maxresdefault.jpg",
+          "viewCount": 7739,
+          "likeCount": 214,
+          "publishedAt": 1780399215
+        },
+        {
+          "videoId": "X9fg5hxJC3o",
+          "title": "ROAD TRIP | Omeleto",
+          "thumbnailUrl": "https://i.ytimg.com/vi/X9fg5hxJC3o/maxresdefault.jpg",
+          "viewCount": 7572,
+          "likeCount": 375,
+          "publishedAt": 1780113742
+        }
+      ],
+      "lastUpdate": 1780631637
     },
     {
       "id": "UCPcF3KTqhD67ADkukx_OeDg",
@@ -271,8 +671,33 @@
       "yesterdaySubscribers": 3880000,
       "weekAgoSubscribers": null,
       "monthAgoSubscribers": null,
-      "latestVideos": [],
-      "lastUpdate": 1780630523
+      "latestVideos": [
+        {
+          "videoId": "pGc9lB5jQXA",
+          "title": "卓文萱《讀心術》(2026新版) #暗戀神曲 #熱門BGM #抖音熱歌 #經典歌曲文藝復興 #寶藏好歌",
+          "thumbnailUrl": "https://i.ytimg.com/vi/pGc9lB5jQXA/maxresdefault.jpg",
+          "viewCount": 82,
+          "likeCount": 3,
+          "publishedAt": 1780628437
+        },
+        {
+          "videoId": "gj31RTK-3wQ",
+          "title": "萬芳《孩子氣》",
+          "thumbnailUrl": "https://i.ytimg.com/vi/gj31RTK-3wQ/maxresdefault.jpg",
+          "viewCount": 3122,
+          "likeCount": 94,
+          "publishedAt": 1780563622
+        },
+        {
+          "videoId": "mKbMu762z9A",
+          "title": "163braces《天空 To love, to see》2026.5.20 MV首播 @163_braces",
+          "thumbnailUrl": "https://i.ytimg.com/vi/mKbMu762z9A/maxresdefault.jpg",
+          "viewCount": 1555,
+          "likeCount": 10,
+          "publishedAt": 1780542014
+        }
+      ],
+      "lastUpdate": 1780631637
     },
     {
       "id": "UCI7ktPB6toqucpkkCiolwLg",
@@ -287,24 +712,33 @@
       "yesterdaySubscribers": 3790000,
       "weekAgoSubscribers": null,
       "monthAgoSubscribers": null,
-      "latestVideos": [],
-      "lastUpdate": 1780630523
-    },
-    {
-      "id": "UC5l1Yto5oOIgRXlI4p4VKbw",
-      "title": "中天電視",
-      "avatarUrl": "https://yt3.ggpht.com/stUf6P7kJeOrW96ZKdaHoYvg6USCR0MOe90jfOp2oTLOdPWeQDIKNm6S25wcEzJBXuVLRNmAag=s240-c-k-c0x00ffffff-no-rj",
-      "bannerUrl": "https://yt3.googleusercontent.com/Zq2xjUOvOpOK5bavetkMgYMKAJVNnCckCdeufALXwnLpzqK6RVrAx_lH-rzpHp9CCWHUgb9d",
-      "subscriberCount": 3760000,
-      "videoCount": 189548,
-      "avgViews": 4348,
-      "rank": 19,
-      "previousRank": 19,
-      "yesterdaySubscribers": 3760000,
-      "weekAgoSubscribers": null,
-      "monthAgoSubscribers": null,
-      "latestVideos": [],
-      "lastUpdate": 1780630523
+      "latestVideos": [
+        {
+          "videoId": "UUO9BKeqXQU",
+          "title": "幻想神域-源神啟動 X Pan Piano テーマ曲 [ピアノ]",
+          "thumbnailUrl": "https://i.ytimg.com/vi/UUO9BKeqXQU/maxresdefault.jpg",
+          "viewCount": 100568,
+          "likeCount": 2755,
+          "publishedAt": 1770211806
+        },
+        {
+          "videoId": "JkSG3xV0sLA",
+          "title": "赤鳥居 CHOCOLATE - Pan Piano edition - 開封！",
+          "thumbnailUrl": "https://i.ytimg.com/vi/JkSG3xV0sLA/maxresdefault.jpg",
+          "viewCount": 150899,
+          "likeCount": 3794,
+          "publishedAt": 1766583006
+        },
+        {
+          "videoId": "nNyq_xi5R84",
+          "title": "聖境伝説 Eden Eternal X Pan Piano テーマ曲 [ピアノ]",
+          "thumbnailUrl": "https://i.ytimg.com/vi/nNyq_xi5R84/maxresdefault.jpg",
+          "viewCount": 169941,
+          "likeCount": 4185,
+          "publishedAt": 1762608606
+        }
+      ],
+      "lastUpdate": 1780631637
     },
     {
       "id": "UCttafJi4SCirZhlxsxISbyA",
@@ -314,13 +748,79 @@
       "subscriberCount": 3770000,
       "videoCount": 2601,
       "avgViews": 67331,
-      "rank": 20,
+      "rank": 19,
       "previousRank": 20,
       "yesterdaySubscribers": 3770000,
       "weekAgoSubscribers": null,
       "monthAgoSubscribers": null,
-      "latestVideos": [],
-      "lastUpdate": 1780630523
+      "latestVideos": [
+        {
+          "videoId": "Y6CFkXvYkbs",
+          "title": "神奇的滑滑梯🛝小雞變出新髮型 #babybus #sherifflabrador #shorts",
+          "thumbnailUrl": "https://i.ytimg.com/vi/Y6CFkXvYkbs/maxresdefault.jpg",
+          "viewCount": 5322,
+          "likeCount": 34,
+          "publishedAt": 1780564503
+        },
+        {
+          "videoId": "GOAcYRIphLI",
+          "title": "乳牛羅拉🐮 | 尼歐歐歐！想象大爆發🌟 | Yes！Neo | 兒歌 | Kids Song | 童謠 | 卡通片 | BabyBus | 寶寶巴士",
+          "thumbnailUrl": "https://i.ytimg.com/vi/GOAcYRIphLI/maxresdefault.jpg",
+          "viewCount": 15336,
+          "likeCount": 40,
+          "publishedAt": 1780478107
+        },
+        {
+          "videoId": "zwzY3yORE4w",
+          "title": "下雨了，奇奇妙妙想出去玩😿 #babybus #寶寶巴士 #shorts",
+          "thumbnailUrl": "https://i.ytimg.com/vi/zwzY3yORE4w/maxresdefault.jpg",
+          "viewCount": 11088,
+          "likeCount": 85,
+          "publishedAt": 1780391718
+        }
+      ],
+      "lastUpdate": 1780631637
+    },
+    {
+      "id": "UC5l1Yto5oOIgRXlI4p4VKbw",
+      "title": "中天電視",
+      "avatarUrl": "https://yt3.ggpht.com/stUf6P7kJeOrW96ZKdaHoYvg6USCR0MOe90jfOp2oTLOdPWeQDIKNm6S25wcEzJBXuVLRNmAag=s240-c-k-c0x00ffffff-no-rj",
+      "bannerUrl": "https://yt3.googleusercontent.com/Zq2xjUOvOpOK5bavetkMgYMKAJVNnCckCdeufALXwnLpzqK6RVrAx_lH-rzpHp9CCWHUgb9d",
+      "subscriberCount": 3760000,
+      "videoCount": 189549,
+      "avgViews": 4348,
+      "rank": 20,
+      "previousRank": 19,
+      "yesterdaySubscribers": 3760000,
+      "weekAgoSubscribers": null,
+      "monthAgoSubscribers": null,
+      "latestVideos": [
+        {
+          "videoId": "RyiCW08UZtA",
+          "title": "【中天直播#LIVE】傳6月底獲邀訪華府 韓國瑜赴國是論壇20260605@中天新聞CtiNews",
+          "thumbnailUrl": "https://i.ytimg.com/vi/RyiCW08UZtA/maxresdefault_live.jpg",
+          "viewCount": 5135,
+          "likeCount": 376,
+          "publishedAt": 1780571985
+        },
+        {
+          "videoId": "V_u-HwB9vMw",
+          "title": "【中天直播 #LIVE】喪屍煙彈列\"一級毒品\"可判死 卓揆訪台中機械工業 20260605@中天新聞CtiNews",
+          "thumbnailUrl": "https://i.ytimg.com/vi/V_u-HwB9vMw/maxresdefault.jpg",
+          "viewCount": 320,
+          "likeCount": 35,
+          "publishedAt": 1780631506
+        },
+        {
+          "videoId": "Km3nGO2JXQ0",
+          "title": "【中天直播#LIVE】今日\"芒種\"低氣壓影響 各地有短暫陣雨.雷雨 氣象署最新說明 20260605 @中天新聞CtiNews",
+          "thumbnailUrl": "https://i.ytimg.com/vi/Km3nGO2JXQ0/maxresdefault.jpg",
+          "viewCount": 346,
+          "likeCount": 44,
+          "publishedAt": 1780629275
+        }
+      ],
+      "lastUpdate": 1780631637
     },
     {
       "id": "UCrLO-yoAu4ZTzRSdmWqS53A",
@@ -336,7 +836,7 @@
       "weekAgoSubscribers": null,
       "monthAgoSubscribers": null,
       "latestVideos": [],
-      "lastUpdate": 1780630523
+      "lastUpdate": 1780631637
     },
     {
       "id": "UCFUtqTcgJgRnmZ3tMU6P74Q",
@@ -352,7 +852,7 @@
       "weekAgoSubscribers": null,
       "monthAgoSubscribers": null,
       "latestVideos": [],
-      "lastUpdate": 1780630523
+      "lastUpdate": 1780631637
     },
     {
       "id": "UCX9VHpN62jkqCCntHxymPOA",
@@ -368,7 +868,7 @@
       "weekAgoSubscribers": null,
       "monthAgoSubscribers": null,
       "latestVideos": [],
-      "lastUpdate": 1780630523
+      "lastUpdate": 1780631637
     },
     {
       "id": "UC6FcYHEm7SO1jpu5TKjNXEA",
@@ -384,7 +884,7 @@
       "weekAgoSubscribers": null,
       "monthAgoSubscribers": null,
       "latestVideos": [],
-      "lastUpdate": 1780630523
+      "lastUpdate": 1780631637
     },
     {
       "id": "UCKQVSNdzGBJSXaUmS4TOWww",
@@ -400,7 +900,7 @@
       "weekAgoSubscribers": null,
       "monthAgoSubscribers": null,
       "latestVideos": [],
-      "lastUpdate": 1780630523
+      "lastUpdate": 1780631637
     },
     {
       "id": "UC8CU5nVhCQIdAGrFFp4loOQ",
@@ -416,7 +916,7 @@
       "weekAgoSubscribers": null,
       "monthAgoSubscribers": null,
       "latestVideos": [],
-      "lastUpdate": 1780630523
+      "lastUpdate": 1780631637
     },
     {
       "id": "UCnJEWsS5agXCkqIpyHC9Grg",
@@ -432,7 +932,7 @@
       "weekAgoSubscribers": null,
       "monthAgoSubscribers": null,
       "latestVideos": [],
-      "lastUpdate": 1780630523
+      "lastUpdate": 1780631637
     },
     {
       "id": "UCaycGxaoGRDeBbkfAZ4mqGQ",
@@ -448,7 +948,7 @@
       "weekAgoSubscribers": null,
       "monthAgoSubscribers": null,
       "latestVideos": [],
-      "lastUpdate": 1780630523
+      "lastUpdate": 1780631637
     },
     {
       "id": "UC5nwNW4KdC0SzrhF9BXEYOQ",
@@ -456,7 +956,7 @@
       "avatarUrl": "https://yt3.ggpht.com/IrPD-qWFtgEr0kplk7RvA5HWJz3BLzg8mBMh9bz2lNvRSE_YgCErB7dheHcQohExnC_VCdCKnA=s240-c-k-c0x00ffffff-no-rj",
       "bannerUrl": "https://yt3.googleusercontent.com/pGIDz8Wo9fcV2LRXYLZJSKTq5D8_4RN4mNTka6k3EVATIVHL1IhCN7oPl9RAryv3rqJqTHgW",
       "subscriberCount": 3280000,
-      "videoCount": 591778,
+      "videoCount": 591779,
       "avgViews": 2309,
       "rank": 29,
       "previousRank": 29,
@@ -464,7 +964,7 @@
       "weekAgoSubscribers": null,
       "monthAgoSubscribers": null,
       "latestVideos": [],
-      "lastUpdate": 1780630523
+      "lastUpdate": 1780631637
     },
     {
       "id": "UCpu3bemTQwAU8PqM4kJdoEQ",
@@ -472,7 +972,7 @@
       "avatarUrl": "https://yt3.ggpht.com/HajrUjhJTUZVTJhqsCkJxHocaB0R8TwxApCiOG6h_rgF6KyGwV6g2KMD6FTX_IMRGS8WPR4s=s240-c-k-c0x00ffffff-no-rj",
       "bannerUrl": "https://yt3.googleusercontent.com/V9dtsEHnn8YijUDDyE1_JAk0yvcAKWDXp1h7ofDtoRsZ0alHRgykr-ubADQxfxk8AufHV7TouOw",
       "subscriberCount": 3230000,
-      "videoCount": 419163,
+      "videoCount": 419167,
       "avgViews": 4495,
       "rank": 30,
       "previousRank": 30,
@@ -480,7 +980,7 @@
       "weekAgoSubscribers": null,
       "monthAgoSubscribers": null,
       "latestVideos": [],
-      "lastUpdate": 1780630523
+      "lastUpdate": 1780631637
     },
     {
       "id": "UCxbfRJ_Uk2tyeWXsHg748Ow",
@@ -496,7 +996,7 @@
       "weekAgoSubscribers": null,
       "monthAgoSubscribers": null,
       "latestVideos": [],
-      "lastUpdate": 1780630523
+      "lastUpdate": 1780631637
     },
     {
       "id": "UCR3asjvr_WAaxwJYEDV_Bfw",
@@ -504,7 +1004,7 @@
       "avatarUrl": "https://yt3.ggpht.com/3SP20B5NfOMGNTvAd4PkffLIHt7vA5_SrtefsCbmKBm4k4uD5JhSE2LzDsPyxWT6RP3BiW4vAA=s240-c-k-c0x00ffffff-no-rj",
       "bannerUrl": "https://yt3.googleusercontent.com/-y6Cnu98_upHaZ_puR7dnrOPHwCUBSjXeWA3j0KKWt3AZJmdBq_Sp8eju2SIIGxKdqH3VGdEKw",
       "subscriberCount": 3150000,
-      "videoCount": 109743,
+      "videoCount": 109744,
       "avgViews": 3076,
       "rank": 32,
       "previousRank": 32,
@@ -512,7 +1012,7 @@
       "weekAgoSubscribers": null,
       "monthAgoSubscribers": null,
       "latestVideos": [],
-      "lastUpdate": 1780630523
+      "lastUpdate": 1780631637
     },
     {
       "id": "UCIU8ha-NHmLjtUwU7dFiXUA",
@@ -520,7 +1020,7 @@
       "avatarUrl": "https://yt3.ggpht.com/rIgJU_kbOlmNIFsL_FMlfnM3MuKsfUHjIydWeRtmExsSjA_nf5HBVyH6QX1mQhGGerHpx7RgpA=s240-c-k-c0x00ffffff-no-rj",
       "bannerUrl": "https://yt3.googleusercontent.com/BKYB-ebzHf3ZcZxDkKl4FKS77QcmTofmmSn0E9Z-EfAA4I07cRBnKV0ypWPQdRxi8ysSwU40tA",
       "subscriberCount": 3110000,
-      "videoCount": 255963,
+      "videoCount": 255966,
       "avgViews": 3073,
       "rank": 33,
       "previousRank": 33,
@@ -528,7 +1028,7 @@
       "weekAgoSubscribers": null,
       "monthAgoSubscribers": null,
       "latestVideos": [],
-      "lastUpdate": 1780630523
+      "lastUpdate": 1780631637
     },
     {
       "id": "UClr57MMpeX6m_p6hvvhu1Fw",
@@ -544,7 +1044,7 @@
       "weekAgoSubscribers": null,
       "monthAgoSubscribers": null,
       "latestVideos": [],
-      "lastUpdate": 1780630523
+      "lastUpdate": 1780631637
     },
     {
       "id": "UC7ovu6a8ydIbDy0fAKmoZ9A",
@@ -560,7 +1060,7 @@
       "weekAgoSubscribers": null,
       "monthAgoSubscribers": null,
       "latestVideos": [],
-      "lastUpdate": 1780630523
+      "lastUpdate": 1780631637
     },
     {
       "id": "UCeo3JwE3HezUWFdVcehQk9Q",
@@ -576,7 +1076,7 @@
       "weekAgoSubscribers": null,
       "monthAgoSubscribers": null,
       "latestVideos": [],
-      "lastUpdate": 1780630523
+      "lastUpdate": 1780631637
     },
     {
       "id": "UCjMV3Yx66vYc-reXrFZ4Eyg",
@@ -592,7 +1092,7 @@
       "weekAgoSubscribers": null,
       "monthAgoSubscribers": null,
       "latestVideos": [],
-      "lastUpdate": 1780630523
+      "lastUpdate": 1780631637
     },
     {
       "id": "UCPRWWKG0VkBA0Pqa4Jr5j0Q",
@@ -608,7 +1108,7 @@
       "weekAgoSubscribers": null,
       "monthAgoSubscribers": null,
       "latestVideos": [],
-      "lastUpdate": 1780630523
+      "lastUpdate": 1780631637
     },
     {
       "id": "UCkD-chsfAdNa4I4fMfKEl0g",
@@ -624,7 +1124,7 @@
       "weekAgoSubscribers": null,
       "monthAgoSubscribers": null,
       "latestVideos": [],
-      "lastUpdate": 1780630523
+      "lastUpdate": 1780631637
     },
     {
       "id": "UC345x_D7DgK5313D3ftM_EQ",
@@ -640,7 +1140,7 @@
       "weekAgoSubscribers": null,
       "monthAgoSubscribers": null,
       "latestVideos": [],
-      "lastUpdate": 1780630523
+      "lastUpdate": 1780631637
     },
     {
       "id": "UCAYrMNl92jw6cpjdpBP8JyA",
@@ -656,7 +1156,7 @@
       "weekAgoSubscribers": null,
       "monthAgoSubscribers": null,
       "latestVideos": [],
-      "lastUpdate": 1780630523
+      "lastUpdate": 1780631637
     },
     {
       "id": "UCgKo2xhLY4IfTegYyXnD01A",
@@ -672,7 +1172,7 @@
       "weekAgoSubscribers": null,
       "monthAgoSubscribers": null,
       "latestVideos": [],
-      "lastUpdate": 1780630523
+      "lastUpdate": 1780631637
     },
     {
       "id": "UCgdwtyqBunlRb-i-7PnCssQ",
@@ -688,7 +1188,7 @@
       "weekAgoSubscribers": null,
       "monthAgoSubscribers": null,
       "latestVideos": [],
-      "lastUpdate": 1780630523
+      "lastUpdate": 1780631637
     },
     {
       "id": "UCDHCCiZigoUdf5rmYHw2y4A",
@@ -704,7 +1204,7 @@
       "weekAgoSubscribers": null,
       "monthAgoSubscribers": null,
       "latestVideos": [],
-      "lastUpdate": 1780630523
+      "lastUpdate": 1780631637
     },
     {
       "id": "UC2tQpW0dPiyWPebwBSksJ_g",
@@ -720,7 +1220,7 @@
       "weekAgoSubscribers": null,
       "monthAgoSubscribers": null,
       "latestVideos": [],
-      "lastUpdate": 1780630523
+      "lastUpdate": 1780631637
     },
     {
       "id": "UCPwxSX0DYDMQxCvgfeVDv_g",
@@ -736,7 +1236,7 @@
       "weekAgoSubscribers": null,
       "monthAgoSubscribers": null,
       "latestVideos": [],
-      "lastUpdate": 1780630523
+      "lastUpdate": 1780631637
     },
     {
       "id": "UCa_IA3vTJ6kd5xdayOUlplQ",
@@ -752,7 +1252,7 @@
       "weekAgoSubscribers": null,
       "monthAgoSubscribers": null,
       "latestVideos": [],
-      "lastUpdate": 1780630523
+      "lastUpdate": 1780631637
     },
     {
       "id": "UCwWXGnvVmi-6Sfx2wf8S8tQ",
@@ -768,7 +1268,7 @@
       "weekAgoSubscribers": null,
       "monthAgoSubscribers": null,
       "latestVideos": [],
-      "lastUpdate": 1780630523
+      "lastUpdate": 1780631637
     },
     {
       "id": "UCjMBtSoVSmqE2jTqwKh3ttg",
@@ -784,7 +1284,7 @@
       "weekAgoSubscribers": null,
       "monthAgoSubscribers": null,
       "latestVideos": [],
-      "lastUpdate": 1780630523
+      "lastUpdate": 1780631637
     },
     {
       "id": "UCvtO27QvzLYfMwINGCl_gBg",
@@ -800,7 +1300,7 @@
       "weekAgoSubscribers": null,
       "monthAgoSubscribers": null,
       "latestVideos": [],
-      "lastUpdate": 1780630523
+      "lastUpdate": 1780631637
     },
     {
       "id": "UC7ACqIQiy1SkjglQQ6bWDRg",
@@ -816,7 +1316,7 @@
       "weekAgoSubscribers": null,
       "monthAgoSubscribers": null,
       "latestVideos": [],
-      "lastUpdate": 1780630523
+      "lastUpdate": 1780631637
     },
     {
       "id": "UCH3aos_uf4pGHbkANSbceEg",
@@ -832,7 +1332,7 @@
       "weekAgoSubscribers": null,
       "monthAgoSubscribers": null,
       "latestVideos": [],
-      "lastUpdate": 1780630523
+      "lastUpdate": 1780631637
     },
     {
       "id": "UCV_S2S-Zs8LeuJxK-T3RQQg",
@@ -848,7 +1348,7 @@
       "weekAgoSubscribers": null,
       "monthAgoSubscribers": null,
       "latestVideos": [],
-      "lastUpdate": 1780630523
+      "lastUpdate": 1780631637
     },
     {
       "id": "UCLyvdKX7jFoS6z_1yrBFM_Q",
@@ -864,7 +1364,7 @@
       "weekAgoSubscribers": null,
       "monthAgoSubscribers": null,
       "latestVideos": [],
-      "lastUpdate": 1780630523
+      "lastUpdate": 1780631637
     },
     {
       "id": "UCYh2KtHophTKoKv5rTT3Tug",
@@ -880,7 +1380,7 @@
       "weekAgoSubscribers": null,
       "monthAgoSubscribers": null,
       "latestVideos": [],
-      "lastUpdate": 1780630523
+      "lastUpdate": 1780631637
     },
     {
       "id": "UCLW_SzI9txZvtOFTPDswxqg",
@@ -896,7 +1396,7 @@
       "weekAgoSubscribers": null,
       "monthAgoSubscribers": null,
       "latestVideos": [],
-      "lastUpdate": 1780630523
+      "lastUpdate": 1780631637
     },
     {
       "id": "UCV1OpUwWJCMiv6gJCRR6yAg",
@@ -912,7 +1412,7 @@
       "weekAgoSubscribers": null,
       "monthAgoSubscribers": null,
       "latestVideos": [],
-      "lastUpdate": 1780630523
+      "lastUpdate": 1780631637
     },
     {
       "id": "UCHk_d5rRpoBAWsq7s2Uwk0w",
@@ -928,7 +1428,7 @@
       "weekAgoSubscribers": null,
       "monthAgoSubscribers": null,
       "latestVideos": [],
-      "lastUpdate": 1780630523
+      "lastUpdate": 1780631637
     },
     {
       "id": "UCq07rx0fdqxLqFYZ1f6WxYA",
@@ -944,7 +1444,7 @@
       "weekAgoSubscribers": null,
       "monthAgoSubscribers": null,
       "latestVideos": [],
-      "lastUpdate": 1780630523
+      "lastUpdate": 1780631637
     },
     {
       "id": "UC2TuODJhC03pLgd6MpWP0iw",
@@ -952,7 +1452,7 @@
       "avatarUrl": "https://yt3.ggpht.com/SDjcZE8Xo2dsS5OF3_LA8hkZrzXqr1L37S4JlgbJ9B7Be77fViYJmDY7mr76hkpvw6PEdIEd9Q=s240-c-k-c0x00ffffff-no-rj",
       "bannerUrl": "https://yt3.googleusercontent.com/91lI8_odyn-kGSV6tr26cyKF0qMkd7t0Pzn5XCe9BrDKSwJGfGa2NNPmeCVZfmMLRXfWcBB4",
       "subscriberCount": 2140000,
-      "videoCount": 293180,
+      "videoCount": 293183,
       "avgViews": 3733,
       "rank": 60,
       "previousRank": 60,
@@ -960,7 +1460,7 @@
       "weekAgoSubscribers": null,
       "monthAgoSubscribers": null,
       "latestVideos": [],
-      "lastUpdate": 1780630523
+      "lastUpdate": 1780631637
     },
     {
       "id": "UC9M9sV3sGmutY26H4LNBTww",
@@ -976,7 +1476,7 @@
       "weekAgoSubscribers": null,
       "monthAgoSubscribers": null,
       "latestVideos": [],
-      "lastUpdate": 1780630523
+      "lastUpdate": 1780631637
     },
     {
       "id": "UClrNuiYF8ZUBsTskWL6T_Bw",
@@ -992,7 +1492,7 @@
       "weekAgoSubscribers": null,
       "monthAgoSubscribers": null,
       "latestVideos": [],
-      "lastUpdate": 1780630523
+      "lastUpdate": 1780631637
     },
     {
       "id": "UCAMrnDQlsPnrScHun5PgrXw",
@@ -1008,7 +1508,7 @@
       "weekAgoSubscribers": null,
       "monthAgoSubscribers": null,
       "latestVideos": [],
-      "lastUpdate": 1780630523
+      "lastUpdate": 1780631637
     },
     {
       "id": "UCIECJyQ6meDyN-UnVHgXAMA",
@@ -1024,7 +1524,7 @@
       "weekAgoSubscribers": null,
       "monthAgoSubscribers": null,
       "latestVideos": [],
-      "lastUpdate": 1780630523
+      "lastUpdate": 1780631637
     },
     {
       "id": "UCSF9s9yW3yJWYA6gX4hHcsQ",
@@ -1040,7 +1540,7 @@
       "weekAgoSubscribers": null,
       "monthAgoSubscribers": null,
       "latestVideos": [],
-      "lastUpdate": 1780630523
+      "lastUpdate": 1780631637
     },
     {
       "id": "UC6IMF6xi_MZ3jA1wRlPQDLA",
@@ -1056,7 +1556,7 @@
       "weekAgoSubscribers": null,
       "monthAgoSubscribers": null,
       "latestVideos": [],
-      "lastUpdate": 1780630523
+      "lastUpdate": 1780631637
     },
     {
       "id": "UCYS0Plbc61Lmt2zUFwIXcLQ",
@@ -1072,7 +1572,7 @@
       "weekAgoSubscribers": null,
       "monthAgoSubscribers": null,
       "latestVideos": [],
-      "lastUpdate": 1780630523
+      "lastUpdate": 1780631637
     },
     {
       "id": "UC4Aclpo5YyXbKPeiZNO_uiw",
@@ -1088,7 +1588,7 @@
       "weekAgoSubscribers": null,
       "monthAgoSubscribers": null,
       "latestVideos": [],
-      "lastUpdate": 1780630523
+      "lastUpdate": 1780631637
     },
     {
       "id": "UCgDbdS9sm90CG771uznT8wg",
@@ -1104,7 +1604,7 @@
       "weekAgoSubscribers": null,
       "monthAgoSubscribers": null,
       "latestVideos": [],
-      "lastUpdate": 1780630523
+      "lastUpdate": 1780631637
     },
     {
       "id": "UC3LBFXbWtEBdOOUb8-qJm9Q",
@@ -1120,7 +1620,7 @@
       "weekAgoSubscribers": null,
       "monthAgoSubscribers": null,
       "latestVideos": [],
-      "lastUpdate": 1780630523
+      "lastUpdate": 1780631637
     },
     {
       "id": "UCYaGbgcyKqMgpfmA1JdoYVw",
@@ -1136,7 +1636,7 @@
       "weekAgoSubscribers": null,
       "monthAgoSubscribers": null,
       "latestVideos": [],
-      "lastUpdate": 1780630523
+      "lastUpdate": 1780631637
     },
     {
       "id": "UC_nj1nqc8ivOtzaM6AeJ3fg",
@@ -1152,7 +1652,7 @@
       "weekAgoSubscribers": null,
       "monthAgoSubscribers": null,
       "latestVideos": [],
-      "lastUpdate": 1780630523
+      "lastUpdate": 1780631637
     },
     {
       "id": "UCiceQ96aHdwwve2vpCSbbNQ",
@@ -1168,7 +1668,7 @@
       "weekAgoSubscribers": null,
       "monthAgoSubscribers": null,
       "latestVideos": [],
-      "lastUpdate": 1780630523
+      "lastUpdate": 1780631637
     },
     {
       "id": "UC9i2Qgd5lizhVgJrdnxunKw",
@@ -1184,7 +1684,7 @@
       "weekAgoSubscribers": null,
       "monthAgoSubscribers": null,
       "latestVideos": [],
-      "lastUpdate": 1780630523
+      "lastUpdate": 1780631637
     },
     {
       "id": "UCr90FXGOO8nAE9B6FAUeTNA",
@@ -1200,7 +1700,7 @@
       "weekAgoSubscribers": null,
       "monthAgoSubscribers": null,
       "latestVideos": [],
-      "lastUpdate": 1780630523
+      "lastUpdate": 1780631637
     },
     {
       "id": "UCiMiEL1XRXANaypB2wEdr5w",
@@ -1216,7 +1716,7 @@
       "weekAgoSubscribers": null,
       "monthAgoSubscribers": null,
       "latestVideos": [],
-      "lastUpdate": 1780630523
+      "lastUpdate": 1780631637
     },
     {
       "id": "UCAqzHNzLTC6Vm5UYE7xw_2A",
@@ -1232,7 +1732,7 @@
       "weekAgoSubscribers": null,
       "monthAgoSubscribers": null,
       "latestVideos": [],
-      "lastUpdate": 1780630523
+      "lastUpdate": 1780631637
     },
     {
       "id": "UCDrswN-SqWh7Kii62h9aXGA",
@@ -1242,13 +1742,13 @@
       "subscriberCount": 1810000,
       "videoCount": 1152,
       "avgViews": 41099,
-      "rank": 79,
+      "rank": 78,
       "previousRank": 79,
       "yesterdaySubscribers": 1810000,
       "weekAgoSubscribers": null,
       "monthAgoSubscribers": null,
       "latestVideos": [],
-      "lastUpdate": 1780630523
+      "lastUpdate": 1780631637
     },
     {
       "id": "UC7ia-A8gma8qcdC6GDcjwsQ",
@@ -1258,13 +1758,13 @@
       "subscriberCount": 1800000,
       "videoCount": 757,
       "avgViews": 10451,
-      "rank": 80,
+      "rank": 79,
       "previousRank": 80,
       "yesterdaySubscribers": 1800000,
       "weekAgoSubscribers": null,
       "monthAgoSubscribers": null,
       "latestVideos": [],
-      "lastUpdate": 1780630523
+      "lastUpdate": 1780631637
     },
     {
       "id": "UCEsinqZjZ11w0T9ZvyKIr6A",
@@ -1274,13 +1774,13 @@
       "subscriberCount": 1790000,
       "videoCount": 2371,
       "avgViews": 15305,
-      "rank": 81,
+      "rank": 80,
       "previousRank": 81,
       "yesterdaySubscribers": 1790000,
       "weekAgoSubscribers": null,
       "monthAgoSubscribers": null,
       "latestVideos": [],
-      "lastUpdate": 1780630523
+      "lastUpdate": 1780631637
     },
     {
       "id": "UCbIJeyl_va8MG2xx0q4Uobg",
@@ -1290,13 +1790,29 @@
       "subscriberCount": 1780000,
       "videoCount": 462,
       "avgViews": 1011084,
-      "rank": 82,
+      "rank": 81,
       "previousRank": 82,
       "yesterdaySubscribers": 1780000,
       "weekAgoSubscribers": null,
       "monthAgoSubscribers": null,
       "latestVideos": [],
-      "lastUpdate": 1780630523
+      "lastUpdate": 1780631637
+    },
+    {
+      "id": "UCmdVfsLHu18lCkKYXSOGUxg",
+      "title": "中時新聞網",
+      "avatarUrl": "https://yt3.ggpht.com/p2KDr9412K0jrHajCKPr6UBIzXoMmNocqjiRIdAFgSeOmpZ5VDH2I_Bn25R7jRV2ZEjlIBLwNw=s240-c-k-c0x00ffffff-no-rj",
+      "bannerUrl": "https://yt3.googleusercontent.com/aSzHL_qYxbZbQbbwF-zc_a52s5wJJUSxOauohJ68XP5yec6HQBJFZ1XfoWAPDKH_LZVWrWnXkQ",
+      "subscriberCount": 1780000,
+      "videoCount": 226389,
+      "avgViews": 5590,
+      "rank": 82,
+      "previousRank": 97,
+      "yesterdaySubscribers": 1780000,
+      "weekAgoSubscribers": null,
+      "monthAgoSubscribers": null,
+      "latestVideos": [],
+      "lastUpdate": 1780631637
     },
     {
       "id": "UC6VKHP606ee6ffKwKmBHSig",
@@ -1312,7 +1828,7 @@
       "weekAgoSubscribers": null,
       "monthAgoSubscribers": null,
       "latestVideos": [],
-      "lastUpdate": 1780630523
+      "lastUpdate": 1780631637
     },
     {
       "id": "UCdRKafyb--geO9ySg6CbhYA",
@@ -1328,7 +1844,7 @@
       "weekAgoSubscribers": null,
       "monthAgoSubscribers": null,
       "latestVideos": [],
-      "lastUpdate": 1780630523
+      "lastUpdate": 1780631637
     },
     {
       "id": "UC5fkmrA5VDTr2IU7lPmpsHA",
@@ -1344,7 +1860,7 @@
       "weekAgoSubscribers": null,
       "monthAgoSubscribers": null,
       "latestVideos": [],
-      "lastUpdate": 1780630523
+      "lastUpdate": 1780631637
     },
     {
       "id": "UCWb8DSi4ygNb6TO42gwhu4A",
@@ -1360,7 +1876,7 @@
       "weekAgoSubscribers": null,
       "monthAgoSubscribers": null,
       "latestVideos": [],
-      "lastUpdate": 1780630523
+      "lastUpdate": 1780631637
     },
     {
       "id": "UCiWRSesvSYmY7YOyz0tv_zQ",
@@ -1376,7 +1892,7 @@
       "weekAgoSubscribers": null,
       "monthAgoSubscribers": null,
       "latestVideos": [],
-      "lastUpdate": 1780630523
+      "lastUpdate": 1780631637
     },
     {
       "id": "UCU-swpBLny7YEqNJB4hI1Kg",
@@ -1392,7 +1908,7 @@
       "weekAgoSubscribers": null,
       "monthAgoSubscribers": null,
       "latestVideos": [],
-      "lastUpdate": 1780630523
+      "lastUpdate": 1780631637
     },
     {
       "id": "UCdxoeijd8BEuQlARHDcz4EA",
@@ -1408,7 +1924,7 @@
       "weekAgoSubscribers": null,
       "monthAgoSubscribers": null,
       "latestVideos": [],
-      "lastUpdate": 1780630523
+      "lastUpdate": 1780631637
     },
     {
       "id": "UC8zkK0-g8S8Z_t8ZjUmpAlA",
@@ -1424,7 +1940,7 @@
       "weekAgoSubscribers": null,
       "monthAgoSubscribers": null,
       "latestVideos": [],
-      "lastUpdate": 1780630523
+      "lastUpdate": 1780631637
     },
     {
       "id": "UCdEpz2A4DzV__4C1x2quKLw",
@@ -1440,7 +1956,7 @@
       "weekAgoSubscribers": null,
       "monthAgoSubscribers": null,
       "latestVideos": [],
-      "lastUpdate": 1780630523
+      "lastUpdate": 1780631637
     },
     {
       "id": "UC8wI85SlecrsLdPm-I73PzA",
@@ -1456,7 +1972,7 @@
       "weekAgoSubscribers": null,
       "monthAgoSubscribers": null,
       "latestVideos": [],
-      "lastUpdate": 1780630523
+      "lastUpdate": 1780631637
     },
     {
       "id": "UCZqsvi6uhFrbsJcAmcZudcQ",
@@ -1472,7 +1988,7 @@
       "weekAgoSubscribers": null,
       "monthAgoSubscribers": null,
       "latestVideos": [],
-      "lastUpdate": 1780630523
+      "lastUpdate": 1780631637
     },
     {
       "id": "UCezxSW8kVueIU0pr_rukbYA",
@@ -1488,7 +2004,7 @@
       "weekAgoSubscribers": null,
       "monthAgoSubscribers": null,
       "latestVideos": [],
-      "lastUpdate": 1780630523
+      "lastUpdate": 1780631637
     },
     {
       "id": "UCfq75-6J5seC82CmtLSFxXw",
@@ -1504,7 +2020,7 @@
       "weekAgoSubscribers": null,
       "monthAgoSubscribers": null,
       "latestVideos": [],
-      "lastUpdate": 1780630523
+      "lastUpdate": 1780631637
     },
     {
       "id": "UCiWXd0nmBjlKROwzMyPV-Nw",
@@ -1520,23 +2036,7 @@
       "weekAgoSubscribers": null,
       "monthAgoSubscribers": null,
       "latestVideos": [],
-      "lastUpdate": 1780630523
-    },
-    {
-      "id": "UCmdVfsLHu18lCkKYXSOGUxg",
-      "title": "中時新聞網",
-      "avatarUrl": "https://yt3.ggpht.com/p2KDr9412K0jrHajCKPr6UBIzXoMmNocqjiRIdAFgSeOmpZ5VDH2I_Bn25R7jRV2ZEjlIBLwNw=s240-c-k-c0x00ffffff-no-rj",
-      "bannerUrl": "https://yt3.googleusercontent.com/aSzHL_qYxbZbQbbwF-zc_a52s5wJJUSxOauohJ68XP5yec6HQBJFZ1XfoWAPDKH_LZVWrWnXkQ",
-      "subscriberCount": 1780000,
-      "videoCount": 226389,
-      "avgViews": 5590,
-      "rank": 97,
-      "previousRank": 97,
-      "yesterdaySubscribers": 1780000,
-      "weekAgoSubscribers": null,
-      "monthAgoSubscribers": null,
-      "latestVideos": [],
-      "lastUpdate": 1780630523
+      "lastUpdate": 1780631637
     },
     {
       "id": "UCPe5NCNPzox5bIxrfF7fMmQ",
@@ -1546,13 +2046,13 @@
       "subscriberCount": 1650000,
       "videoCount": 21763,
       "avgViews": 1505,
-      "rank": 98,
+      "rank": 97,
       "previousRank": 98,
       "yesterdaySubscribers": 1650000,
       "weekAgoSubscribers": null,
       "monthAgoSubscribers": null,
       "latestVideos": [],
-      "lastUpdate": 1780630523
+      "lastUpdate": 1780631637
     },
     {
       "id": "UCtcaZ5FUqaNXGX6xhpiGPQA",
@@ -1562,13 +2062,13 @@
       "subscriberCount": 1630000,
       "videoCount": 925,
       "avgViews": 118258,
-      "rank": 99,
+      "rank": 98,
       "previousRank": 99,
       "yesterdaySubscribers": 1630000,
       "weekAgoSubscribers": null,
       "monthAgoSubscribers": null,
       "latestVideos": [],
-      "lastUpdate": 1780630523
+      "lastUpdate": 1780631637
     },
     {
       "id": "UCRdJFrguW7zsR15dacQLtDg",
@@ -1578,13 +2078,13 @@
       "subscriberCount": 1630000,
       "videoCount": 294,
       "avgViews": 0,
-      "rank": 100,
+      "rank": 99,
       "previousRank": 100,
       "yesterdaySubscribers": 1630000,
       "weekAgoSubscribers": null,
       "monthAgoSubscribers": null,
       "latestVideos": [],
-      "lastUpdate": 1780630523
+      "lastUpdate": 1780631637
     }
   ]
 }
