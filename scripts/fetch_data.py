@@ -56,6 +56,12 @@ PREVIOUS_RANKS_FILE = "data/previous_ranks.json"
 DISCOVERY_KEYWORDS = [
     "YouTuber",
     "vlog",
+    "台灣人",
+    "台灣創作者",
+    "台灣大胃王",
+    "大胃王",
+    "旅韓台灣人",
+    "台灣人在韓國",
     "美食",
     "遊戲",
     "新聞",
