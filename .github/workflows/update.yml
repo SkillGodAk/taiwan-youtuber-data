@@ -4,6 +4,15 @@ on:
   schedule:
     - cron: '*/10 * * * *'
   workflow_dispatch:
+    inputs:
+      discovery_mode:
+        description: 'Use YouTube search.list to expand the searchable channel pool'
+        required: false
+        default: 'false'
+        type: choice
+        options:
+          - 'false'
+          - 'true'
 
 permissions:
   contents: write
@@ -27,6 +36,7 @@ jobs:
           RANKING_POOL_SIZE: 500
           LATEST_VIDEO_CHANNEL_LIMIT: 20
           LATEST_VIDEO_COUNT: 3
+          DISCOVERY_MODE: ${{ github.event.inputs.discovery_mode || 'false' }}
         run: python scripts/fetch_data.py
       - name: Push
         run: |

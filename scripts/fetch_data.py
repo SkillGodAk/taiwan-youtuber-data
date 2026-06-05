@@ -20,8 +20,24 @@ LATEST_VIDEO_CHANNEL_LIMIT = int(os.environ.get('LATEST_VIDEO_CHANNEL_LIMIT', '2
 LATEST_VIDEO_COUNT = int(os.environ.get('LATEST_VIDEO_COUNT', '3'))
 TOP_CHANNEL_LIMIT = int(os.environ.get('TOP_CHANNEL_LIMIT', '100'))
 RANKING_POOL_SIZE = int(os.environ.get('RANKING_POOL_SIZE', '500'))
+DISCOVERY_MODE = os.environ.get('DISCOVERY_MODE', '').lower() in ('1', 'true', 'yes')
 
 NOXINFLUENCER_URL = 'https://www.noxinfluencer.com/ws/rank/youtube/kol'
+CHANNELS_FILE = 'data/channels.json'
+DISCOVERY_KEYWORDS = [
+    '台灣 YouTuber',
+    '台灣 vlog',
+    '台灣 美食',
+    '台灣 遊戲',
+    '台灣 旅遊',
+    '台灣 開箱',
+    '台灣 音樂',
+    '台灣 寵物',
+    '台灣 科技',
+    '台灣 搞笑',
+    'Taiwan YouTuber',
+    'Taiwan vlog',
+]
 
 HEADERS = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 '
@@ -30,15 +46,14 @@ HEADERS = {
 }
 
 
-def fetch_noxinfluencer_channels(limit=RANKING_POOL_SIZE):
-    """從 Noxinfluencer 取得台灣 YouTube 排名頻道。"""
-    print(f"正在從 Noxinfluencer 取得前 {limit} 名...")
+def fetch_noxinfluencer_page(page_num, page_size=100):
+    """從 Noxinfluencer 取得單頁排名資料。"""
     params = urllib.parse.urlencode({
         'country': 'TW',
         'rankType': 'followers',
         'interval': 'weekly',
-        'pageNum': 1,
-        'pageSize': limit,
+        'pageNum': page_num,
+        'pageSize': page_size,
     })
     req = urllib.request.Request(f"{NOXINFLUENCER_URL}?{params}", headers=HEADERS)
     try:
@@ -62,8 +77,31 @@ def fetch_noxinfluencer_channels(limit=RANKING_POOL_SIZE):
         print(f"回應內容前 500 字: {sample}")
         return []
 
+    return rows
+
+
+def fetch_noxinfluencer_channels(limit=RANKING_POOL_SIZE):
+    """從 Noxinfluencer 取得台灣 YouTube 排名頻道。"""
+    print(f"正在從 Noxinfluencer 取得前 {limit} 名...")
+    rows = []
+    page_size = 100
+    max_pages = max(1, (limit + page_size - 1) // page_size)
+
+    for page_num in range(1, max_pages + 1):
+        page_rows = fetch_noxinfluencer_page(page_num, page_size)
+        if not page_rows:
+            if page_num == 1:
+                return []
+            print(f"第 {page_num} 頁沒有資料，停止延伸索引抓取")
+            break
+        rows.extend(page_rows)
+        if len(rows) >= limit:
+            break
+        time.sleep(0.3)
+
     channels = []
-    for i, row in enumerate(rows):
+    seen_ids = set()
+    for i, row in enumerate(rows[:limit]):
         # Noxinfluencer 欄位名稱可能不同，嘗試常見的 key
         channel_id = (
             row.get('channelId') or row.get('id') or
@@ -82,9 +120,10 @@ def fetch_noxinfluencer_channels(limit=RANKING_POOL_SIZE):
         except (ValueError, TypeError):
             avg_views = 0
 
-        if channel_id:
+        if channel_id and channel_id not in seen_ids:
+            seen_ids.add(channel_id)
             channels.append({
-                'nox_rank': i + 1,
+                'nox_rank': len(channels) + 1,
                 'channel_id': channel_id,
                 'title': title,
                 'avatar': avatar,
@@ -108,6 +147,74 @@ def youtube_api_get(endpoint, params):
     except Exception as e:
         print(f"YouTube API 錯誤 ({endpoint}): {e}")
         return None
+
+
+def load_known_channels():
+    """讀取既有搜尋索引，正常排程靠這份清單校正排名。"""
+    if not os.path.exists(CHANNELS_FILE):
+        return []
+
+    try:
+        with open(CHANNELS_FILE, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+    except (json.JSONDecodeError, OSError):
+        return []
+
+    channels = []
+    for row in data.get('channels', []):
+        cid = row.get('id') or row.get('channel_id')
+        if cid:
+            channels.append({
+                'nox_rank': row.get('rank') or len(channels) + 1,
+                'channel_id': cid,
+                'title': row.get('title', ''),
+                'avatar': row.get('avatarUrl', ''),
+                'avg_views': row.get('avgViews', 0),
+            })
+    return channels
+
+
+def discover_channels_by_youtube_search(existing_ids, limit=RANKING_POOL_SIZE):
+    """低頻 discovery 用 search.list 補候選池，不在一般 10 分鐘排程大量使用。"""
+    discovered = []
+    seen = set(existing_ids)
+
+    for keyword in DISCOVERY_KEYWORDS:
+        if len(seen) >= limit:
+            break
+
+        print(f"Discovery 搜尋：{keyword}")
+        data = youtube_api_get('search', {
+            'part': 'snippet',
+            'q': keyword,
+            'type': 'channel',
+            'regionCode': 'TW',
+            'order': 'viewCount',
+            'maxResults': 50,
+        })
+        if not data:
+            continue
+
+        for item in data.get('items', []):
+            cid = item.get('id', {}).get('channelId', '')
+            if not cid or cid in seen:
+                continue
+            snippet = item.get('snippet', {})
+            seen.add(cid)
+            discovered.append({
+                'nox_rank': len(seen),
+                'channel_id': cid,
+                'title': snippet.get('title', ''),
+                'avatar': snippet.get('thumbnails', {}).get('high', {}).get('url', ''),
+                'avg_views': 0,
+            })
+            if len(seen) >= limit:
+                break
+
+        time.sleep(0.3)
+
+    print(f"Discovery 新增 {len(discovered)} 個候選頻道")
+    return discovered
 
 
 def batch_channels_list(channel_ids):
@@ -268,10 +375,33 @@ def main():
     print("=== 台灣 YouTuber 排行榜數據更新 ===")
     print(f"時間：{datetime.now(timezone.utc).isoformat()}")
 
-    # 1. 從 Noxinfluencer 取得排名和平均觀看量，前 100 給首頁，其餘給搜尋索引
+    # 1. 取得候選頻道池。Noxinfluencer 可用時優先使用；失敗時用既有索引。
     nox_channels = fetch_noxinfluencer_channels()
     if not nox_channels:
-        print("無法從 Noxinfluencer 取得數據，終止")
+        print("無法從 Noxinfluencer 取得數據，改用既有頻道索引")
+        nox_channels = load_known_channels()
+
+    if DISCOVERY_MODE or len(nox_channels) < TOP_CHANNEL_LIMIT:
+        existing_ids = [channel['channel_id'] for channel in nox_channels]
+        nox_channels.extend(
+            discover_channels_by_youtube_search(existing_ids, RANKING_POOL_SIZE)
+        )
+
+    # 去重並限制候選池大小
+    deduped_channels = []
+    seen_ids = set()
+    for channel in nox_channels:
+        cid = channel.get('channel_id')
+        if not cid or cid in seen_ids:
+            continue
+        seen_ids.add(cid)
+        deduped_channels.append(channel)
+        if len(deduped_channels) >= RANKING_POOL_SIZE:
+            break
+    nox_channels = deduped_channels
+
+    if not nox_channels:
+        print("沒有候選頻道，終止")
         return
 
     # 建立 channel_id -> nox_data 的對照表
