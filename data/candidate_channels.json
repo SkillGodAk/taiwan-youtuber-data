@@ -1,5 +1,5 @@
 {
-  "updatedAt": 1780653333,
+  "updatedAt": 1780653580,
   "candidates": [
     {
       "name": "PresentHunt",
@@ -8793,7 +8793,13 @@
       "sourceVideosText": "1,323",
       "category": "Entertainment",
       "started": "2017",
-      "href": "/yan-lifestyle/youtuber-stats"
+      "href": "/yan-lifestyle/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "channel_id": "UCP35n-RmdhU5m1UjvreVcwQ",
+      "officialTitle": "yan lifestyle",
+      "officialCountry": "TW",
+      "matchScore": 1.15,
+      "status": "verified"
     },
     {
       "name": "幸福空間",
@@ -8804,7 +8810,9 @@
       "sourceVideosText": "6,879",
       "category": "Howto & Style",
       "started": "2009",
-      "href": "/a5e9c74f-4316-4d69-b985-99af22c356fb/youtuber-stats"
+      "href": "/a5e9c74f-4316-4d69-b985-99af22c356fb/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "Mr. machine",
@@ -8815,7 +8823,13 @@
       "sourceVideosText": "180",
       "category": "People & Blogs",
       "started": "2019",
-      "href": "/mr-machine/youtuber-stats"
+      "href": "/mr-machine/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "channel_id": "UCaL0tLVGued9B-XFu5YtrEQ",
+      "officialTitle": "Mr. machine",
+      "officialCountry": "TW",
+      "matchScore": 1.15,
+      "status": "verified"
     },
     {
       "name": "不演了新聞台",
@@ -8826,7 +8840,9 @@
       "sourceVideosText": "6,672",
       "category": "News & Politics",
       "started": "2020",
-      "href": "/ea682e47-84cd-4d15-8b9b-e75a6d302179/youtuber-stats"
+      "href": "/ea682e47-84cd-4d15-8b9b-e75a6d302179/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "真電玩宅速配（Gamexpress）",
@@ -8837,7 +8853,9 @@
       "sourceVideosText": "14,172",
       "category": "Gaming",
       "started": "2009",
-      "href": "/54ebba79-e2b2-4cd5-a13e-ce1a460c6725/youtuber-stats"
+      "href": "/54ebba79-e2b2-4cd5-a13e-ce1a460c6725/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "桿子 Drumstick",
@@ -8848,7 +8866,9 @@
       "sourceVideosText": "587",
       "category": "Music",
       "started": "2007",
-      "href": "/drumstick/youtuber-stats"
+      "href": "/drumstick/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "undergroundDV 達哥",
@@ -8859,7 +8879,9 @@
       "sourceVideosText": "4,202",
       "category": "Film & Animation",
       "started": "2008",
-      "href": "/undergrounddv/youtuber-stats"
+      "href": "/undergrounddv/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "種子音樂有限公司",
@@ -8870,7 +8892,9 @@
       "sourceVideosText": "952",
       "category": "Music",
       "started": "2008",
-      "href": "/1d2433fc-d12a-4c24-a1df-f8580515646c/youtuber-stats"
+      "href": "/1d2433fc-d12a-4c24-a1df-f8580515646c/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "AMU Game Channel",
@@ -8881,7 +8905,9 @@
       "sourceVideosText": "8,474",
       "category": "Gaming",
       "started": "2006",
-      "href": "/amu-game-channel/youtuber-stats"
+      "href": "/amu-game-channel/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "Star World TW",
@@ -8892,7 +8918,9 @@
       "sourceVideosText": "787",
       "category": "Film & Animation",
       "started": "2017",
-      "href": "/fox-taiwan/youtuber-stats"
+      "href": "/fox-taiwan/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "ModiCutLoL",
@@ -8903,7 +8931,9 @@
       "sourceVideosText": "21",
       "category": "Pets & Animals",
       "started": "2017",
-      "href": "/bd45e565-63ad-42cd-8fe3-fbd67fe762a3/youtuber-stats"
+      "href": "/bd45e565-63ad-42cd-8fe3-fbd67fe762a3/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "營養健身葛格Peeta",
@@ -8914,7 +8944,9 @@
       "sourceVideosText": "515",
       "category": "Sports",
       "started": "2016",
-      "href": "/peeta/youtuber-stats"
+      "href": "/peeta/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "角頭 GATAO MOVIE",
@@ -8925,7 +8957,13 @@
       "sourceVideosText": "158",
       "category": "Film & Animation",
       "started": "2014",
-      "href": "/2018-2-gatao2/youtuber-stats"
+      "href": "/2018-2-gatao2/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "channel_id": "UCqjIzK9n0_YsueytXDHqz1Q",
+      "officialTitle": "角頭 GATAO MOVIE",
+      "officialCountry": "TW",
+      "matchScore": 1.15,
+      "status": "verified"
     },
     {
       "name": "海村小梅官方頻道",
@@ -8936,7 +8974,9 @@
       "sourceVideosText": "2,201",
       "category": "People & Blogs",
       "started": "2019",
-      "href": "/b35391d0-51e6-45a0-a486-f25546678031/youtuber-stats"
+      "href": "/b35391d0-51e6-45a0-a486-f25546678031/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "四號倉庫",
@@ -8946,7 +8986,9 @@
       "sourceViewsText": "117,301,681",
       "sourceVideosText": "351",
       "started": "2020",
-      "href": "/6a0f4ee7-cc6d-41bd-8cfd-3bb41d005ac5/youtuber-stats"
+      "href": "/6a0f4ee7-cc6d-41bd-8cfd-3bb41d005ac5/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "China Cradle 山西:华夏文明的摇篮",
@@ -8957,7 +8999,9 @@
       "sourceVideosText": "5,738",
       "category": "News & Politics",
       "started": "2021",
-      "href": "/china-cradle/youtuber-stats"
+      "href": "/china-cradle/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "yenzg金剛猩猩Gorilla D'jeeco Troop",
@@ -8968,7 +9012,9 @@
       "sourceVideosText": "4,927",
       "category": "Pets & Animals",
       "started": "2021",
-      "href": "/yenzg-gorilla-d-jeeco-troop/youtuber-stats"
+      "href": "/yenzg-gorilla-d-jeeco-troop/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "Bonjour Louis! 我是路易",
@@ -8979,7 +9025,9 @@
       "sourceVideosText": "354",
       "category": "Entertainment",
       "started": "2017",
-      "href": "/bonjour-louis/youtuber-stats"
+      "href": "/bonjour-louis/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "SHIRO TV",
@@ -8990,7 +9038,9 @@
       "sourceVideosText": "197",
       "category": "Film & Animation",
       "started": "2017",
-      "href": "/a6b21520-2ae9-4188-b755-b1f1cc638193/youtuber-stats"
+      "href": "/a6b21520-2ae9-4188-b755-b1f1cc638193/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "Volkswagen Taiwan",
@@ -9001,7 +9051,9 @@
       "sourceVideosText": "307",
       "category": "Music",
       "started": "2015",
-      "href": "/volkswagen-taiwan/youtuber-stats"
+      "href": "/volkswagen-taiwan/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "Lice萊斯",
@@ -9012,7 +9064,9 @@
       "sourceVideosText": "1,737",
       "category": "Gaming",
       "started": "2011",
-      "href": "/lice-wang/youtuber-stats"
+      "href": "/lice-wang/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "非凡 股市現場",
@@ -9023,7 +9077,9 @@
       "sourceVideosText": "22,225",
       "category": "People & Blogs",
       "started": "2017",
-      "href": "/d8d98738-536e-4192-a496-cb743db33a17/youtuber-stats"
+      "href": "/d8d98738-536e-4192-a496-cb743db33a17/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "TVBS經典頻道",
@@ -9034,7 +9090,9 @@
       "sourceVideosText": "9,999",
       "category": "News & Politics",
       "started": "2015",
-      "href": "/647705d1-df2e-49d3-a9e2-e5fac5366560/youtuber-stats"
+      "href": "/647705d1-df2e-49d3-a9e2-e5fac5366560/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "台客劇場 TKstory",
@@ -9045,7 +9103,9 @@
       "sourceVideosText": "620",
       "category": "Entertainment",
       "started": "2015",
-      "href": "/tkstory/youtuber-stats"
+      "href": "/tkstory/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "巢哥",
@@ -9056,7 +9116,9 @@
       "sourceVideosText": "178",
       "category": "Gaming",
       "started": "2012",
-      "href": "/12b68e16-a2c8-4f9f-a288-1c59d41c5fc2/youtuber-stats"
+      "href": "/12b68e16-a2c8-4f9f-a288-1c59d41c5fc2/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "大头虫",
@@ -9067,7 +9129,9 @@
       "sourceVideosText": "496",
       "category": "Entertainment",
       "started": "2019",
-      "href": "/31748251-2881-4e69-ad70-f120ed57ae11/youtuber-stats"
+      "href": "/31748251-2881-4e69-ad70-f120ed57ae11/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "I don't Drink latte.",
@@ -9078,7 +9142,9 @@
       "sourceVideosText": "5,133",
       "category": "Gaming",
       "started": "2016",
-      "href": "/i-don-t-drink-latte/youtuber-stats"
+      "href": "/i-don-t-drink-latte/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "SSUtv Sports",
@@ -9089,7 +9155,9 @@
       "sourceVideosText": "10,555",
       "category": "Sports",
       "started": "2009",
-      "href": "/ssutv-sports/youtuber-stats"
+      "href": "/ssutv-sports/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "秀煜 Show YoU",
@@ -9100,7 +9168,9 @@
       "sourceVideosText": "487",
       "category": "Entertainment",
       "started": "2017",
-      "href": "/show-you/youtuber-stats"
+      "href": "/show-you/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "DK2.0",
@@ -9111,7 +9181,9 @@
       "sourceVideosText": "1,038",
       "category": "Gaming",
       "started": "2020",
-      "href": "/dk2-0/youtuber-stats"
+      "href": "/dk2-0/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "阿湯趣歷史",
@@ -9122,7 +9194,13 @@
       "sourceVideosText": "1,568",
       "category": "People & Blogs",
       "started": "2017",
-      "href": "/2ace7bf0-f493-4454-bbc2-a0b6511161ba/youtuber-stats"
+      "href": "/2ace7bf0-f493-4454-bbc2-a0b6511161ba/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "channel_id": "UC3ZyAquIZgLZebw8GyIGj-A",
+      "officialTitle": "阿湯趣歷史",
+      "officialCountry": "TW",
+      "matchScore": 1.15,
+      "status": "verified"
     },
     {
       "name": "Rural Funny Man",
@@ -9133,7 +9211,9 @@
       "sourceVideosText": "4,427",
       "category": "People & Blogs",
       "started": "2023",
-      "href": "/rural-funny-man/youtuber-stats"
+      "href": "/rural-funny-man/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "Toyz 實況精華",
@@ -9143,7 +9223,9 @@
       "sourceViewsText": "113,113,205",
       "sourceVideosText": "446",
       "started": "2021",
-      "href": "/toyz-44638c4f-4eaf-40f6-80d9-ddea0f3fbe51/youtuber-stats"
+      "href": "/toyz-44638c4f-4eaf-40f6-80d9-ddea0f3fbe51/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "小尾巴",
@@ -9154,7 +9236,9 @@
       "sourceVideosText": "1,033",
       "category": "Music",
       "started": "2006",
-      "href": "/4caa12ee-3b28-4d19-aebb-808c9624f978/youtuber-stats"
+      "href": "/4caa12ee-3b28-4d19-aebb-808c9624f978/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "中華航空",
@@ -9165,7 +9249,9 @@
       "sourceVideosText": "308",
       "category": "Travel & Events",
       "started": "2012",
-      "href": "/china-airlines/youtuber-stats"
+      "href": "/china-airlines/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "飛碟聯播網",
@@ -9176,7 +9262,9 @@
       "sourceVideosText": "17,749",
       "category": "Entertainment",
       "started": "2014",
-      "href": "/13054eb1-521a-4d30-9f7b-6dd50af18fed/youtuber-stats"
+      "href": "/13054eb1-521a-4d30-9f7b-6dd50af18fed/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "搞笑美食精选",
@@ -9187,7 +9275,9 @@
       "sourceVideosText": "1,617",
       "category": "People & Blogs",
       "started": "2023",
-      "href": "/e1de72e6-2109-4596-892e-24386b0572ec/youtuber-stats"
+      "href": "/e1de72e6-2109-4596-892e-24386b0572ec/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "四嫂在路上",
@@ -9198,7 +9288,9 @@
       "sourceVideosText": "5,258",
       "category": "Howto & Style",
       "started": "2018",
-      "href": "/a53aa279-2b8c-4389-b840-1ac074df276e/youtuber-stats"
+      "href": "/a53aa279-2b8c-4389-b840-1ac074df276e/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "TomoNews 台灣",
@@ -9209,7 +9301,9 @@
       "sourceVideosText": "9,961",
       "category": "News & Politics",
       "started": "2009",
-      "href": "/tomonews/youtuber-stats"
+      "href": "/tomonews/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "Soya手癢計劃",
@@ -9220,7 +9314,9 @@
       "sourceVideosText": "695",
       "category": "People & Blogs",
       "started": "2011",
-      "href": "/soya/youtuber-stats"
+      "href": "/soya/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "Jason 杰生",
@@ -9231,7 +9327,9 @@
       "sourceVideosText": "767",
       "category": "People & Blogs",
       "started": "2012",
-      "href": "/jason-lee/youtuber-stats"
+      "href": "/jason-lee/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "MarvelTW",
@@ -9242,7 +9340,9 @@
       "sourceVideosText": "596",
       "category": "Film & Animation",
       "started": "2014",
-      "href": "/marveltw/youtuber-stats"
+      "href": "/marveltw/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "顏社 KAO!INC.",
@@ -9253,7 +9353,9 @@
       "sourceVideosText": "319",
       "category": "Music",
       "started": "2009",
-      "href": "/kao-inc/youtuber-stats"
+      "href": "/kao-inc/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "Semenix Gaming",
@@ -9264,7 +9366,9 @@
       "sourceVideosText": "816",
       "category": "Gaming",
       "started": "2013",
-      "href": "/semenix-gaming/youtuber-stats"
+      "href": "/semenix-gaming/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "LRX103",
@@ -9275,7 +9379,9 @@
       "sourceVideosText": "153",
       "category": "People & Blogs",
       "started": "2022",
-      "href": "/lrx103/youtuber-stats"
+      "href": "/lrx103/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "閃電狼 Flash Wolves",
@@ -9286,7 +9392,9 @@
       "sourceVideosText": "2,160",
       "category": "Sports",
       "started": "2013",
-      "href": "/flash-wolves/youtuber-stats"
+      "href": "/flash-wolves/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "老人與狗",
@@ -9297,7 +9405,9 @@
       "sourceVideosText": "238",
       "category": "People & Blogs",
       "started": "2018",
-      "href": "/9ec1b416-d049-47fb-b63e-08b6712f2f17/youtuber-stats"
+      "href": "/9ec1b416-d049-47fb-b63e-08b6712f2f17/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "Petszone",
@@ -9308,7 +9418,9 @@
       "sourceVideosText": "1,933",
       "category": "People & Blogs",
       "started": "2025",
-      "href": "/petszone/youtuber-stats"
+      "href": "/petszone/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "誰來晚餐 GuessWho",
@@ -9319,7 +9431,9 @@
       "sourceVideosText": "1,045",
       "category": "People & Blogs",
       "started": "2017",
-      "href": "/guess-who/youtuber-stats"
+      "href": "/guess-who/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "好機車",
@@ -9330,7 +9444,9 @@
       "sourceVideosText": "803",
       "category": "Comedy",
       "started": "2019",
-      "href": "/ce87e01c-ea29-4c6c-955e-332fe39c450d/youtuber-stats"
+      "href": "/ce87e01c-ea29-4c6c-955e-332fe39c450d/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "DBS Taiwan",
@@ -9340,7 +9456,9 @@
       "sourceViewsText": "107,890,711",
       "sourceVideosText": "137",
       "started": "2016",
-      "href": "/dbs-taiwan/youtuber-stats"
+      "href": "/dbs-taiwan/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "馬叔叔 Uncle Ma",
@@ -9351,7 +9469,9 @@
       "sourceVideosText": "1,139",
       "category": "Music",
       "started": "2008",
-      "href": "/uncle-ma/youtuber-stats"
+      "href": "/uncle-ma/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "阿兜仔不教美語",
@@ -9362,7 +9482,9 @@
       "sourceVideosText": "1,706",
       "category": "Entertainment",
       "started": "2008",
-      "href": "/3f9fcb70-1341-4143-9ff1-1ff26fb60c61/youtuber-stats"
+      "href": "/3f9fcb70-1341-4143-9ff1-1ff26fb60c61/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "T-KPOP 主頻道",
@@ -9372,7 +9494,9 @@
       "sourceViewsText": "107,311,823",
       "sourceVideosText": "1,952",
       "started": "2022",
-      "href": "/t-kpop/youtuber-stats"
+      "href": "/t-kpop/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "野人七號部落",
@@ -9383,7 +9507,9 @@
       "sourceVideosText": "625",
       "category": "People & Blogs",
       "started": "2020",
-      "href": "/33812b8a-b75a-439d-b096-4357d7ce6670/youtuber-stats"
+      "href": "/33812b8a-b75a-439d-b096-4357d7ce6670/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "有璟嘿喲요찡",
@@ -9394,7 +9520,9 @@
       "sourceVideosText": "1,166",
       "category": "Entertainment",
       "started": "2012",
-      "href": "/afbe876c-cca8-463c-92ee-65b47dc95c4e/youtuber-stats"
+      "href": "/afbe876c-cca8-463c-92ee-65b47dc95c4e/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "我們倆Ricky&Nina",
@@ -9404,7 +9532,9 @@
       "sourceViewsText": "106,630,022",
       "sourceVideosText": "446",
       "started": "2021",
-      "href": "/ricky-nina/youtuber-stats"
+      "href": "/ricky-nina/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "八婆 BESTIES",
@@ -9415,7 +9545,9 @@
       "sourceVideosText": "2,038",
       "category": "Entertainment",
       "started": "2017",
-      "href": "/besties-17c88fe1-2205-4eff-9075-c1891259a761/youtuber-stats"
+      "href": "/besties-17c88fe1-2205-4eff-9075-c1891259a761/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "喜歡音樂",
@@ -9426,7 +9558,9 @@
       "sourceVideosText": "385",
       "category": "Music",
       "started": "2008",
-      "href": "/368a94a1-4d8b-411d-9925-45005be2db1f/youtuber-stats"
+      "href": "/368a94a1-4d8b-411d-9925-45005be2db1f/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "光良官方專屬頻道 Michael Wong's Official Channel",
@@ -9437,7 +9571,9 @@
       "sourceVideosText": "423",
       "category": "Music",
       "started": "2006",
-      "href": "/xymusic/youtuber-stats"
+      "href": "/xymusic/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "夜市王",
@@ -9448,7 +9584,9 @@
       "sourceVideosText": "3,101",
       "category": "Howto & Style",
       "started": "2017",
-      "href": "/3fedcd77-2d7c-47b7-9efe-16ae8f150579/youtuber-stats"
+      "href": "/3fedcd77-2d7c-47b7-9efe-16ae8f150579/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "話時代人物",
@@ -9459,7 +9597,9 @@
       "sourceVideosText": "2,861",
       "category": "Education",
       "started": "2019",
-      "href": "/946054bd-2382-4d97-b933-fd152294c6a1/youtuber-stats"
+      "href": "/946054bd-2382-4d97-b933-fd152294c6a1/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "Catch大錢潮",
@@ -9470,7 +9610,9 @@
       "sourceVideosText": "4,715",
       "category": "People & Blogs",
       "started": "2014",
-      "href": "/5e65d712-3c97-467f-887d-a9aed3c1c0ff/youtuber-stats"
+      "href": "/5e65d712-3c97-467f-887d-a9aed3c1c0ff/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "啾啾妹CHUCHUMEI",
@@ -9481,7 +9623,9 @@
       "sourceVideosText": "351",
       "category": "Entertainment",
       "started": "2016",
-      "href": "/chuchu-mei/youtuber-stats"
+      "href": "/chuchu-mei/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "擠看看",
@@ -9492,7 +9636,9 @@
       "sourceVideosText": "20,632",
       "category": "Education",
       "started": "2011",
-      "href": "/5d5f1a75-0dcc-461d-a5fc-1a1e2f52a132/youtuber-stats"
+      "href": "/5d5f1a75-0dcc-461d-a5fc-1a1e2f52a132/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "Jinnytty 企鵝妹 지니티",
@@ -9503,7 +9649,9 @@
       "sourceVideosText": "1,425",
       "category": "Gaming",
       "started": "2017",
-      "href": "/yoomjji/youtuber-stats"
+      "href": "/yoomjji/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "閒者之時",
@@ -9514,7 +9662,9 @@
       "sourceVideosText": "2,333",
       "category": "People & Blogs",
       "started": "2017",
-      "href": "/18fd01a6-8823-4fad-8a01-2dc4b0b5657f/youtuber-stats"
+      "href": "/18fd01a6-8823-4fad-8a01-2dc4b0b5657f/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "TVBS戲劇-女兵日記 女力報到",
@@ -9525,7 +9675,9 @@
       "sourceVideosText": "1,068",
       "category": "Comedy",
       "started": "2019",
-      "href": "/tvbs-32f8a334-4d52-4920-bed2-9c6489de3517/youtuber-stats"
+      "href": "/tvbs-32f8a334-4d52-4920-bed2-9c6489de3517/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "Passion Sisters【宏將多利安國際股份有限公司】",
@@ -9536,7 +9688,9 @@
       "sourceVideosText": "1,158",
       "category": "Music",
       "started": "2016",
-      "href": "/6458badc-0570-4c07-b1fc-699d17e5770d/youtuber-stats"
+      "href": "/6458badc-0570-4c07-b1fc-699d17e5770d/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "Iku老師/Ikulaoshi",
@@ -9547,7 +9701,9 @@
       "sourceVideosText": "1,161",
       "category": "Education",
       "started": "2016",
-      "href": "/iku-ikulaoshi/youtuber-stats"
+      "href": "/iku-ikulaoshi/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "5MIN Webcam Live | 5分鐘視角",
@@ -9558,7 +9714,9 @@
       "sourceVideosText": "240",
       "category": "Pets & Animals",
       "started": "2012",
-      "href": "/5min-webcam-live-5/youtuber-stats"
+      "href": "/5min-webcam-live-5/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "新竹敏華牙醫",
@@ -9568,7 +9726,9 @@
       "sourceViewsText": "104,526,959",
       "sourceVideosText": "215",
       "started": "2012",
-      "href": "/6ad1da7f-4e92-4bf8-9740-765f99df3f33/youtuber-stats"
+      "href": "/6ad1da7f-4e92-4bf8-9740-765f99df3f33/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "焦點娛樂劇集站",
@@ -9579,7 +9739,9 @@
       "sourceVideosText": "1,719",
       "category": "Entertainment",
       "started": "2017",
-      "href": "/pepe-cd2aec3b-2b13-4792-9dc3-251a2f688801/youtuber-stats"
+      "href": "/pepe-cd2aec3b-2b13-4792-9dc3-251a2f688801/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "小燕有約",
@@ -9590,7 +9752,9 @@
       "sourceVideosText": "1,438",
       "category": "People & Blogs",
       "started": "2017",
-      "href": "/d32e57e3-9e28-424c-bf9e-40e2b6c59180/youtuber-stats"
+      "href": "/d32e57e3-9e28-424c-bf9e-40e2b6c59180/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "Our TV",
@@ -9601,7 +9765,9 @@
       "sourceVideosText": "1,127",
       "category": "Entertainment",
       "started": "2017",
-      "href": "/our-tv/youtuber-stats"
+      "href": "/our-tv/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "35線上賞屋",
@@ -9612,7 +9778,9 @@
       "sourceVideosText": "1,603",
       "category": "Education",
       "started": "2017",
-      "href": "/35-3dde505a-6728-416d-a518-86ee3fa34057/youtuber-stats"
+      "href": "/35-3dde505a-6728-416d-a518-86ee3fa34057/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "飛利浦家電 - Philips Home Living TW",
@@ -9623,7 +9791,9 @@
       "sourceVideosText": "855",
       "category": "Entertainment",
       "started": "2012",
-      "href": "/philipstwbm/youtuber-stats"
+      "href": "/philipstwbm/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "Vamos Sports翊起運動",
@@ -9634,7 +9804,9 @@
       "sourceVideosText": "5,305",
       "category": "Sports",
       "started": "2014",
-      "href": "/vamos-sports/youtuber-stats"
+      "href": "/vamos-sports/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "綜藝OK啦",
@@ -9645,7 +9817,9 @@
       "sourceVideosText": "2,285",
       "category": "Entertainment",
       "started": "2017",
-      "href": "/8416f7d3-735d-4811-a209-181bc95b484b/youtuber-stats"
+      "href": "/8416f7d3-735d-4811-a209-181bc95b484b/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "I'm Charlie",
@@ -9656,7 +9830,9 @@
       "sourceVideosText": "540",
       "category": "People & Blogs",
       "started": "2015",
-      "href": "/i-m-charlie/youtuber-stats"
+      "href": "/i-m-charlie/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "Regon Kuo",
@@ -9667,7 +9843,9 @@
       "sourceVideosText": "409",
       "category": "People & Blogs",
       "started": "2011",
-      "href": "/regon-kuo/youtuber-stats"
+      "href": "/regon-kuo/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "花甲少年趣旅行",
@@ -9678,7 +9856,9 @@
       "sourceVideosText": "3,603",
       "category": "Travel & Events",
       "started": "2022",
-      "href": "/84e9489e-3d56-419f-9aab-9cb7be71aacf/youtuber-stats"
+      "href": "/84e9489e-3d56-419f-9aab-9cb7be71aacf/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "Nagootv那傳媒",
@@ -9689,7 +9869,9 @@
       "sourceVideosText": "27,401",
       "category": "Entertainment",
       "started": "2010",
-      "href": "/nagootv/youtuber-stats"
+      "href": "/nagootv/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "交通安全猿",
@@ -9700,7 +9882,9 @@
       "sourceVideosText": "587",
       "category": "Howto & Style",
       "started": "2019",
-      "href": "/6ea32031-89e8-4ea3-b8fc-9d26e1a3ce36/youtuber-stats"
+      "href": "/6ea32031-89e8-4ea3-b8fc-9d26e1a3ce36/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "爱剧Lovin Drama",
@@ -9711,7 +9895,9 @@
       "sourceVideosText": "787",
       "category": "People & Blogs",
       "started": "2021",
-      "href": "/lovin-drama/youtuber-stats"
+      "href": "/lovin-drama/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "大鱼讲电影",
@@ -9722,7 +9908,9 @@
       "sourceVideosText": "940",
       "category": "Film & Animation",
       "started": "2018",
-      "href": "/bb1b82d0-7fcc-436b-9fc0-709976dc5ccb/youtuber-stats"
+      "href": "/bb1b82d0-7fcc-436b-9fc0-709976dc5ccb/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "LIVE BIRTH VLOG",
@@ -9733,7 +9921,9 @@
       "sourceVideosText": "3,489",
       "category": "People & Blogs",
       "started": "2022",
-      "href": "/live-birth-vlog/youtuber-stats"
+      "href": "/live-birth-vlog/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "原子邦妮 AstroBunny",
@@ -9744,7 +9934,9 @@
       "sourceVideosText": "371",
       "category": "Music",
       "started": "2014",
-      "href": "/astrobunny/youtuber-stats"
+      "href": "/astrobunny/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "大劇點播",
@@ -9755,7 +9947,9 @@
       "sourceVideosText": "2,426",
       "category": "Film & Animation",
       "started": "2020",
-      "href": "/2b52593e-1817-4913-bb1d-64980bfe5b02/youtuber-stats"
+      "href": "/2b52593e-1817-4913-bb1d-64980bfe5b02/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "地方熊貓",
@@ -9766,7 +9960,9 @@
       "sourceVideosText": "6,893",
       "category": "Gaming",
       "started": "2008",
-      "href": "/04761060-a9f5-4176-b11e-89e8d9bb105a/youtuber-stats"
+      "href": "/04761060-a9f5-4176-b11e-89e8d9bb105a/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "逼呿（beachClub）",
@@ -9777,7 +9973,9 @@
       "sourceVideosText": "2,769",
       "category": "Gaming",
       "started": "2012",
-      "href": "/23ede0b5-3d65-4871-85ec-6f0ed0fdd4a3/youtuber-stats"
+      "href": "/23ede0b5-3d65-4871-85ec-6f0ed0fdd4a3/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "TCar 試車頻道",
@@ -9788,7 +9986,9 @@
       "sourceVideosText": "2,017",
       "category": "Autos & Vehicles",
       "started": "2015",
-      "href": "/tcar/youtuber-stats"
+      "href": "/tcar/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "我是黨黨",
@@ -9798,7 +9998,13 @@
       "sourceViewsText": "100,127,021",
       "sourceVideosText": "557",
       "started": "2022",
-      "href": "/a536730f-73ad-4475-a8e8-c0e20f563a48/youtuber-stats"
+      "href": "/a536730f-73ad-4475-a8e8-c0e20f563a48/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "channel_id": "UCgca61SZNQ2SoYt22SZ93VA",
+      "officialTitle": "我是黨黨",
+      "officialCountry": "TW",
+      "matchScore": 1.15,
+      "status": "verified"
     },
     {
       "name": "ZS Music Studio",
@@ -9809,7 +10015,9 @@
       "sourceVideosText": "584",
       "category": "Entertainment",
       "started": "2023",
-      "href": "/zs-music-studio/youtuber-stats"
+      "href": "/zs-music-studio/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "Flowers",
@@ -9820,7 +10028,9 @@
       "sourceVideosText": "284",
       "category": "Film & Animation",
       "started": "2025",
-      "href": "/flowers/youtuber-stats"
+      "href": "/flowers/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "Wang's Funny Videos",
@@ -9831,7 +10041,9 @@
       "sourceVideosText": "3,452",
       "category": "People & Blogs",
       "started": "2023",
-      "href": "/wang-s-funny-videos/youtuber-stats"
+      "href": "/wang-s-funny-videos/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "aicat & cuteanimals",
@@ -9842,7 +10054,9 @@
       "sourceVideosText": "25",
       "category": "Film & Animation",
       "started": "2024",
-      "href": "/aicat-cuteanimals/youtuber-stats"
+      "href": "/aicat-cuteanimals/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "软妹刷谍剧",
@@ -9853,7 +10067,9 @@
       "sourceVideosText": "2,483",
       "category": "Film & Animation",
       "started": "2021",
-      "href": "/41f806b7-5548-4736-bacd-0123242760ca/youtuber-stats"
+      "href": "/41f806b7-5548-4736-bacd-0123242760ca/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "維基傳媒",
@@ -9864,7 +10080,9 @@
       "sourceVideosText": "7,855",
       "category": "Entertainment",
       "started": "2015",
-      "href": "/wikienter/youtuber-stats"
+      "href": "/wikienter/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "K.D",
@@ -9875,7 +10093,9 @@
       "sourceVideosText": "613",
       "category": "Music",
       "started": "2018",
-      "href": "/k-d-music/youtuber-stats"
+      "href": "/k-d-music/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "公視 網路直播頻道",
@@ -9886,7 +10106,9 @@
       "sourceVideosText": "2,387",
       "category": "Entertainment",
       "started": "2011",
-      "href": "/a5fa8e2a-4d3c-4ef4-b1e8-2b9b434444d8/youtuber-stats"
+      "href": "/a5fa8e2a-4d3c-4ef4-b1e8-2b9b434444d8/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "柴鼠兄弟 ZRBros",
@@ -9897,7 +10119,9 @@
       "sourceVideosText": "786",
       "category": "Education",
       "started": "2017",
-      "href": "/zrbros/youtuber-stats"
+      "href": "/zrbros/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "呂捷",
@@ -9908,7 +10132,9 @@
       "sourceVideosText": "484",
       "category": "People & Blogs",
       "started": "2012",
-      "href": "/c7a1ee8e-d4b4-4f07-a5e7-19901fe08afb/youtuber-stats"
+      "href": "/c7a1ee8e-d4b4-4f07-a5e7-19901fe08afb/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "韩跑跑动画",
@@ -9919,7 +10145,9 @@
       "sourceVideosText": "1,898",
       "category": "Entertainment",
       "started": "2018",
-      "href": "/927910e5-4ed3-4b93-b492-543ee18bcbf5/youtuber-stats"
+      "href": "/927910e5-4ed3-4b93-b492-543ee18bcbf5/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "LiTV立視線上影視",
@@ -9930,7 +10158,9 @@
       "sourceVideosText": "4,944",
       "category": "Film & Animation",
       "started": "2012",
-      "href": "/litv/youtuber-stats"
+      "href": "/litv/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "DAZZLING",
@@ -9941,7 +10171,9 @@
       "sourceVideosText": "190",
       "category": "Music",
       "started": "2012",
-      "href": "/dazzling/youtuber-stats"
+      "href": "/dazzling/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "張家夫妻滑起來",
@@ -9952,7 +10184,9 @@
       "sourceVideosText": "321",
       "category": "Gaming",
       "started": "2014",
-      "href": "/c4d092fe-43cb-4f01-ba48-2b1b5e19c29a/youtuber-stats"
+      "href": "/c4d092fe-43cb-4f01-ba48-2b1b5e19c29a/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "康康嘴機車",
@@ -9963,7 +10197,9 @@
       "sourceVideosText": "1,107",
       "category": "Autos & Vehicles",
       "started": "2012",
-      "href": "/9e65b132-46cf-4734-952a-bf38cd6bdb76/youtuber-stats"
+      "href": "/9e65b132-46cf-4734-952a-bf38cd6bdb76/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "肉肉的小瓜",
@@ -9974,7 +10210,9 @@
       "sourceVideosText": "298",
       "category": "People & Blogs",
       "started": "2010",
-      "href": "/c9e47ef9-a024-4866-bdf4-dab967ac9b49/youtuber-stats"
+      "href": "/c9e47ef9-a024-4866-bdf4-dab967ac9b49/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "李安安",
@@ -9985,7 +10223,9 @@
       "sourceVideosText": "3,528",
       "category": "People & Blogs",
       "started": "2023",
-      "href": "/9c14a5d7-d7fd-4e62-9003-17423b49ea4b/youtuber-stats"
+      "href": "/9c14a5d7-d7fd-4e62-9003-17423b49ea4b/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "豐富",
@@ -9995,7 +10235,9 @@
       "sourceViewsText": "97,674,297",
       "sourceVideosText": "8,447",
       "started": "2018",
-      "href": "/957405f7-c612-4ba5-a3e0-e8fac8390003/youtuber-stats"
+      "href": "/957405f7-c612-4ba5-a3e0-e8fac8390003/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "EBC地產王",
@@ -10006,7 +10248,9 @@
       "sourceVideosText": "5,100",
       "category": "News & Politics",
       "started": "2018",
-      "href": "/29215ff9-2869-4762-be92-609aa3d4a72f/youtuber-stats"
+      "href": "/29215ff9-2869-4762-be92-609aa3d4a72f/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "中廣流行網 i like radio",
@@ -10017,7 +10261,9 @@
       "sourceVideosText": "19,684",
       "category": "Education",
       "started": "2011",
-      "href": "/46739748-ca29-488c-9081-3911b253c742/youtuber-stats"
+      "href": "/46739748-ca29-488c-9081-3911b253c742/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "聯絡簿拿來我簽!",
@@ -10028,7 +10274,9 @@
       "sourceVideosText": "200",
       "category": "Entertainment",
       "started": "2014",
-      "href": "/now/youtuber-stats"
+      "href": "/now/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "羽毛",
@@ -10039,7 +10287,9 @@
       "sourceVideosText": "1,851",
       "category": "Gaming",
       "started": "2014",
-      "href": "/f7353bd7-9467-465b-a0b8-814c400201bc/youtuber-stats"
+      "href": "/f7353bd7-9467-465b-a0b8-814c400201bc/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "佛禪",
@@ -10050,7 +10300,9 @@
       "sourceVideosText": "1,157",
       "category": "People & Blogs",
       "started": "2018",
-      "href": "/plus-6decc6fa-9c84-4961-a10a-57628dadfa23/youtuber-stats"
+      "href": "/plus-6decc6fa-9c84-4961-a10a-57628dadfa23/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "PowerTech淮特",
@@ -10061,7 +10313,9 @@
       "sourceVideosText": "2,434",
       "category": "Gaming",
       "started": "2016",
-      "href": "/powertech/youtuber-stats"
+      "href": "/powertech/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "Official En",
@@ -10072,7 +10326,9 @@
       "sourceVideosText": "965",
       "category": "Entertainment",
       "started": "2019",
-      "href": "/official-en/youtuber-stats"
+      "href": "/official-en/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "PocatsStudio",
@@ -10083,7 +10339,9 @@
       "sourceVideosText": "307",
       "category": "Music",
       "started": "2021",
-      "href": "/pocatsstudio/youtuber-stats"
+      "href": "/pocatsstudio/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "ya1650",
@@ -10094,7 +10352,9 @@
       "sourceVideosText": "4,983",
       "category": "Music",
       "started": "2009",
-      "href": "/ya1650/youtuber-stats"
+      "href": "/ya1650/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "紅月",
@@ -10118,7 +10378,9 @@
       "sourceVideosText": "1,126",
       "category": "Gaming",
       "started": "2016",
-      "href": "/ming/youtuber-stats"
+      "href": "/ming/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "GINA HELLO!",
@@ -10129,7 +10391,9 @@
       "sourceVideosText": "551",
       "category": "Entertainment",
       "started": "2009",
-      "href": "/gina-hello/youtuber-stats"
+      "href": "/gina-hello/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "鼻妹Bimay",
@@ -10139,7 +10403,9 @@
       "sourceViewsText": "95,710,404",
       "sourceVideosText": "359",
       "started": "2009",
-      "href": "/4a6b6b81-de8e-4ec0-b5c7-9e2a3bea7def/youtuber-stats"
+      "href": "/4a6b6b81-de8e-4ec0-b5c7-9e2a3bea7def/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "嘎老師 Miss Ga",
@@ -10150,7 +10416,9 @@
       "sourceVideosText": "741",
       "category": "Music",
       "started": "2017",
-      "href": "/miss-ga/youtuber-stats"
+      "href": "/miss-ga/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "黃小潔Jerry",
@@ -10160,7 +10428,9 @@
       "sourceViewsText": "95,433,750",
       "sourceVideosText": "234",
       "started": "2009",
-      "href": "/jerry-2a35a0a6-8ad5-414b-b445-13e7d1c904fe/youtuber-stats"
+      "href": "/jerry-2a35a0a6-8ad5-414b-b445-13e7d1c904fe/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "年代MUCH台 健康好生活",
@@ -10171,7 +10441,9 @@
       "sourceVideosText": "8,514",
       "category": "Entertainment",
       "started": "2010",
-      "href": "/much-3480ba6c-6671-4d04-9a98-c8fd3e86f549/youtuber-stats"
+      "href": "/much-3480ba6c-6671-4d04-9a98-c8fd3e86f549/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "客家電視 HakkaTV",
@@ -10182,7 +10454,9 @@
       "sourceVideosText": "19,352",
       "category": "Entertainment",
       "started": "2007",
-      "href": "/hakkatv/youtuber-stats"
+      "href": "/hakkatv/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "С ДРУГОГО БЕРЕГА - блог о путешествиях",
@@ -10193,7 +10467,9 @@
       "sourceVideosText": "541",
       "category": "Travel & Events",
       "started": "2019",
-      "href": "/ceffeae5-c18f-428c-9181-4bdadfdd6eea/youtuber-stats"
+      "href": "/ceffeae5-c18f-428c-9181-4bdadfdd6eea/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "HCHS63rdWilsonZombie",
@@ -10204,7 +10480,9 @@
       "sourceVideosText": "495",
       "category": "Comedy",
       "started": "2013",
-      "href": "/hchs63rdwilsonzombie/youtuber-stats"
+      "href": "/hchs63rdwilsonzombie/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "小老婆汽機車資訊網 Jorsindo Motor Club",
@@ -10215,7 +10493,9 @@
       "sourceVideosText": "2,672",
       "category": "Autos & Vehicles",
       "started": "2014",
-      "href": "/jorsindo-motor-club/youtuber-stats"
+      "href": "/jorsindo-motor-club/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "Aoi Chen",
@@ -10226,7 +10506,9 @@
       "sourceVideosText": "629",
       "category": "Entertainment",
       "started": "2016",
-      "href": "/aoi-chen/youtuber-stats"
+      "href": "/aoi-chen/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "貴圈四姨太",
@@ -10237,7 +10519,9 @@
       "sourceVideosText": "2,062",
       "category": "Entertainment",
       "started": "2018",
-      "href": "/ace373f2-4c95-4bdc-9131-b5986e1f0b5a/youtuber-stats"
+      "href": "/ace373f2-4c95-4bdc-9131-b5986e1f0b5a/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "hou4you",
@@ -10248,7 +10532,13 @@
       "sourceVideosText": "728",
       "category": "News & Politics",
       "started": "2010",
-      "href": "/hou4you/youtuber-stats"
+      "href": "/hou4you/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "channel_id": "UCOw3Ix7lpUAXnzCHnuGRWpA",
+      "officialTitle": "hou4you",
+      "officialCountry": "TW",
+      "matchScore": 1.15,
+      "status": "verified"
     },
     {
       "name": "The News Lens 關鍵評論網",
@@ -10259,7 +10549,9 @@
       "sourceVideosText": "3,585",
       "category": "News & Politics",
       "started": "2014",
-      "href": "/the-news-lens/youtuber-stats"
+      "href": "/the-news-lens/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "賴清德",
@@ -10269,7 +10561,9 @@
       "sourceViewsText": "94,186,304",
       "sourceVideosText": "1,032",
       "started": "2023",
-      "href": "/771d9a97-8e20-4671-99f1-14359cab66e9/youtuber-stats"
+      "href": "/771d9a97-8e20-4671-99f1-14359cab66e9/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "AmazingFilmStudio",
@@ -10280,7 +10574,9 @@
       "sourceVideosText": "96",
       "category": "Music",
       "started": "2013",
-      "href": "/amazingfilmstudio/youtuber-stats"
+      "href": "/amazingfilmstudio/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "風華絕代",
@@ -10291,7 +10587,9 @@
       "sourceVideosText": "543",
       "category": "Entertainment",
       "started": "2020",
-      "href": "/0d10125a-08d9-4837-af15-379298a4c502/youtuber-stats"
+      "href": "/0d10125a-08d9-4837-af15-379298a4c502/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "JAM愛的影響力",
@@ -10302,7 +10600,9 @@
       "sourceVideosText": "3,252",
       "category": "Music",
       "started": "2013",
-      "href": "/jam/youtuber-stats"
+      "href": "/jam/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "SiCAR愛車酷",
@@ -10313,7 +10613,9 @@
       "sourceVideosText": "1,185",
       "category": "Autos & Vehicles",
       "started": "2015",
-      "href": "/carplay/youtuber-stats"
+      "href": "/carplay/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "LINE TV 日娛觀測站",
@@ -10324,7 +10626,9 @@
       "sourceVideosText": "10,000",
       "category": "Entertainment",
       "started": "2016",
-      "href": "/kktv/youtuber-stats"
+      "href": "/kktv/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "小公視",
@@ -10335,7 +10639,9 @@
       "sourceVideosText": "5,851",
       "category": "Education",
       "started": "2015",
-      "href": "/4ccf87ef-56b0-44f0-88cb-f0cf8086a21b/youtuber-stats"
+      "href": "/4ccf87ef-56b0-44f0-88cb-f0cf8086a21b/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "愛迪先生",
@@ -10346,7 +10652,9 @@
       "sourceVideosText": "3,137",
       "category": "Science & Technology",
       "started": "2012",
-      "href": "/mr-andy-853bee7f-0607-444a-984c-0944b7ad7d60/youtuber-stats"
+      "href": "/mr-andy-853bee7f-0607-444a-984c-0944b7ad7d60/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "雀可美特",
@@ -10357,7 +10665,9 @@
       "sourceVideosText": "679",
       "category": "Film & Animation",
       "started": "2018",
-      "href": "/09832b54-1321-4849-9f94-1c232db7a967/youtuber-stats"
+      "href": "/09832b54-1321-4849-9f94-1c232db7a967/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "張哲生",
@@ -10368,7 +10678,9 @@
       "sourceVideosText": "2,101",
       "category": "Sports",
       "started": "2009",
-      "href": "/galactor2009/youtuber-stats"
+      "href": "/galactor2009/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "遊戲大亂鬥",
@@ -10379,7 +10691,9 @@
       "sourceVideosText": "1,395",
       "category": "Gaming",
       "started": "2012",
-      "href": "/5ee00dec-6c66-43ff-a70e-78cbc234c96b/youtuber-stats"
+      "href": "/5ee00dec-6c66-43ff-a70e-78cbc234c96b/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "好倫",
@@ -10390,7 +10704,9 @@
       "sourceVideosText": "828",
       "category": "Howto & Style",
       "started": "2016",
-      "href": "/iamgoodland/youtuber-stats"
+      "href": "/iamgoodland/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "SonicHaXD",
@@ -10401,7 +10717,9 @@
       "sourceVideosText": "400",
       "category": "Entertainment",
       "started": "2012",
-      "href": "/sonichaxd/youtuber-stats"
+      "href": "/sonichaxd/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "牛顿巴",
@@ -10412,7 +10730,9 @@
       "sourceVideosText": "5,828",
       "category": "Science & Technology",
       "started": "2017",
-      "href": "/26059369-33f8-4b84-bf51-fc3636907fa3/youtuber-stats"
+      "href": "/26059369-33f8-4b84-bf51-fc3636907fa3/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "TaiwanTalks",
@@ -10423,7 +10743,9 @@
       "sourceVideosText": "5,818",
       "category": "News & Politics",
       "started": "2009",
-      "href": "/taiwantalks/youtuber-stats"
+      "href": "/taiwantalks/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "豹子腿方昶詠",
@@ -10433,7 +10755,9 @@
       "sourceViewsText": "90,994,541",
       "sourceVideosText": "1,148",
       "started": "2020",
-      "href": "/45f93986-c0a8-48a4-843b-fca943823e48/youtuber-stats"
+      "href": "/45f93986-c0a8-48a4-843b-fca943823e48/youtuber-stats",
+      "lastResolved": "2026-06-05",
+      "status": "not_found"
     },
     {
       "name": "華映娛樂",
