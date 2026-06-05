@@ -36,6 +36,7 @@ LATEST_VIDEO_COUNT = int(os.environ.get("LATEST_VIDEO_COUNT", "3"))
 DISCOVERY_MODE = os.environ.get("DISCOVERY_MODE", "").lower() in ("1", "true", "yes")
 CANDIDATE_LIMIT = int(os.environ.get("CANDIDATE_LIMIT", "1000"))
 CANDIDATE_RESOLVE_LIMIT = int(os.environ.get("CANDIDATE_RESOLVE_LIMIT", "25"))
+ABOUT_PAGE_CHECK_LIMIT = int(os.environ.get("ABOUT_PAGE_CHECK_LIMIT", "120"))
 VERIFY_OFFICIAL_TW = os.environ.get("VERIFY_OFFICIAL_TW", "true").lower() in (
     "1",
     "true",
@@ -63,6 +64,18 @@ DISCOVERY_KEYWORDS = [
     "音樂",
     "生活",
     "短影音",
+]
+
+TAIWAN_TEXT_PATTERNS = [
+    "台灣",
+    "臺灣",
+    "Taiwan",
+    "Taiwanese",
+    "Taipei",
+    "New Taipei",
+    "Kaohsiung",
+    "Taichung",
+    "Tainan",
 ]
 
 HEADERS = {
@@ -317,6 +330,86 @@ def official_country(channel: dict[str, Any]) -> str:
     return (branding_country or snippet_country or "").upper()
 
 
+def text_has_taiwan_signal(value: str) -> bool:
+    normalized = value.casefold()
+    return any(pattern.casefold() in normalized for pattern in TAIWAN_TEXT_PATTERNS)
+
+
+def fetch_about_page_taiwan_reason(channel: dict[str, Any]) -> str:
+    """Check YouTube's public About page for Taiwan signals.
+
+    Data API country is the first choice, but YouTube's web About panel can show
+    a country even when Data API metadata is blank. This quota-free check is
+    intentionally limited by ABOUT_PAGE_CHECK_LIMIT.
+    """
+    cid = channel.get("id", "")
+    snippet = channel.get("snippet", {})
+    custom_url = snippet.get("customUrl", "")
+    urls = []
+    if custom_url:
+        handle = custom_url if custom_url.startswith("@") else f"@{custom_url}"
+        urls.append(f"https://www.youtube.com/{handle}/about")
+    if cid:
+        urls.append(f"https://www.youtube.com/channel/{cid}/about")
+
+    for url in urls:
+        try:
+            page = http_get_text(url, timeout=20)
+        except Exception:
+            continue
+
+        compact = page.replace("\\u0026", "&")
+        country_match = re.search(
+            r'"country"\s*:\s*\{[^}]*"simpleText"\s*:\s*"([^"]+)"',
+            compact,
+            flags=re.I,
+        )
+        if country_match and text_has_taiwan_signal(country_match.group(1)):
+            return "youtube_about_country"
+
+        meta_match = re.search(
+            r'<meta\s+name="description"\s+content="([^"]+)"',
+            compact,
+            flags=re.I,
+        )
+        if meta_match and text_has_taiwan_signal(html.unescape(meta_match.group(1))):
+            return "youtube_about_description"
+
+        title_match = re.search(r"<title>(.*?)</title>", compact, flags=re.I | re.S)
+        if title_match and text_has_taiwan_signal(strip_tags(title_match.group(1))):
+            return "youtube_about_title"
+
+    return ""
+
+
+def taiwan_match_reason(
+    channel: dict[str, Any],
+    seed: dict[str, Any] | None = None,
+    allow_about_page: bool = False,
+) -> str:
+    country = official_country(channel)
+    if country == "TW":
+        return "official_country_tw"
+
+    snippet = channel.get("snippet", {})
+    title = snippet.get("title", "")
+    description = snippet.get("description", "")
+    custom_url = snippet.get("customUrl", "")
+    seed_title = (seed or {}).get("title", "")
+
+    if text_has_taiwan_signal(f"{title} {seed_title}"):
+        return "title_taiwan_signal"
+    if text_has_taiwan_signal(description):
+        return "description_taiwan_signal"
+    if text_has_taiwan_signal(custom_url):
+        return "handle_taiwan_signal"
+
+    if allow_about_page:
+        return fetch_about_page_taiwan_reason(channel)
+
+    return ""
+
+
 def resolve_youtubers_candidates(
     candidates: list[dict[str, Any]], cache: dict[str, dict[str, Any]]
 ) -> list[dict[str, Any]]:
@@ -417,8 +510,6 @@ def build_channel_seed_list() -> list[dict[str, Any]]:
     for row in resolved_candidates:
         cid = row.get("channel_id")
         if not cid:
-            continue
-        if VERIFY_OFFICIAL_TW and row.get("officialCountry") != "TW":
             continue
         seeds.append(
             {
@@ -555,6 +646,7 @@ def make_output_channel(
     history: dict[str, Any],
     previous_ranks: dict[str, int],
     now_ts: int,
+    match_reason: str,
 ) -> dict[str, Any]:
     cid = youtube_channel["id"]
     snippet = youtube_channel.get("snippet", {})
@@ -590,6 +682,7 @@ def make_output_channel(
         "latestVideos": [],
         "lastUpdate": now_ts,
         "officialCountry": official_country(youtube_channel),
+        "taiwanMatchReason": match_reason,
         "_uploadsPlaylist": uploads_playlist,
     }
 
@@ -597,7 +690,7 @@ def make_output_channel(
 def main() -> None:
     print("=== Taiwan YouTuber ranking update ===")
     print(f"UTC time: {datetime.now(timezone.utc).isoformat()}")
-    print(f"Official TW filter: {VERIFY_OFFICIAL_TW}")
+    print(f"Taiwan channel filter: {VERIFY_OFFICIAL_TW}")
 
     seeds = build_channel_seed_list()
     if not seeds:
@@ -612,12 +705,31 @@ def main() -> None:
     now_ts = int(time.time())
 
     output_channels = []
+    about_checks_used = 0
     for youtube_channel in youtube_channels:
-        if VERIFY_OFFICIAL_TW and official_country(youtube_channel) != "TW":
-            continue
         seed = seeds_by_id.get(youtube_channel["id"], {})
+        allow_about_page = about_checks_used < ABOUT_PAGE_CHECK_LIMIT
+        match_reason = taiwan_match_reason(
+            youtube_channel,
+            seed,
+            allow_about_page=allow_about_page,
+        )
+        if allow_about_page and match_reason.startswith("youtube_about_"):
+            about_checks_used += 1
+        elif allow_about_page and not match_reason:
+            about_checks_used += 1
+
+        if VERIFY_OFFICIAL_TW and not match_reason:
+            continue
         output_channels.append(
-            make_output_channel(seed, youtube_channel, history, previous_ranks, now_ts)
+            make_output_channel(
+                seed,
+                youtube_channel,
+                history,
+                previous_ranks,
+                now_ts,
+                match_reason,
+            )
         )
 
     if not output_channels:
@@ -657,7 +769,8 @@ def main() -> None:
         "lastUpdate": now_ts,
         "channelCount": len(top_channels),
         "searchIndexCount": len(output_channels),
-        "officialTwFilter": VERIFY_OFFICIAL_TW,
+        "taiwanFilter": VERIFY_OFFICIAL_TW,
+        "aboutPageChecksUsed": about_checks_used,
         "channels": top_channels,
         "searchIndex": output_channels,
     }
@@ -670,6 +783,7 @@ def main() -> None:
                     "id": channel["id"],
                     "title": channel["title"],
                     "officialCountry": channel.get("officialCountry", ""),
+                    "taiwanMatchReason": channel.get("taiwanMatchReason", ""),
                 }
                 for channel in output_channels
             ]
@@ -679,7 +793,7 @@ def main() -> None:
     with_country = sum(1 for channel in output_channels if channel.get("officialCountry"))
     print(
         f"Done: top={len(top_channels)}, searchIndex={len(output_channels)}, "
-        f"withOfficialCountry={with_country}"
+        f"withOfficialCountry={with_country}, aboutChecks={about_checks_used}"
     )
 
 
