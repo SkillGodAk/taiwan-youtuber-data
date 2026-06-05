@@ -1,551 +1,687 @@
 #!/usr/bin/env python3
-"""
-台灣創作者Top100 - YouTube 數據抓取腳本
-由 GitHub Actions 定期自動執行
+"""Update Taiwan YouTuber ranking data.
 
-使用 Noxinfluencer API 取得排名 + avgViews
-使用 YouTube Data API v3 取得精確的訂閱數、影片數等
+The app needs two different jobs:
+
+1. Refresh known channel statistics cheaply every 10 minutes.
+2. Grow the searchable Taiwan channel pool over time without burning quota.
+
+External ranking sites are used only as candidate sources. Final subscriber
+counts, ordering, and optional country checks always come from YouTube Data API.
 """
 
-import os
+from __future__ import annotations
+
+import html
 import json
+import os
+import re
 import time
-import urllib.request
+import urllib.error
 import urllib.parse
-from datetime import datetime, timezone, timedelta
+import urllib.request
+from datetime import datetime, timedelta, timezone
+from difflib import SequenceMatcher
+from typing import Any
 
-API_KEY = os.environ.get('YOUTUBE_API_KEY', '')
-BASE_URL = 'https://www.googleapis.com/youtube/v3'
-LATEST_VIDEO_CHANNEL_LIMIT = int(os.environ.get('LATEST_VIDEO_CHANNEL_LIMIT', '20'))
-LATEST_VIDEO_COUNT = int(os.environ.get('LATEST_VIDEO_COUNT', '3'))
-TOP_CHANNEL_LIMIT = int(os.environ.get('TOP_CHANNEL_LIMIT', '100'))
-RANKING_POOL_SIZE = int(os.environ.get('RANKING_POOL_SIZE', '500'))
-DISCOVERY_MODE = os.environ.get('DISCOVERY_MODE', '').lower() in ('1', 'true', 'yes')
 
-NOXINFLUENCER_URL = 'https://www.noxinfluencer.com/ws/rank/youtube/kol'
-CHANNELS_FILE = 'data/channels.json'
+API_KEY = os.environ.get("YOUTUBE_API_KEY", "")
+BASE_URL = "https://www.googleapis.com/youtube/v3"
+
+TOP_CHANNEL_LIMIT = int(os.environ.get("TOP_CHANNEL_LIMIT", "100"))
+RANKING_POOL_SIZE = int(os.environ.get("RANKING_POOL_SIZE", "500"))
+LATEST_VIDEO_CHANNEL_LIMIT = int(os.environ.get("LATEST_VIDEO_CHANNEL_LIMIT", "20"))
+LATEST_VIDEO_COUNT = int(os.environ.get("LATEST_VIDEO_COUNT", "3"))
+
+DISCOVERY_MODE = os.environ.get("DISCOVERY_MODE", "").lower() in ("1", "true", "yes")
+CANDIDATE_LIMIT = int(os.environ.get("CANDIDATE_LIMIT", "1000"))
+CANDIDATE_RESOLVE_LIMIT = int(os.environ.get("CANDIDATE_RESOLVE_LIMIT", "25"))
+VERIFY_OFFICIAL_TW = os.environ.get("VERIFY_OFFICIAL_TW", "true").lower() in (
+    "1",
+    "true",
+    "yes",
+)
+
+YOUTUBERS_ME_URL = (
+    "https://us.youtubers.me/taiwan/all/top-1000-youtube-channels-in-taiwan"
+)
+NOXINFLUENCER_URL = "https://www.noxinfluencer.com/ws/rank/youtube/kol"
+
+CHANNELS_FILE = "data/channels.json"
+CANDIDATES_FILE = "data/candidate_channels.json"
+HISTORY_FILE = "data/history.json"
+PREVIOUS_RANKS_FILE = "data/previous_ranks.json"
+
 DISCOVERY_KEYWORDS = [
-    '台灣 YouTuber',
-    '台灣 vlog',
-    '台灣 美食',
-    '台灣 遊戲',
-    '台灣 旅遊',
-    '台灣 開箱',
-    '台灣 音樂',
-    '台灣 寵物',
-    '台灣 科技',
-    '台灣 搞笑',
-    'Taiwan YouTuber',
-    'Taiwan vlog',
+    "YouTuber",
+    "vlog",
+    "美食",
+    "遊戲",
+    "新聞",
+    "旅遊",
+    "開箱",
+    "音樂",
+    "生活",
+    "短影音",
 ]
 
 HEADERS = {
-    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 '
-                  '(KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-    'Accept': 'application/json',
+    "User-Agent": (
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+        "(KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+    ),
+    "Accept": "text/html,application/xhtml+xml,application/json",
+    "Accept-Language": "zh-TW,zh;q=0.9,en;q=0.8",
 }
 
 
-def fetch_noxinfluencer_page(page_num, page_size=100):
-    """從 Noxinfluencer 取得單頁排名資料。"""
-    params = urllib.parse.urlencode({
-        'country': 'TW',
-        'rankType': 'followers',
-        'interval': 'weekly',
-        'pageNum': page_num,
-        'pageSize': page_size,
-    })
-    req = urllib.request.Request(f"{NOXINFLUENCER_URL}?{params}", headers=HEADERS)
+def http_get_text(url: str, timeout: int = 30) -> str:
+    req = urllib.request.Request(url, headers=HEADERS)
+    with urllib.request.urlopen(req, timeout=timeout) as resp:
+        raw = resp.read()
+        charset = "utf-8"
+        content_type = resp.headers.get("Content-Type", "")
+        match = re.search(r"charset=([A-Za-z0-9_-]+)", content_type)
+        if match:
+            charset = match.group(1)
+        return raw.decode(charset, errors="replace")
+
+
+def strip_tags(value: str) -> str:
+    value = re.sub(r"<script\b[^>]*>.*?</script>", " ", value, flags=re.I | re.S)
+    value = re.sub(r"<style\b[^>]*>.*?</style>", " ", value, flags=re.I | re.S)
+    value = re.sub(r"<[^>]+>", " ", value)
+    return re.sub(r"\s+", " ", html.unescape(value)).strip()
+
+
+def parse_int(value: Any) -> int:
+    if value is None:
+        return 0
+    text = str(value).replace(",", "").strip()
+    match = re.search(r"-?\d+", text)
+    return int(match.group(0)) if match else 0
+
+
+def normalize_name(value: str) -> str:
+    return re.sub(r"[\W_]+", "", value.casefold())
+
+
+def title_similarity(left: str, right: str) -> float:
+    a = normalize_name(left)
+    b = normalize_name(right)
+    if not a or not b:
+        return 0.0
+    if a == b:
+        return 1.0
+    if a in b or b in a:
+        return 0.86
+    return SequenceMatcher(None, a, b).ratio()
+
+
+def youtube_api_get(endpoint: str, params: dict[str, Any]) -> dict[str, Any] | None:
+    if not API_KEY:
+        print("YOUTUBE_API_KEY is missing")
+        return None
+
+    query = dict(params)
+    query["key"] = API_KEY
+    url = f"{BASE_URL}/{endpoint}?{urllib.parse.urlencode(query)}"
     try:
-        with urllib.request.urlopen(req, timeout=30) as resp:
-            data = json.loads(resp.read().decode())
-    except Exception as e:
-        print(f"Noxinfluencer API 錯誤: {e}")
+        with urllib.request.urlopen(url, timeout=30) as resp:
+            return json.loads(resp.read().decode("utf-8"))
+    except urllib.error.HTTPError as exc:
+        body = exc.read().decode("utf-8", errors="replace")[:300]
+        print(f"YouTube API HTTP {exc.code} ({endpoint}): {body}")
+    except Exception as exc:
+        print(f"YouTube API error ({endpoint}): {exc}")
+    return None
+
+
+def load_json_file(path: str, default: Any) -> Any:
+    if not os.path.exists(path):
+        return default
+    try:
+        with open(path, "r", encoding="utf-8") as file:
+            return json.load(file)
+    except (OSError, json.JSONDecodeError):
+        return default
+
+
+def write_json_file(path: str, data: Any) -> None:
+    os.makedirs(os.path.dirname(path) or ".", exist_ok=True)
+    with open(path, "w", encoding="utf-8") as file:
+        json.dump(data, file, ensure_ascii=False, indent=2)
+
+
+def fetch_youtubers_me_candidates(limit: int = CANDIDATE_LIMIT) -> list[dict[str, Any]]:
+    print(f"Fetching youtubers.me Taiwan top {limit} candidates")
+    try:
+        page = http_get_text(YOUTUBERS_ME_URL)
+    except Exception as exc:
+        print(f"youtubers.me fetch failed: {exc}")
         return []
 
-    # 解析回應結構
-    rows = []
-    if isinstance(data, dict):
-        rows = data.get('retDataList', data.get('data', data.get('rows', data.get('list', []))))
-    elif isinstance(data, list):
-        rows = data
+    rows: list[dict[str, Any]] = []
+    for row_html in re.findall(r"<tr\b[^>]*>(.*?)</tr>", page, flags=re.I | re.S):
+        cells = re.findall(r"<t[dh]\b[^>]*>(.*?)</t[dh]>", row_html, flags=re.I | re.S)
+        if len(cells) < 7:
+            continue
 
-    if not rows:
-        print(f"Noxinfluencer 回應格式異常: keys={list(data.keys()) if isinstance(data, dict) else type(data)}")
-        # 嘗試印出部分內容幫助 debug
-        sample = json.dumps(data, ensure_ascii=False)[:500]
-        print(f"回應內容前 500 字: {sample}")
-        return []
+        rank_text = strip_tags(cells[0])
+        if not rank_text.isdigit():
+            continue
 
+        link_match = re.search(r'href=["\']([^"\']+)["\']', cells[1], flags=re.I)
+        name = strip_tags(cells[1])
+        if not name:
+            continue
+
+        rows.append(
+            {
+                "name": name,
+                "source": "youtubers.me",
+                "sourceRank": int(rank_text),
+                "sourceSubscribersText": strip_tags(cells[2]),
+                "sourceViewsText": strip_tags(cells[3]),
+                "sourceVideosText": strip_tags(cells[4]),
+                "category": strip_tags(cells[5]),
+                "started": strip_tags(cells[6]),
+                "href": link_match.group(1) if link_match else "",
+            }
+        )
+        if len(rows) >= limit:
+            break
+
+    print(f"Loaded {len(rows)} youtubers.me candidates")
     return rows
 
 
-def fetch_noxinfluencer_channels(limit=RANKING_POOL_SIZE):
-    """從 Noxinfluencer 取得台灣 YouTube 排名頻道。"""
-    print(f"正在從 Noxinfluencer 取得前 {limit} 名...")
-    rows = []
-    page_size = 100
-    max_pages = max(1, (limit + page_size - 1) // page_size)
-
-    for page_num in range(1, max_pages + 1):
-        page_rows = fetch_noxinfluencer_page(page_num, page_size)
-        if not page_rows:
-            if page_num == 1:
-                return []
-            print(f"第 {page_num} 頁沒有資料，停止延伸索引抓取")
-            break
-        rows.extend(page_rows)
-        if len(rows) >= limit:
-            break
-        time.sleep(0.3)
-
-    channels = []
-    seen_ids = set()
-    for i, row in enumerate(rows[:limit]):
-        # Noxinfluencer 欄位名稱可能不同，嘗試常見的 key
-        channel_id = (
-            row.get('channelId') or row.get('id') or
-            row.get('youtube_id') or row.get('channel_id') or ''
-        )
-        title = row.get('title') or row.get('name') or row.get('channelName') or ''
-        avatar = (
-            row.get('avatar') or row.get('thumbnail') or
-            row.get('avatarUrl') or row.get('img') or ''
-        )
-        avg_views = row.get('avgViews') or row.get('avg_views') or row.get('avgView') or 0
-
-        # 確保 avg_views 是整數
-        try:
-            avg_views = int(avg_views)
-        except (ValueError, TypeError):
-            avg_views = 0
-
-        if channel_id and channel_id not in seen_ids:
-            seen_ids.add(channel_id)
-            channels.append({
-                'nox_rank': len(channels) + 1,
-                'channel_id': channel_id,
-                'title': title,
-                'avatar': avatar,
-                'avg_views': avg_views,
-            })
-
-    print(f"從 Noxinfluencer 取得 {len(channels)} 個頻道")
-    if channels:
-        sample = channels[0]
-        print(f"範例頻道: id={sample['channel_id']}, title={sample['title']}, avgViews={sample['avg_views']}")
-    return channels
-
-
-def youtube_api_get(endpoint, params):
-    """呼叫 YouTube Data API v3"""
-    params['key'] = API_KEY
-    url = f"{BASE_URL}/{endpoint}?{urllib.parse.urlencode(params)}"
-    try:
-        with urllib.request.urlopen(url, timeout=30) as resp:
-            return json.loads(resp.read().decode())
-    except Exception as e:
-        print(f"YouTube API 錯誤 ({endpoint}): {e}")
-        return None
-
-
-def load_known_channels():
-    """讀取既有搜尋索引，正常排程靠這份清單校正排名。"""
-    if not os.path.exists(CHANNELS_FILE):
-        return []
-
-    try:
-        with open(CHANNELS_FILE, 'r', encoding='utf-8') as f:
-            data = json.load(f)
-    except (json.JSONDecodeError, OSError):
-        return []
-
-    channels = []
-    for row in data.get('channels', []):
-        cid = row.get('id') or row.get('channel_id')
-        if cid:
-            channels.append({
-                'nox_rank': row.get('rank') or len(channels) + 1,
-                'channel_id': cid,
-                'title': row.get('title', ''),
-                'avatar': row.get('avatarUrl', ''),
-                'avg_views': row.get('avgViews', 0),
-            })
-    return channels
-
-
-def discover_channels_by_youtube_search(existing_ids, limit=RANKING_POOL_SIZE):
-    """低頻 discovery 用 search.list 補候選池，不在一般 10 分鐘排程大量使用。"""
-    discovered = []
-    seen = set(existing_ids)
-
-    for keyword in DISCOVERY_KEYWORDS:
-        if len(seen) >= limit:
-            break
-
-        print(f"Discovery 搜尋：{keyword}")
-        data = youtube_api_get('search', {
-            'part': 'snippet',
-            'q': keyword,
-            'type': 'channel',
-            'regionCode': 'TW',
-            'order': 'viewCount',
-            'maxResults': 50,
-        })
-        if not data:
-            continue
-
-        for item in data.get('items', []):
-            cid = item.get('id', {}).get('channelId', '')
-            if not cid or cid in seen:
-                continue
-            snippet = item.get('snippet', {})
-            seen.add(cid)
-            discovered.append({
-                'nox_rank': len(seen),
-                'channel_id': cid,
-                'title': snippet.get('title', ''),
-                'avatar': snippet.get('thumbnails', {}).get('high', {}).get('url', ''),
-                'avg_views': 0,
-            })
-            if len(seen) >= limit:
-                break
-
-        time.sleep(0.3)
-
-    print(f"Discovery 新增 {len(discovered)} 個候選頻道")
-    return discovered
-
-
-def batch_channels_list(channel_ids):
-    """批次查詢頻道資料（YouTube API 每批最多 50 個）"""
-    results = []
-    for i in range(0, len(channel_ids), 50):
-        batch = channel_ids[i:i + 50]
-        params = {
-            'part': 'snippet,statistics,brandingSettings,contentDetails',
-            'id': ','.join(batch),
+def fetch_noxinfluencer_channels(limit: int = RANKING_POOL_SIZE) -> list[dict[str, Any]]:
+    params = urllib.parse.urlencode(
+        {
+            "country": "TW",
+            "rankType": "followers",
+            "interval": "weekly",
+            "pageNum": 1,
+            "pageSize": min(limit, 100),
         }
-        data = youtube_api_get('channels', params)
-        if data and 'items' in data:
-            results.extend(data['items'])
-        time.sleep(0.15)  # 避免 rate limit
+    )
+    try:
+        text = http_get_text(f"{NOXINFLUENCER_URL}?{params}")
+        data = json.loads(text)
+    except Exception as exc:
+        print(f"Noxinfluencer fetch failed: {exc}")
+        return []
+
+    if isinstance(data, dict):
+        rows = data.get("retDataList") or data.get("data") or data.get("rows") or []
+    else:
+        rows = data if isinstance(data, list) else []
+
+    channels = []
+    for row in rows[:limit]:
+        cid = row.get("channelId") or row.get("id") or row.get("channel_id")
+        title = row.get("title") or row.get("name") or row.get("channelName") or ""
+        if cid:
+            channels.append(
+                {
+                    "channel_id": cid,
+                    "title": title,
+                    "source": "noxinfluencer",
+                    "avg_views": parse_int(
+                        row.get("avgViews") or row.get("avg_views") or row.get("avgView")
+                    ),
+                }
+            )
+    print(f"Loaded {len(channels)} Noxinfluencer candidates")
+    return channels
+
+
+def load_known_channels() -> list[dict[str, Any]]:
+    data = load_json_file(CHANNELS_FILE, {"channels": []})
+    channels = []
+    for row in data.get("channels", []):
+        cid = row.get("id") or row.get("channel_id")
+        if cid:
+            channels.append(
+                {
+                    "channel_id": cid,
+                    "title": row.get("title", ""),
+                    "source": "known",
+                    "avg_views": row.get("avgViews", 0),
+                }
+            )
+    return channels
+
+
+def load_candidate_cache() -> dict[str, dict[str, Any]]:
+    data = load_json_file(CANDIDATES_FILE, {"candidates": []})
+    cache: dict[str, dict[str, Any]] = {}
+    for row in data.get("candidates", []):
+        name = row.get("name", "")
+        if name:
+            cache[normalize_name(name)] = row
+    return cache
+
+
+def save_candidate_cache(rows: list[dict[str, Any]]) -> None:
+    rows = sorted(rows, key=lambda c: (c.get("sourceRank") or 999999, c.get("name", "")))
+    write_json_file(CANDIDATES_FILE, {"updatedAt": int(time.time()), "candidates": rows})
+
+
+def search_channel_candidates(query: str) -> list[str]:
+    data = youtube_api_get(
+        "search",
+        {
+            "part": "snippet",
+            "q": query,
+            "type": "channel",
+            "regionCode": "TW",
+            "maxResults": 5,
+            "order": "relevance",
+        },
+    )
+    if not data:
+        return []
+    ids = []
+    for item in data.get("items", []):
+        cid = item.get("id", {}).get("channelId", "")
+        if cid and cid not in ids:
+            ids.append(cid)
+    return ids
+
+
+def batch_channels_list(channel_ids: list[str]) -> list[dict[str, Any]]:
+    results: list[dict[str, Any]] = []
+    unique_ids = list(dict.fromkeys([cid for cid in channel_ids if cid]))
+    for index in range(0, len(unique_ids), 50):
+        batch = unique_ids[index : index + 50]
+        data = youtube_api_get(
+            "channels",
+            {
+                "part": "snippet,statistics,brandingSettings,contentDetails",
+                "id": ",".join(batch),
+            },
+        )
+        if data and "items" in data:
+            results.extend(data["items"])
+        time.sleep(0.12)
     return results
 
 
-def get_recent_video_ids(uploads_playlist_id, max_results=LATEST_VIDEO_COUNT):
-    """用 uploads playlist 取得最新影片 ID。比 search.list 省很多 quota。"""
+def official_country(channel: dict[str, Any]) -> str:
+    branding_country = (
+        channel.get("brandingSettings", {}).get("channel", {}).get("country", "")
+    )
+    snippet_country = channel.get("snippet", {}).get("country", "")
+    return (branding_country or snippet_country or "").upper()
+
+
+def resolve_youtubers_candidates(
+    candidates: list[dict[str, Any]], cache: dict[str, dict[str, Any]]
+) -> list[dict[str, Any]]:
+    """Resolve a quota-limited number of candidate names to official channel IDs."""
+    merged: dict[str, dict[str, Any]] = dict(cache)
+    unresolved = []
+
+    for candidate in candidates:
+        key = normalize_name(candidate["name"])
+        current = merged.get(key, {})
+        current.update({k: v for k, v in candidate.items() if v not in ("", None)})
+        current.setdefault("name", candidate["name"])
+        merged[key] = current
+        if not current.get("channel_id") and current.get("status") != "not_found":
+            unresolved.append(current)
+
+    if not DISCOVERY_MODE:
+        print("Discovery is off; keeping cached youtubers.me resolutions only")
+        return list(merged.values())
+
+    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    to_resolve = unresolved[:CANDIDATE_RESOLVE_LIMIT]
+    print(f"Resolving {len(to_resolve)} youtubers.me candidates via YouTube search")
+
+    for candidate in to_resolve:
+        ids = search_channel_candidates(candidate["name"])
+        details = batch_channels_list(ids)
+
+        best: dict[str, Any] | None = None
+        best_score = 0.0
+        for detail in details:
+            title = detail.get("snippet", {}).get("title", "")
+            score = title_similarity(candidate["name"], title)
+            if official_country(detail) == "TW":
+                score += 0.15
+            if score > best_score:
+                best = detail
+                best_score = score
+
+        candidate["lastResolved"] = today
+        if best and best_score >= 0.62:
+            country = official_country(best)
+            candidate["channel_id"] = best["id"]
+            candidate["officialTitle"] = best.get("snippet", {}).get("title", "")
+            candidate["officialCountry"] = country
+            candidate["matchScore"] = round(best_score, 3)
+            candidate["status"] = "verified" if country == "TW" else "resolved_non_tw"
+        else:
+            candidate["status"] = "not_found"
+
+        time.sleep(0.2)
+
+    return list(merged.values())
+
+
+def discover_channels_by_youtube_search(existing_ids: set[str]) -> list[dict[str, Any]]:
+    discovered = []
+    for keyword in DISCOVERY_KEYWORDS:
+        data = youtube_api_get(
+            "search",
+            {
+                "part": "snippet",
+                "q": keyword,
+                "type": "channel",
+                "regionCode": "TW",
+                "order": "viewCount",
+                "maxResults": 50,
+            },
+        )
+        if not data:
+            continue
+        for item in data.get("items", []):
+            cid = item.get("id", {}).get("channelId", "")
+            if cid and cid not in existing_ids:
+                existing_ids.add(cid)
+                discovered.append(
+                    {
+                        "channel_id": cid,
+                        "title": item.get("snippet", {}).get("title", ""),
+                        "source": "youtube_search",
+                        "avg_views": 0,
+                    }
+                )
+        time.sleep(0.25)
+    print(f"Discovered {len(discovered)} keyword-search channels")
+    return discovered
+
+
+def build_channel_seed_list() -> list[dict[str, Any]]:
+    seeds = load_known_channels()
+    seeds.extend(fetch_noxinfluencer_channels())
+
+    youtubers_candidates = fetch_youtubers_me_candidates()
+    candidate_cache = load_candidate_cache()
+    resolved_candidates = resolve_youtubers_candidates(youtubers_candidates, candidate_cache)
+    save_candidate_cache(resolved_candidates)
+
+    for row in resolved_candidates:
+        cid = row.get("channel_id")
+        if not cid:
+            continue
+        if VERIFY_OFFICIAL_TW and row.get("officialCountry") != "TW":
+            continue
+        seeds.append(
+            {
+                "channel_id": cid,
+                "title": row.get("officialTitle") or row.get("name", ""),
+                "source": row.get("source", "youtubers.me"),
+                "sourceRank": row.get("sourceRank"),
+                "avg_views": 0,
+            }
+        )
+
+    existing_ids = {row["channel_id"] for row in seeds if row.get("channel_id")}
+    if DISCOVERY_MODE or len(seeds) < TOP_CHANNEL_LIMIT:
+        seeds.extend(discover_channels_by_youtube_search(existing_ids))
+
+    deduped = []
+    seen = set()
+    for row in seeds:
+        cid = row.get("channel_id")
+        if not cid or cid in seen:
+            continue
+        seen.add(cid)
+        deduped.append(row)
+    print(f"Seed channel IDs: {len(deduped)}")
+    return deduped
+
+
+def get_recent_video_ids(uploads_playlist_id: str) -> list[str]:
     if not uploads_playlist_id:
         return []
-
-    params = {
-        'part': 'contentDetails',
-        'playlistId': uploads_playlist_id,
-        'maxResults': max_results,
-    }
-    data = youtube_api_get('playlistItems', params)
-    if not data or 'items' not in data:
+    data = youtube_api_get(
+        "playlistItems",
+        {
+            "part": "contentDetails",
+            "playlistId": uploads_playlist_id,
+            "maxResults": LATEST_VIDEO_COUNT,
+        },
+    )
+    if not data:
         return []
-
     return [
-        item.get('contentDetails', {}).get('videoId', '')
-        for item in data['items']
-        if item.get('contentDetails', {}).get('videoId')
+        item.get("contentDetails", {}).get("videoId", "")
+        for item in data.get("items", [])
+        if item.get("contentDetails", {}).get("videoId")
     ]
 
 
-def get_video_details(video_ids):
-    """批次取得影片資訊，回傳 videoId -> video info。"""
-    details = {}
+def get_video_details(video_ids: list[str]) -> dict[str, dict[str, Any]]:
+    details: dict[str, dict[str, Any]] = {}
     unique_ids = list(dict.fromkeys([vid for vid in video_ids if vid]))
-
-    for i in range(0, len(unique_ids), 50):
-        batch = unique_ids[i:i + 50]
-        params = {
-            'part': 'statistics,snippet',
-            'id': ','.join(batch),
-        }
-        data = youtube_api_get('videos', params)
-        if not data or 'items' not in data:
+    for index in range(0, len(unique_ids), 50):
+        batch = unique_ids[index : index + 50]
+        data = youtube_api_get(
+            "videos",
+            {"part": "statistics,snippet", "id": ",".join(batch)},
+        )
+        if not data:
             continue
-
-        for item in data['items']:
-            snippet = item.get('snippet', {})
-            stats = item.get('statistics', {})
-            published_at = snippet.get('publishedAt', '')
+        for item in data.get("items", []):
+            snippet = item.get("snippet", {})
+            stats = item.get("statistics", {})
+            published_at = snippet.get("publishedAt", "")
             try:
-                dt = datetime.fromisoformat(published_at.replace('Z', '+00:00'))
-                ts = int(dt.timestamp())
+                published_ts = int(
+                    datetime.fromisoformat(published_at.replace("Z", "+00:00")).timestamp()
+                )
             except Exception:
-                ts = 0
-
-            details[item['id']] = {
-                'videoId': item['id'],
-                'title': snippet.get('title', ''),
-                'thumbnailUrl': (
-                    snippet.get('thumbnails', {}).get('maxres', {}).get('url', '') or
-                    snippet.get('thumbnails', {}).get('high', {}).get('url', '') or
-                    snippet.get('thumbnails', {}).get('medium', {}).get('url', '')
+                published_ts = 0
+            thumbs = snippet.get("thumbnails", {})
+            details[item["id"]] = {
+                "videoId": item["id"],
+                "title": snippet.get("title", ""),
+                "thumbnailUrl": (
+                    thumbs.get("maxres", {}).get("url")
+                    or thumbs.get("high", {}).get("url")
+                    or thumbs.get("medium", {}).get("url")
+                    or ""
                 ),
-                'viewCount': int(stats.get('viewCount', 0)),
-                'likeCount': int(stats.get('likeCount', 0)),
-                'publishedAt': ts,
+                "viewCount": parse_int(stats.get("viewCount")),
+                "likeCount": parse_int(stats.get("likeCount")),
+                "publishedAt": published_ts,
             }
-
-        time.sleep(0.15)
-
+        time.sleep(0.12)
     return details
 
 
-def load_history():
-    """讀取歷史數據"""
-    history_file = 'data/history.json'
-    if os.path.exists(history_file):
-        with open(history_file, 'r', encoding='utf-8') as f:
-            return json.load(f)
-    return {}
+def load_history() -> dict[str, Any]:
+    return load_json_file(HISTORY_FILE, {})
 
 
-def save_history(channels_data):
-    """儲存今日數據到歷史記錄"""
-    history_file = 'data/history.json'
-    os.makedirs('data', exist_ok=True)
-
+def save_history(channels_data: list[dict[str, Any]]) -> None:
     history = load_history()
-    today = datetime.now(timezone.utc).strftime('%Y-%m-%d')
-
-    for ch in channels_data:
-        cid = ch['id']
-        if cid not in history:
-            history[cid] = {}
+    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    for channel in channels_data:
+        cid = channel["id"]
+        history.setdefault(cid, {})
         history[cid][today] = {
-            'subscriberCount': ch['subscriberCount'],
-            'videoCount': ch['videoCount'],
-            'timestamp': int(time.time()),
+            "subscriberCount": channel["subscriberCount"],
+            "videoCount": channel["videoCount"],
+            "timestamp": int(time.time()),
         }
-        # 只保留最近 35 天
-        dates = sorted(history[cid].keys())
-        if len(dates) > 35:
-            for old_date in dates[:-35]:
-                del history[cid][old_date]
-
-    with open(history_file, 'w', encoding='utf-8') as f:
-        json.dump(history, f, ensure_ascii=False)
+        dates = sorted(history[cid])
+        for old_date in dates[:-35]:
+            del history[cid][old_date]
+    write_json_file(HISTORY_FILE, history)
 
 
-def load_previous_ranks():
-    """讀取上一次的排名，用於計算排名變化"""
-    prev_file = 'data/previous_ranks.json'
-    if os.path.exists(prev_file):
-        with open(prev_file, 'r', encoding='utf-8') as f:
-            return json.load(f)
-    return {}
+def load_previous_ranks() -> dict[str, int]:
+    return load_json_file(PREVIOUS_RANKS_FILE, {})
 
 
-def save_current_ranks(channels_data):
-    """儲存本次排名，供下次比較"""
-    prev_file = 'data/previous_ranks.json'
-    os.makedirs('data', exist_ok=True)
-    ranks = {ch['id']: ch['rank'] for ch in channels_data}
-    with open(prev_file, 'w', encoding='utf-8') as f:
-        json.dump(ranks, f, ensure_ascii=False)
+def save_current_ranks(channels_data: list[dict[str, Any]]) -> None:
+    write_json_file(PREVIOUS_RANKS_FILE, {ch["id"]: ch["rank"] for ch in channels_data})
 
 
-def compute_comparison(channel_id, history):
-    """計算昨日/7日/30日比較"""
+def compute_comparison(channel_id: str, history: dict[str, Any]) -> dict[str, int]:
     result = {}
     now = datetime.now(timezone.utc)
-
-    yesterday = (now - timedelta(days=1)).strftime('%Y-%m-%d')
-    if yesterday in history:
-        result['yesterdaySubscribers'] = history[yesterday].get('subscriberCount')
-
-    week_ago = (now - timedelta(days=7)).strftime('%Y-%m-%d')
-    if week_ago in history:
-        result['weekAgoSubscribers'] = history[week_ago].get('subscriberCount')
-
-    month_ago = (now - timedelta(days=30)).strftime('%Y-%m-%d')
-    if month_ago in history:
-        result['monthAgoSubscribers'] = history[month_ago].get('subscriberCount')
-
+    channel_history = history.get(channel_id, {})
+    for key, days in (
+        ("yesterdaySubscribers", 1),
+        ("weekAgoSubscribers", 7),
+        ("monthAgoSubscribers", 30),
+    ):
+        date_key = (now - timedelta(days=days)).strftime("%Y-%m-%d")
+        if date_key in channel_history:
+            result[key] = channel_history[date_key].get("subscriberCount")
     return result
 
 
-def main():
-    print("=== 台灣 YouTuber 排行榜數據更新 ===")
-    print(f"時間：{datetime.now(timezone.utc).isoformat()}")
+def make_output_channel(
+    seed: dict[str, Any],
+    youtube_channel: dict[str, Any],
+    history: dict[str, Any],
+    previous_ranks: dict[str, int],
+    now_ts: int,
+) -> dict[str, Any]:
+    cid = youtube_channel["id"]
+    snippet = youtube_channel.get("snippet", {})
+    stats = youtube_channel.get("statistics", {})
+    branding = youtube_channel.get("brandingSettings", {})
+    content = youtube_channel.get("contentDetails", {})
 
-    # 1. 取得候選頻道池。Noxinfluencer 可用時優先使用；失敗時用既有索引。
-    nox_channels = fetch_noxinfluencer_channels()
-    if not nox_channels:
-        print("無法從 Noxinfluencer 取得數據，改用既有頻道索引")
-        nox_channels = load_known_channels()
+    thumbnails = snippet.get("thumbnails", {})
+    avatar_url = (
+        thumbnails.get("high", {}).get("url")
+        or thumbnails.get("medium", {}).get("url")
+        or thumbnails.get("default", {}).get("url")
+        or ""
+    )
+    avatar_url = avatar_url.replace("/s88-", "/s240-").replace("=s88-", "=s240-")
 
-    if DISCOVERY_MODE or len(nox_channels) < TOP_CHANNEL_LIMIT:
-        existing_ids = [channel['channel_id'] for channel in nox_channels]
-        nox_channels.extend(
-            discover_channels_by_youtube_search(existing_ids, RANKING_POOL_SIZE)
-        )
+    comparison = compute_comparison(cid, history)
+    uploads_playlist = content.get("relatedPlaylists", {}).get("uploads", "")
 
-    # 去重並限制候選池大小
-    deduped_channels = []
-    seen_ids = set()
-    for channel in nox_channels:
-        cid = channel.get('channel_id')
-        if not cid or cid in seen_ids:
-            continue
-        seen_ids.add(cid)
-        deduped_channels.append(channel)
-        if len(deduped_channels) >= RANKING_POOL_SIZE:
-            break
-    nox_channels = deduped_channels
+    return {
+        "id": cid,
+        "title": snippet.get("title", "") or seed.get("title", ""),
+        "avatarUrl": avatar_url,
+        "bannerUrl": branding.get("image", {}).get("bannerExternalUrl", ""),
+        "subscriberCount": parse_int(stats.get("subscriberCount")),
+        "videoCount": parse_int(stats.get("videoCount")),
+        "avgViews": parse_int(seed.get("avg_views")),
+        "rank": 0,
+        "previousRank": previous_ranks.get(cid, 0),
+        "yesterdaySubscribers": comparison.get("yesterdaySubscribers"),
+        "weekAgoSubscribers": comparison.get("weekAgoSubscribers"),
+        "monthAgoSubscribers": comparison.get("monthAgoSubscribers"),
+        "latestVideos": [],
+        "lastUpdate": now_ts,
+        "officialCountry": official_country(youtube_channel),
+        "_uploadsPlaylist": uploads_playlist,
+    }
 
-    if not nox_channels:
-        print("沒有候選頻道，終止")
+
+def main() -> None:
+    print("=== Taiwan YouTuber ranking update ===")
+    print(f"UTC time: {datetime.now(timezone.utc).isoformat()}")
+    print(f"Official TW filter: {VERIFY_OFFICIAL_TW}")
+
+    seeds = build_channel_seed_list()
+    if not seeds:
+        print("No channel seeds available")
         return
 
-    # 建立 channel_id -> nox_data 的對照表
-    nox_map = {c['channel_id']: c for c in nox_channels}
-    channel_ids = [c['channel_id'] for c in nox_channels]
-
-    # 2. 用 YouTube API 批次查詢頻道詳細資料
-    print(f"正在用 YouTube API 查詢 {len(channel_ids)} 個頻道...")
-    yt_channels = batch_channels_list(channel_ids)
-    print(f"YouTube API 回傳 {len(yt_channels)} 個頻道")
-
-    # 建立 YouTube 數據對照表
-    yt_map = {}
-    for ch in yt_channels:
-        cid = ch['id']
-        yt_map[cid] = ch
-
-    # 3. 讀取歷史數據和上次排名
+    seeds_by_id = {row["channel_id"]: row for row in seeds}
+    print(f"Refreshing {len(seeds_by_id)} official channel records")
+    youtube_channels = batch_channels_list(list(seeds_by_id))
     history = load_history()
     previous_ranks = load_previous_ranks()
-
-    # 4. 組裝最終輸出，稍後再依 YouTube 訂閱數排序
-    output_channels = []
     now_ts = int(time.time())
 
-    for nox_ch in nox_channels:
-        cid = nox_ch['channel_id']
-        yt_ch = yt_map.get(cid)
-
-        if not yt_ch:
-            # YouTube API 找不到這個頻道，跳過
-            print(f"  跳過 {cid}（YouTube API 未回傳）")
+    output_channels = []
+    for youtube_channel in youtube_channels:
+        if VERIFY_OFFICIAL_TW and official_country(youtube_channel) != "TW":
             continue
-
-        snippet = yt_ch.get('snippet', {})
-        stats = yt_ch.get('statistics', {})
-        branding = yt_ch.get('brandingSettings', {})
-        content = yt_ch.get('contentDetails', {})
-
-        # 頭像：取較大尺寸
-        avatar_url = snippet.get('thumbnails', {}).get('default', {}).get('url', '')
-        avatar_url = avatar_url.replace('/s88-', '/s240-').replace('=s88-', '=s240-')
-        if not avatar_url and nox_ch.get('avatar'):
-            avatar_url = nox_ch['avatar']
-
-        banner_url = branding.get('image', {}).get('bannerExternalUrl', '')
-
-        sub_count = int(stats.get('subscriberCount', 0))
-        vid_count = int(stats.get('videoCount', 0))
-        avg_views = nox_ch.get('avg_views', 0)
-
-        # 歷史比較
-        ch_history = history.get(cid, {})
-        comparison = compute_comparison(cid, ch_history)
-
-        uploads_playlist = (
-            content.get('relatedPlaylists', {}).get('uploads', '')
-            if isinstance(content, dict) else ''
+        seed = seeds_by_id.get(youtube_channel["id"], {})
+        output_channels.append(
+            make_output_channel(seed, youtube_channel, history, previous_ranks, now_ts)
         )
 
-        title = snippet.get('title', '') or nox_ch.get('title', '')
-
-        output_channels.append({
-            'id': cid,
-            'title': title,
-            'avatarUrl': avatar_url,
-            'bannerUrl': banner_url,
-            'subscriberCount': sub_count,
-            'videoCount': vid_count,
-            'avgViews': avg_views,
-            'rank': 0,
-            'previousRank': previous_ranks.get(cid, 0),
-            'yesterdaySubscribers': comparison.get('yesterdaySubscribers'),
-            'weekAgoSubscribers': comparison.get('weekAgoSubscribers'),
-            'monthAgoSubscribers': comparison.get('monthAgoSubscribers'),
-            'latestVideos': [],
-            'lastUpdate': now_ts,
-            '_uploadsPlaylist': uploads_playlist,
-        })
-
     if not output_channels:
-        print("沒有成功組裝任何頻道數據，終止")
+        print("No official channel records available")
         return
 
-    # 依公開 YouTube API 訂閱數重新排序，首頁排名才會跟今日訂閱數一致。
-    output_channels.sort(key=lambda c: c.get('subscriberCount', 0), reverse=True)
+    output_channels.sort(key=lambda row: row.get("subscriberCount", 0), reverse=True)
+    output_channels = output_channels[:RANKING_POOL_SIZE]
     for rank, channel in enumerate(output_channels, 1):
-        channel['rank'] = rank
-        if not channel['previousRank']:
-            channel['previousRank'] = rank
+        channel["rank"] = rank
+        if not channel["previousRank"]:
+            channel["previousRank"] = rank
 
-    # 最新影片只抓前 N 名，兼顧「有展示」與每日 YouTube API 配額。
-    print(f"抓取前 {LATEST_VIDEO_CHANNEL_LIMIT} 名最新影片，每頻道 {LATEST_VIDEO_COUNT} 支...")
+    print(f"Fetching latest videos for top {LATEST_VIDEO_CHANNEL_LIMIT}")
     all_video_ids = []
     for channel in output_channels[:LATEST_VIDEO_CHANNEL_LIMIT]:
-        video_ids = get_recent_video_ids(channel.get('_uploadsPlaylist', ''))
-        channel['_latestVideoIds'] = video_ids
-        all_video_ids.extend(video_ids)
-        time.sleep(0.15)
+        ids = get_recent_video_ids(channel.get("_uploadsPlaylist", ""))
+        channel["_latestVideoIds"] = ids
+        all_video_ids.extend(ids)
+        time.sleep(0.12)
 
     video_details = get_video_details(all_video_ids)
     for channel in output_channels:
-        ordered_ids = channel.pop('_latestVideoIds', [])
-        channel['latestVideos'] = [
+        ordered_ids = channel.pop("_latestVideoIds", [])
+        channel["latestVideos"] = [
             video_details[video_id]
             for video_id in ordered_ids
             if video_id in video_details
         ]
-        channel.pop('_uploadsPlaylist', None)
+        channel.pop("_uploadsPlaylist", None)
 
     top_channels = output_channels[:TOP_CHANNEL_LIMIT]
-
-    # 5. 儲存歷史和排名
     save_history(output_channels)
     save_current_ranks(output_channels)
 
-    # 6. 產出 JSON
     output = {
-        'lastUpdate': now_ts,
-        'channelCount': len(top_channels),
-        'searchIndexCount': len(output_channels),
-        'channels': top_channels,
-        'searchIndex': output_channels,
+        "lastUpdate": now_ts,
+        "channelCount": len(top_channels),
+        "searchIndexCount": len(output_channels),
+        "officialTwFilter": VERIFY_OFFICIAL_TW,
+        "channels": top_channels,
+        "searchIndex": output_channels,
     }
+    write_json_file("data.json", output)
+    write_json_file(
+        CHANNELS_FILE,
+        {
+            "channels": [
+                {
+                    "id": channel["id"],
+                    "title": channel["title"],
+                    "officialCountry": channel.get("officialCountry", ""),
+                }
+                for channel in output_channels
+            ]
+        },
+    )
 
-    os.makedirs('data', exist_ok=True)
-
-    # 寫入 data.json（GitHub Pages 提供）
-    with open('data.json', 'w', encoding='utf-8') as f:
-        json.dump(output, f, ensure_ascii=False, indent=2)
-
-    # 備份頻道列表
-    with open('data/channels.json', 'w', encoding='utf-8') as f:
-        json.dump(
-            {'channels': [{'id': c['id'], 'title': c['title']} for c in output_channels]},
-            f, ensure_ascii=False, indent=2,
-        )
-
-    print(f"\n完成！首頁 {len(top_channels)} 個，搜尋索引 {len(output_channels)} 個，已輸出 data.json")
-
-    # 統計 avgViews 覆蓋率
-    with_avg = sum(1 for c in output_channels if c.get('avgViews', 0) > 0)
-    print(f"avgViews 覆蓋率: {with_avg}/{len(output_channels)}")
+    with_country = sum(1 for channel in output_channels if channel.get("officialCountry"))
+    print(
+        f"Done: top={len(top_channels)}, searchIndex={len(output_channels)}, "
+        f"withOfficialCountry={with_country}"
+    )
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

@@ -3,6 +3,7 @@ name: Update Data
 on:
   schedule:
     - cron: '*/10 * * * *'
+    - cron: '17 18 * * *'
   workflow_dispatch:
     inputs:
       discovery_mode:
@@ -34,9 +35,12 @@ jobs:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
           TOP_CHANNEL_LIMIT: 100
           RANKING_POOL_SIZE: 500
+          CANDIDATE_LIMIT: 1000
+          CANDIDATE_RESOLVE_LIMIT: 25
+          VERIFY_OFFICIAL_TW: true
           LATEST_VIDEO_CHANNEL_LIMIT: 20
           LATEST_VIDEO_COUNT: 3
-          DISCOVERY_MODE: ${{ github.event.inputs.discovery_mode || 'false' }}
+          DISCOVERY_MODE: ${{ github.event.inputs.discovery_mode || (github.event.schedule == '17 18 * * *' && 'true' || 'false') }}
         run: python scripts/fetch_data.py
       - name: Push
         run: |
