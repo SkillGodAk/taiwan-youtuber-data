@@ -145,14 +145,14 @@
       "taiwanMatchReason": "official_country_tw"
     },
     {
-      "id": "UCKQVSNdzGBJSXaUmS4TOWww",
-      "title": "關鍵時刻",
+      "id": "UC8CU5nVhCQIdAGrFFp4loOQ",
+      "title": "周杰倫 Jay Chou",
       "officialCountry": "TW",
       "taiwanMatchReason": "official_country_tw"
     },
     {
-      "id": "UC8CU5nVhCQIdAGrFFp4loOQ",
-      "title": "周杰倫 Jay Chou",
+      "id": "UCKQVSNdzGBJSXaUmS4TOWww",
+      "title": "關鍵時刻",
       "officialCountry": "TW",
       "taiwanMatchReason": "official_country_tw"
     },
@@ -433,6 +433,12 @@
       "taiwanMatchReason": "official_country_tw"
     },
     {
+      "id": "UC9i2Qgd5lizhVgJrdnxunKw",
+      "title": "千千進食中",
+      "officialCountry": "TW",
+      "taiwanMatchReason": "official_country_tw"
+    },
+    {
       "id": "UCiceQ96aHdwwve2vpCSbbNQ",
       "title": "Allen Tsai",
       "officialCountry": "TW",
@@ -441,12 +447,6 @@
     {
       "id": "UCr90FXGOO8nAE9B6FAUeTNA",
       "title": "MASAの料理ABC",
-      "officialCountry": "TW",
-      "taiwanMatchReason": "official_country_tw"
-    },
-    {
-      "id": "UC9i2Qgd5lizhVgJrdnxunKw",
-      "title": "千千進食中",
       "officialCountry": "TW",
       "taiwanMatchReason": "official_country_tw"
     },
@@ -475,16 +475,16 @@
       "taiwanMatchReason": "official_country_tw"
     },
     {
-      "id": "UCbIJeyl_va8MG2xx0q4Uobg",
-      "title": "HOOK",
-      "officialCountry": "TW",
-      "taiwanMatchReason": "official_country_tw"
-    },
-    {
       "id": "UCEsinqZjZ11w0T9ZvyKIr6A",
       "title": "福茂唱片",
       "officialCountry": "",
       "taiwanMatchReason": "description_taiwan_signal"
+    },
+    {
+      "id": "UCbIJeyl_va8MG2xx0q4Uobg",
+      "title": "HOOK",
+      "officialCountry": "TW",
+      "taiwanMatchReason": "official_country_tw"
     },
     {
       "id": "UCmdVfsLHu18lCkKYXSOGUxg",
@@ -511,14 +511,14 @@
       "taiwanMatchReason": "official_country_tw"
     },
     {
-      "id": "UCWb8DSi4ygNb6TO42gwhu4A",
-      "title": "我叫元小旦",
+      "id": "UCiWRSesvSYmY7YOyz0tv_zQ",
+      "title": "YOYOTV",
       "officialCountry": "TW",
       "taiwanMatchReason": "official_country_tw"
     },
     {
-      "id": "UCiWRSesvSYmY7YOyz0tv_zQ",
-      "title": "YOYOTV",
+      "id": "UCWb8DSi4ygNb6TO42gwhu4A",
+      "title": "我叫元小旦",
       "officialCountry": "TW",
       "taiwanMatchReason": "official_country_tw"
     },
@@ -589,14 +589,14 @@
       "taiwanMatchReason": "official_country_tw"
     },
     {
-      "id": "UCRdJFrguW7zsR15dacQLtDg",
-      "title": "BIBO 和玩具",
+      "id": "UC8ROUUjHzEQm-ndb69CX8Ww",
+      "title": "台視新聞 TTV NEWS",
       "officialCountry": "TW",
       "taiwanMatchReason": "official_country_tw"
     },
     {
-      "id": "UC8ROUUjHzEQm-ndb69CX8Ww",
-      "title": "台視新聞 TTV NEWS",
+      "id": "UCRdJFrguW7zsR15dacQLtDg",
+      "title": "BIBO 和玩具",
       "officialCountry": "TW",
       "taiwanMatchReason": "official_country_tw"
     },
@@ -613,20 +613,14 @@
       "taiwanMatchReason": "official_country_tw"
     },
     {
-      "id": "UCLZBXiS9ZrIXgKBs_SMfGBQ",
-      "title": "少康戰情室 TVBS Situation Room",
-      "officialCountry": "TW",
-      "taiwanMatchReason": "official_country_tw"
-    },
-    {
       "id": "UCKUlsqazP-4QmxdEtUPlxOA",
       "title": "周杰倫 Jay Chou",
       "officialCountry": "TW",
       "taiwanMatchReason": "official_country_tw"
     },
     {
-      "id": "UC4_Ds33FmwzcTDL3G2pbs7g",
-      "title": "詹姆士官方專屬頻道",
+      "id": "UCLZBXiS9ZrIXgKBs_SMfGBQ",
+      "title": "少康戰情室 TVBS Situation Room",
       "officialCountry": "TW",
       "taiwanMatchReason": "official_country_tw"
     },
@@ -637,8 +631,20 @@
       "taiwanMatchReason": "official_country_tw"
     },
     {
+      "id": "UC4_Ds33FmwzcTDL3G2pbs7g",
+      "title": "詹姆士官方專屬頻道",
+      "officialCountry": "TW",
+      "taiwanMatchReason": "official_country_tw"
+    },
+    {
       "id": "UCCtTgzGzQSWVzCG0xR7U-MQ",
       "title": "亮生活 / Bright Side",
+      "officialCountry": "TW",
+      "taiwanMatchReason": "official_country_tw"
+    },
+    {
+      "id": "UCiwt1aanVMoPYUt_CQYCPQg",
+      "title": "全球大視野",
       "officialCountry": "TW",
       "taiwanMatchReason": "official_country_tw"
     },
@@ -655,14 +661,14 @@
       "taiwanMatchReason": "official_country_tw"
     },
     {
-      "id": "UC-z9BI8hMHNPrvnccyWgjyg",
-      "title": "我愛貓大",
+      "id": "UCzxN4G3s9uR9ao5_O5DoXmA",
+      "title": "Onion Man",
       "officialCountry": "TW",
       "taiwanMatchReason": "official_country_tw"
     },
     {
-      "id": "UCzxN4G3s9uR9ao5_O5DoXmA",
-      "title": "Onion Man",
+      "id": "UC-z9BI8hMHNPrvnccyWgjyg",
+      "title": "我愛貓大",
       "officialCountry": "TW",
       "taiwanMatchReason": "official_country_tw"
     },
@@ -679,14 +685,14 @@
       "taiwanMatchReason": "official_country_tw"
     },
     {
-      "id": "UCvcZO0cvDT3rzKtfakL3R5Q",
-      "title": "韓勾ㄟ金針菇 찐쩐꾸",
+      "id": "UCiYZw0h6hA5ENlPhTZFTHTA",
+      "title": "VS MEDIA Taiwan",
       "officialCountry": "TW",
       "taiwanMatchReason": "official_country_tw"
     },
     {
-      "id": "UCiYZw0h6hA5ENlPhTZFTHTA",
-      "title": "VS MEDIA Taiwan",
+      "id": "UCvcZO0cvDT3rzKtfakL3R5Q",
+      "title": "韓勾ㄟ金針菇 찐쩐꾸",
       "officialCountry": "TW",
       "taiwanMatchReason": "official_country_tw"
     },
@@ -703,14 +709,14 @@
       "taiwanMatchReason": "official_country_tw"
     },
     {
-      "id": "UCkELMMBdy4gPj6ooQwYJ-yg",
-      "title": "綜藝大熱門 Hot Door Night",
+      "id": "UCRYM7X1WTLZeFHf4uuqkYCQ",
+      "title": "新聞挖挖哇！",
       "officialCountry": "TW",
       "taiwanMatchReason": "official_country_tw"
     },
     {
-      "id": "UCRYM7X1WTLZeFHf4uuqkYCQ",
-      "title": "新聞挖挖哇！",
+      "id": "UCkELMMBdy4gPj6ooQwYJ-yg",
+      "title": "綜藝大熱門 Hot Door Night",
       "officialCountry": "TW",
       "taiwanMatchReason": "official_country_tw"
     },
@@ -721,14 +727,14 @@
       "taiwanMatchReason": "official_country_tw"
     },
     {
-      "id": "UCDCJyLpbfgeVE9iZiEam-Kg",
-      "title": "華視新聞 CH52",
+      "id": "UCZVCbj9weVNAWqXS9gnfm5A",
+      "title": "鍾明軒",
       "officialCountry": "TW",
       "taiwanMatchReason": "official_country_tw"
     },
     {
-      "id": "UCZVCbj9weVNAWqXS9gnfm5A",
-      "title": "鍾明軒",
+      "id": "UCDCJyLpbfgeVE9iZiEam-Kg",
+      "title": "華視新聞 CH52",
       "officialCountry": "TW",
       "taiwanMatchReason": "official_country_tw"
     },
@@ -823,6 +829,12 @@
       "taiwanMatchReason": "official_country_tw"
     },
     {
+      "id": "UCp2f7tGJGN6R9Muxipem8Nw",
+      "title": "寰宇新聞 頻道",
+      "officialCountry": "TW",
+      "taiwanMatchReason": "official_country_tw"
+    },
+    {
       "id": "UCgL6J6oL8F69vm-GcPScmwg",
       "title": "巧克力",
       "officialCountry": "TW",
@@ -831,12 +843,6 @@
     {
       "id": "UCX157UE-NdaUGQJDkQ-XKnw",
       "title": "ETtoday星光雲/官方平台",
-      "officialCountry": "TW",
-      "taiwanMatchReason": "official_country_tw"
-    },
-    {
-      "id": "UCp2f7tGJGN6R9Muxipem8Nw",
-      "title": "寰宇新聞 頻道",
       "officialCountry": "TW",
       "taiwanMatchReason": "official_country_tw"
     },
@@ -865,6 +871,12 @@
       "taiwanMatchReason": "description_taiwan_signal"
     },
     {
+      "id": "UCzOblez4o3mZEkpOeFZdHWQ",
+      "title": "Cofit x 宋晏仁醫師 - 初日醫學",
+      "officialCountry": "TW",
+      "taiwanMatchReason": "official_country_tw"
+    },
+    {
       "id": "UCL0_NxCvkcXwZHpvqgMZY-A",
       "title": "TVBS選新聞",
       "officialCountry": "TW",
@@ -877,26 +889,26 @@
       "taiwanMatchReason": "official_country_tw"
     },
     {
-      "id": "UC1krNaypYa_vx9W2Kvku8Xw",
-      "title": "小伶玩具 Xiaoling Toy",
-      "officialCountry": "TW",
-      "taiwanMatchReason": "official_country_tw"
-    },
-    {
       "id": "UCKYOzZW8YUQ0O6kIZl00KQg",
       "title": "Inside the factory",
       "officialCountry": "TW",
       "taiwanMatchReason": "official_country_tw"
     },
     {
-      "id": "UCD2KoUc0f4Bv2Bz0mbOah8g",
-      "title": "百靈果News",
+      "id": "UC1krNaypYa_vx9W2Kvku8Xw",
+      "title": "小伶玩具 Xiaoling Toy",
       "officialCountry": "TW",
       "taiwanMatchReason": "official_country_tw"
     },
     {
       "id": "UCyxyKnTGbP3N5kNim4kUNGQ",
       "title": "极速多多",
+      "officialCountry": "TW",
+      "taiwanMatchReason": "official_country_tw"
+    },
+    {
+      "id": "UCD2KoUc0f4Bv2Bz0mbOah8g",
+      "title": "百靈果News",
       "officialCountry": "TW",
       "taiwanMatchReason": "official_country_tw"
     },
@@ -943,6 +955,12 @@
       "taiwanMatchReason": "official_country_tw"
     },
     {
+      "id": "UCZhgu7uf-971SGC8zkwGEHA",
+      "title": "早安健康",
+      "officialCountry": "TW",
+      "taiwanMatchReason": "official_country_tw"
+    },
+    {
       "id": "UCgWD0gHPDM_lCf0PSYDnTIg",
       "title": "iQIYI TW - Get the iQIYI APP",
       "officialCountry": "TW",
@@ -975,6 +993,12 @@
     {
       "id": "UCmArFxfDybtCbo0Fa0Z2xxA",
       "title": "壹加壹",
+      "officialCountry": "TW",
+      "taiwanMatchReason": "official_country_tw"
+    },
+    {
+      "id": "UCnjadOj5qlKXsTAXPSwc67A",
+      "title": "巧虎TV（台灣巧連智官方頻道）",
       "officialCountry": "TW",
       "taiwanMatchReason": "official_country_tw"
     },
@@ -1063,6 +1087,12 @@
       "taiwanMatchReason": "official_country_tw"
     },
     {
+      "id": "UCCqASHJXWs5_Lst_jWp40dw",
+      "title": "大新聞大爆卦",
+      "officialCountry": "TW",
+      "taiwanMatchReason": "official_country_tw"
+    },
+    {
       "id": "UCaHvWPMrGgcd42waw4WYQ6w",
       "title": "消失的國界│從台灣看見世界的故事",
       "officialCountry": "TW",
@@ -1093,14 +1123,14 @@
       "taiwanMatchReason": "official_country_tw"
     },
     {
-      "id": "UC3hi3cz42bDrqozo8UkyU1A",
-      "title": "SunnyYummy",
+      "id": "UC4c-wTOqEID-_vH4MhNs06w",
+      "title": "巴哈姆特電玩瘋",
       "officialCountry": "TW",
       "taiwanMatchReason": "official_country_tw"
     },
     {
-      "id": "UC4c-wTOqEID-_vH4MhNs06w",
-      "title": "巴哈姆特電玩瘋",
+      "id": "UC3hi3cz42bDrqozo8UkyU1A",
+      "title": "SunnyYummy",
       "officialCountry": "TW",
       "taiwanMatchReason": "official_country_tw"
     },
@@ -1123,14 +1153,14 @@
       "taiwanMatchReason": "official_country_tw"
     },
     {
-      "id": "UCQGVzUNv0UTn-t0Xzd06E4Q",
-      "title": "Wecook123 料理123",
+      "id": "UCnNnFMU9A6R3z16bC-erz9A",
+      "title": "吃貨們",
       "officialCountry": "TW",
       "taiwanMatchReason": "official_country_tw"
     },
     {
-      "id": "UCnNnFMU9A6R3z16bC-erz9A",
-      "title": "吃貨們",
+      "id": "UCQGVzUNv0UTn-t0Xzd06E4Q",
+      "title": "Wecook123 料理123",
       "officialCountry": "TW",
       "taiwanMatchReason": "official_country_tw"
     },
@@ -1171,14 +1201,20 @@
       "taiwanMatchReason": "official_country_tw"
     },
     {
+      "id": "UCMM_seJ0wZxLofqzYdpUF4Q",
+      "title": "KT story",
+      "officialCountry": "TW",
+      "taiwanMatchReason": "official_country_tw"
+    },
+    {
       "id": "UCXpbSh6g1ZWHxk-UQv86VzA",
       "title": "小貝米漿 Logan Beck",
       "officialCountry": "TW",
       "taiwanMatchReason": "official_country_tw"
     },
     {
-      "id": "UCMM_seJ0wZxLofqzYdpUF4Q",
-      "title": "KT story",
+      "id": "UCClWVM1DcuwhWBT8aTjBBpg",
+      "title": "Chef Chouchou阿辰師",
       "officialCountry": "TW",
       "taiwanMatchReason": "official_country_tw"
     },
@@ -1221,6 +1257,12 @@
     {
       "id": "UCHc5W23j8eUY492BlI__u-w",
       "title": "Spice Travel 辣旅遊",
+      "officialCountry": "TW",
+      "taiwanMatchReason": "official_country_tw"
+    },
+    {
+      "id": "UCcbjV9pxJa5y7pTINthXyrw",
+      "title": "Focus全球新聞 Focus Global News",
       "officialCountry": "TW",
       "taiwanMatchReason": "official_country_tw"
     },
@@ -1273,14 +1315,14 @@
       "taiwanMatchReason": "official_country_tw"
     },
     {
-      "id": "UCjL1ratS2reFUKJra9Ahd2w",
-      "title": "神奇买家",
+      "id": "UC8w76cjoqEArF-ns44l_ujA",
+      "title": "新聞面對面",
       "officialCountry": "TW",
       "taiwanMatchReason": "official_country_tw"
     },
     {
-      "id": "UC8w76cjoqEArF-ns44l_ujA",
-      "title": "新聞面對面",
+      "id": "UCjL1ratS2reFUKJra9Ahd2w",
+      "title": "神奇买家",
       "officialCountry": "TW",
       "taiwanMatchReason": "official_country_tw"
     },
@@ -1305,6 +1347,12 @@
     {
       "id": "UCjzelMo2UzgQKXdxyPD15Gg",
       "title": "阿杰GAME實況",
+      "officialCountry": "TW",
+      "taiwanMatchReason": "official_country_tw"
+    },
+    {
+      "id": "UCyNixargb5VhzNV2URJRubA",
+      "title": "GaragePlay 車庫娛樂",
       "officialCountry": "TW",
       "taiwanMatchReason": "official_country_tw"
     },
@@ -1501,6 +1549,12 @@
       "taiwanMatchReason": "official_country_tw"
     },
     {
+      "id": "UCMNRAapvcYtQks_QmfiTGkA",
+      "title": "CTBC Brothers 中信兄弟官方頻道",
+      "officialCountry": "TW",
+      "taiwanMatchReason": "official_country_tw"
+    },
+    {
       "id": "UCL-RyTEgITYMyGHlafc3cTg",
       "title": "台灣解碼中",
       "officialCountry": "TW",
@@ -1591,14 +1645,14 @@
       "taiwanMatchReason": "official_country_tw"
     },
     {
-      "id": "UC1OmzW062Tci8eDdjrX-OHg",
-      "title": "愛爾達綜合台",
+      "id": "UCh3mTPtpP3Dqo8jDqGvOefw",
+      "title": "Chu",
       "officialCountry": "TW",
       "taiwanMatchReason": "official_country_tw"
     },
     {
-      "id": "UCh3mTPtpP3Dqo8jDqGvOefw",
-      "title": "Chu",
+      "id": "UC1OmzW062Tci8eDdjrX-OHg",
+      "title": "愛爾達綜合台",
       "officialCountry": "TW",
       "taiwanMatchReason": "official_country_tw"
     },
@@ -1639,14 +1693,14 @@
       "taiwanMatchReason": "official_country_tw"
     },
     {
-      "id": "UC3GeULpLgXi1TNDAv0nyN5Q",
-      "title": "又上財經學院",
+      "id": "UCVy2HTsZqGO30ndTNoCcP2Q",
+      "title": "空巴嗨嗨0322",
       "officialCountry": "TW",
       "taiwanMatchReason": "official_country_tw"
     },
     {
-      "id": "UCVy2HTsZqGO30ndTNoCcP2Q",
-      "title": "空巴嗨嗨0322",
+      "id": "UC3GeULpLgXi1TNDAv0nyN5Q",
+      "title": "又上財經學院",
       "officialCountry": "TW",
       "taiwanMatchReason": "official_country_tw"
     },
@@ -1669,6 +1723,12 @@
       "taiwanMatchReason": "official_country_tw"
     },
     {
+      "id": "UCSyJ1WvirdmrMY8rpnT41LA",
+      "title": "Taiwan Talks",
+      "officialCountry": "TW",
+      "taiwanMatchReason": "official_country_tw"
+    },
+    {
       "id": "UCCChiPobiglLjPs5tAU49zw",
       "title": "The Aüdrey 歐追",
       "officialCountry": "GB",
@@ -1683,6 +1743,12 @@
     {
       "id": "UCo2L8dIxz2ICOQRHsHvFK9A",
       "title": "成都妹子在台灣",
+      "officialCountry": "TW",
+      "taiwanMatchReason": "official_country_tw"
+    },
+    {
+      "id": "UCrpi3ntE4xuGP9N0jtxEP7Q",
+      "title": "花甲少年趣旅行",
       "officialCountry": "TW",
       "taiwanMatchReason": "official_country_tw"
     },
@@ -1747,16 +1813,16 @@
       "taiwanMatchReason": "official_country_tw"
     },
     {
-      "id": "UCMK8vSgoFPANGEK90h6Zdzw",
-      "title": "魚肉壯壯",
-      "officialCountry": "TW",
-      "taiwanMatchReason": "official_country_tw"
-    },
-    {
       "id": "UCoaRO2WcZ0lW-m9k05jFd3Q",
       "title": "台灣家庭在德國Taiwanese family in Germany",
       "officialCountry": "DE",
       "taiwanMatchReason": "title_taiwan_signal"
+    },
+    {
+      "id": "UCMK8vSgoFPANGEK90h6Zdzw",
+      "title": "魚肉壯壯",
+      "officialCountry": "TW",
+      "taiwanMatchReason": "official_country_tw"
     },
     {
       "id": "UCuCasSCJxH26YQkSa0Tp_Vw",
@@ -1807,26 +1873,26 @@
       "taiwanMatchReason": "official_country_tw"
     },
     {
-      "id": "UCo4gNfYFG-3WAwcxfgst-zQ",
-      "title": "有趣一家人FunFamily",
-      "officialCountry": "TW",
-      "taiwanMatchReason": "official_country_tw"
-    },
-    {
       "id": "UCCJBSLNtozkO-NqjpPZujiQ",
       "title": "TaiwanPlus News",
       "officialCountry": "TW",
       "taiwanMatchReason": "official_country_tw"
     },
     {
-      "id": "UCmreer7j0xS0_PXgnGtibog",
-      "title": "阿奕电影",
+      "id": "UCo4gNfYFG-3WAwcxfgst-zQ",
+      "title": "有趣一家人FunFamily",
       "officialCountry": "TW",
       "taiwanMatchReason": "official_country_tw"
     },
     {
       "id": "UC6kh50A4TMslBLMnv0MeArw",
       "title": "科技旅人毛巾Vincent",
+      "officialCountry": "TW",
+      "taiwanMatchReason": "official_country_tw"
+    },
+    {
+      "id": "UCmreer7j0xS0_PXgnGtibog",
+      "title": "阿奕电影",
       "officialCountry": "TW",
       "taiwanMatchReason": "official_country_tw"
     },
@@ -1849,20 +1915,26 @@
       "taiwanMatchReason": "official_country_tw"
     },
     {
+      "id": "UCI1lqlEzrMZGuF7k-io-9XQ",
+      "title": "嗨!營業中 Hi,Come in",
+      "officialCountry": "TW",
+      "taiwanMatchReason": "official_country_tw"
+    },
+    {
       "id": "UCcvushpS5csqRESzX6lGcoQ",
       "title": "麻吉太郎- Majutaro",
       "officialCountry": "TW",
       "taiwanMatchReason": "official_country_tw"
     },
     {
-      "id": "UCS_9WCviNVOzDAXXN9LPsNg",
-      "title": "于利雅",
+      "id": "UCiqm4JC8lbGqgePjHd3Mahw",
+      "title": "運通財經台",
       "officialCountry": "TW",
       "taiwanMatchReason": "official_country_tw"
     },
     {
-      "id": "UCiqm4JC8lbGqgePjHd3Mahw",
-      "title": "運通財經台",
+      "id": "UCS_9WCviNVOzDAXXN9LPsNg",
+      "title": "于利雅",
       "officialCountry": "TW",
       "taiwanMatchReason": "official_country_tw"
     },
@@ -1909,14 +1981,14 @@
       "taiwanMatchReason": "official_country_tw"
     },
     {
-      "id": "UC9nbF6ZiMdee1evHGZd2KGA",
-      "title": "露西Lucy",
+      "id": "UCsL_JGwHVWaRzik_y3xMrAw",
+      "title": "Yummy Food 台灣美食職人",
       "officialCountry": "TW",
       "taiwanMatchReason": "official_country_tw"
     },
     {
-      "id": "UCsL_JGwHVWaRzik_y3xMrAw",
-      "title": "Yummy Food 台灣美食職人",
+      "id": "UC9nbF6ZiMdee1evHGZd2KGA",
+      "title": "露西Lucy",
       "officialCountry": "TW",
       "taiwanMatchReason": "official_country_tw"
     },
@@ -1929,12 +2001,6 @@
     {
       "id": "UCGwgmBOr8Yte1Q84LifSn-w",
       "title": "于锡明",
-      "officialCountry": "TW",
-      "taiwanMatchReason": "official_country_tw"
-    },
-    {
-      "id": "UCQsMke3lwh4Ae5AOr82H1QQ",
-      "title": "RJ的遊戲頻道",
       "officialCountry": "TW",
       "taiwanMatchReason": "official_country_tw"
     },
@@ -1957,6 +2023,12 @@
       "taiwanMatchReason": "official_country_tw"
     },
     {
+      "id": "UCQsMke3lwh4Ae5AOr82H1QQ",
+      "title": "RJ的遊戲頻道",
+      "officialCountry": "TW",
+      "taiwanMatchReason": "official_country_tw"
+    },
+    {
       "id": "UCj87_FNWk9KplcHbCnBh3XQ",
       "title": "Oh Summer",
       "officialCountry": "",
@@ -1967,6 +2039,12 @@
       "title": "外國人在台灣-安德鏡頭下的世界",
       "officialCountry": "TW",
       "taiwanMatchReason": "official_country_tw"
+    },
+    {
+      "id": "UCLV6l4mzvRQUz5IdOdeP5lw",
+      "title": "3寶channel",
+      "officialCountry": "HK",
+      "taiwanMatchReason": "description_taiwan_signal"
     },
     {
       "id": "UCxNb9eAA1ingwCRwHJWisAw",
@@ -2053,6 +2131,12 @@
       "taiwanMatchReason": "description_taiwan_signal"
     },
     {
+      "id": "UCVQwt4e11g_U_307IPSWR6Q",
+      "title": "TaiwanPlus Docs",
+      "officialCountry": "US",
+      "taiwanMatchReason": "title_taiwan_signal"
+    },
+    {
       "id": "UClAbmPcS7jG_3Fnr46TLO2g",
       "title": "放火的實況片段",
       "officialCountry": "TW",
@@ -2067,6 +2151,12 @@
     {
       "id": "UCU7OGCOASGkRnXJ9ru0fDrg",
       "title": "英玹김융",
+      "officialCountry": "TW",
+      "taiwanMatchReason": "official_country_tw"
+    },
+    {
+      "id": "UC9BY4Rx8VdpJeyFNuFknfgQ",
+      "title": "Ozone",
       "officialCountry": "TW",
       "taiwanMatchReason": "official_country_tw"
     },
@@ -2323,14 +2413,14 @@
       "taiwanMatchReason": "title_taiwan_signal"
     },
     {
-      "id": "UCseoqFfyPWr3HKcqS-ZvAEw",
-      "title": "遊戲狂人",
+      "id": "UCzLPT1Ccsr_yqmzzntVjVOQ",
+      "title": "星光雲！RUN新聞",
       "officialCountry": "TW",
       "taiwanMatchReason": "official_country_tw"
     },
     {
-      "id": "UCzLPT1Ccsr_yqmzzntVjVOQ",
-      "title": "星光雲！RUN新聞",
+      "id": "UCseoqFfyPWr3HKcqS-ZvAEw",
+      "title": "遊戲狂人",
       "officialCountry": "TW",
       "taiwanMatchReason": "official_country_tw"
     },
@@ -2389,14 +2479,14 @@
       "taiwanMatchReason": "official_country_tw"
     },
     {
-      "id": "UCGNE8IzDDu34NfCkPi_UunA",
-      "title": "政治狠狠問",
+      "id": "UCTpFSAu5owwABcUPN0MeASQ",
+      "title": "小锋动物世界",
       "officialCountry": "TW",
       "taiwanMatchReason": "official_country_tw"
     },
     {
-      "id": "UCTpFSAu5owwABcUPN0MeASQ",
-      "title": "小锋动物世界",
+      "id": "UCGNE8IzDDu34NfCkPi_UunA",
+      "title": "政治狠狠問",
       "officialCountry": "TW",
       "taiwanMatchReason": "official_country_tw"
     },
@@ -2731,14 +2821,14 @@
       "taiwanMatchReason": "official_country_tw"
     },
     {
-      "id": "UCbvUDWlQ-EhtUES2_7C61XQ",
-      "title": "心心好料理",
+      "id": "UCsXFaWt-rGvcp-S6dxNnLSw",
+      "title": "X電競丶楊某人Ymm",
       "officialCountry": "TW",
       "taiwanMatchReason": "official_country_tw"
     },
     {
-      "id": "UCsXFaWt-rGvcp-S6dxNnLSw",
-      "title": "X電競丶楊某人Ymm",
+      "id": "UCbvUDWlQ-EhtUES2_7C61XQ",
+      "title": "心心好料理",
       "officialCountry": "TW",
       "taiwanMatchReason": "official_country_tw"
     },
@@ -2799,12 +2889,6 @@
     {
       "id": "UChhKAVmDWTUc7dOR5dmJxWQ",
       "title": "政治奇幻世界",
-      "officialCountry": "TW",
-      "taiwanMatchReason": "official_country_tw"
-    },
-    {
-      "id": "UCDc6HnQbfsROC9crFe1JXnQ",
-      "title": "異鄉人看臺灣",
       "officialCountry": "TW",
       "taiwanMatchReason": "official_country_tw"
     },
@@ -2913,90 +2997,6 @@
     {
       "id": "UCc9smIfdM7NKsYk2qQeTEcw",
       "title": "鎧爾 玩遊戲 🎮 Kyle Game Ch.",
-      "officialCountry": "TW",
-      "taiwanMatchReason": "official_country_tw"
-    },
-    {
-      "id": "UCtX-mR3K3g-0wNVTiytVjOw",
-      "title": "老王實況紀錄VOD頻道",
-      "officialCountry": "TW",
-      "taiwanMatchReason": "official_country_tw"
-    },
-    {
-      "id": "UC9wblHEEUJxXlBRggfVM0WQ",
-      "title": "LIVE DRAW TAIWAN",
-      "officialCountry": "",
-      "taiwanMatchReason": "title_taiwan_signal"
-    },
-    {
-      "id": "UChaU-jOXEGYWC_Cgxax5sVQ",
-      "title": "K.K.的遊戲實況台",
-      "officialCountry": "TW",
-      "taiwanMatchReason": "official_country_tw"
-    },
-    {
-      "id": "UCteUXhEuEXgPTGxznxRmpRA",
-      "title": "Aesthetic Era年代新聞「藝饗年代」",
-      "officialCountry": "TW",
-      "taiwanMatchReason": "official_country_tw"
-    },
-    {
-      "id": "UCLqeTh7XfEmgVNTyyzWp-Ng",
-      "title": "LIVE TAIWAN HARI INI",
-      "officialCountry": "ID",
-      "taiwanMatchReason": "title_taiwan_signal"
-    },
-    {
-      "id": "UC5kaTJqvA2I0d7K5Lgfx4sw",
-      "title": "改變台灣三分鐘",
-      "officialCountry": "TW",
-      "taiwanMatchReason": "official_country_tw"
-    },
-    {
-      "id": "UCw5raRX8L56vJtFSo-_baJA",
-      "title": "中都新聞",
-      "officialCountry": "TW",
-      "taiwanMatchReason": "official_country_tw"
-    },
-    {
-      "id": "UCzMk3Qj8EVRm9KAJSrgqlYA",
-      "title": "臺灣靈巖山寺  Taiwan Ling Yen Shan Temple",
-      "officialCountry": "TW",
-      "taiwanMatchReason": "official_country_tw"
-    },
-    {
-      "id": "UCWNfucXN1dwVAePMkyre17A",
-      "title": "文化部影視及流行音樂產業局臺灣原創流行音樂大獎",
-      "officialCountry": "",
-      "taiwanMatchReason": "title_taiwan_signal"
-    },
-    {
-      "id": "UCrHbHTyf2oETuhuop7601Kg",
-      "title": "TT曜越電競",
-      "officialCountry": "TW",
-      "taiwanMatchReason": "official_country_tw"
-    },
-    {
-      "id": "UCFU6TWzOJ8G1EqOpCTUXQpw",
-      "title": "中國社會實況",
-      "officialCountry": "TW",
-      "taiwanMatchReason": "official_country_tw"
-    },
-    {
-      "id": "UCRFjDOch8Y-bBeq0GPng5dg",
-      "title": "頭家製造所│短影音代操│品牌行銷",
-      "officialCountry": "TW",
-      "taiwanMatchReason": "official_country_tw"
-    },
-    {
-      "id": "UCK8al93HrrMwCBzIgzljQ2Q",
-      "title": "韓娜打卡한나",
-      "officialCountry": "",
-      "taiwanMatchReason": "description_taiwan_signal"
-    },
-    {
-      "id": "UCe8_8CoGMsUeqD6NfyeEtEQ",
-      "title": "梨花嘴嘴 Ewha sui²",
       "officialCountry": "TW",
       "taiwanMatchReason": "official_country_tw"
     }
